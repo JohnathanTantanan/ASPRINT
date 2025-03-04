@@ -117,6 +117,10 @@ body {
     margin-right: 10px;
 }
 
+#logo h1 {
+    color: white;
+}
+
 .header-button img {
     height: 1.4rem;
     width: 1.4rem;
@@ -174,6 +178,542 @@ a.sidebar-buttons {
     margin-left: var(--sidebar-width);
     margin-top: var(--header-height);
     padding: 2rem;
+}
+
+.main-content {
+    margin-top: 5%;
+    margin-left: 30%;
+    padding: 20px;
+    position: absolute;
+}
+
+.post-container{
+    position: relative;
+    background-color: #000;
+    width: 30em;
+    padding-top: 1.5em;
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+    padding-bottom: 1.5em;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+}
+
+.link-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: yellow;
+    opacity: 20%; */
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.bypass-overlay{
+    position: relative;
+    z-index: 3;
+}
+
+/* ============ POST ELEMENTS ============ */
+
+/*Post Thumbnail*/
+.post-container > img{
+    width: 30em;
+    height: 15em;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0.8em;
+    margin-top: 1em;
+    justify-self: center;
+    align-self: center;
+}
+
+.post-container p{
+    display: inline;
+    color: #fff;
+}
+
+.post-container h4{
+    margin-bottom: 10px;
+}
+
+/* --- Upvote and Downvote Buttons ---*/
+.post-container button{
+    background: none;
+    border: 0px none;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.post-container button > img{
+    height: 25px;
+    align-items: center;
+    filter: invert(100%);
+}
+
+.post-content{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+/*Username*/
+.profile-picture a{
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    margin-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    margin-right: -1em;
+}
+
+.profile-picture{
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid white;
+}
+
+.profile-picture img{
+    width: 2.5em;
+    height: 2.5em;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    margin-top: 0em;
+    margin-left: 1em;
+    float: left;
+}
+
+/* --- Post Comments ---*/
+#add-comment{
+    background-color: #222;
+    width: 90%;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 12px;
+    font-size: 14px;
+    color: white;
+    border: 0px;
+    border-radius: 20px;
+}
+
+.comment{
+    background-color: black;
+    width: 30em;
+    padding-top: 1.5em;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+}
+
+.comment img{
+    width: 3em;
+    height: 3em;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    margin-top: 0em;
+    margin-left: 1em;
+    float: left;
+}
+
+.comment a{
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    margin-left: 1em;
+    margin-right: 20em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+.comment p{
+    display:block;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 1;
+    margin-left: 6.5em;
+}
+
+.comment button{
+    background-color: white;
+    color: black;
+    border: 0px none;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+#comment-editing {
+    display: flex;
+}
+
+#edit-comment{
+    height: 20px;
+    width: auto;
+    margin-left: -20px;
+    border-radius: 10px;
+}
+
+#edit-comment:hover{
+    background-color: #2164B0;
+    color: #fff;
+}
+
+.post-edit-buttons{
+    display: inline-block;
+    margin-left: 12.5em;
+}
+
+.post-edit-buttons button{
+    background-color: #fff;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.post-edit-buttons button:hover{
+    background-color: #2164B0;
+    color: #fff;
+}
+
+/* ============ CREATE POST ============ */
+#create-post{
+    background-color: #000;
+    width: 50rem;
+    padding: 3rem;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+    justify-content: space-between;
+    display: block;
+    text-align: center;
+}
+
+#create-post input{
+    width: 45rem;
+    height: 2rem;
+    background-color: #000;
+    color: white;
+    font-size: 20px;
+    border: 0px;
+    margin-bottom: 1em;
+}
+
+#create-post button{
+    margin: 5px;
+    padding: 10px;
+    border: 1px outset;
+    border-radius: 3px;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+#create-post textarea{
+    width: 45rem;
+    height: 10rem;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 20px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+#create-post #community{
+    text-align: left;
+    margin-bottom: 1em;
+    padding-left: 2rem;
+    width:auto;
+}
+
+#create-post #community-list{
+    display: none;
+    max-height: 15em;
+    position: absolute;
+    background-color: #000;
+    width: auto;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+    border: 2px solid white;
+}
+
+#community-list button{
+    width: 12em;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#community-list button:hover{
+    color: #fff;
+    background-color: #2164B0;
+}
+
+#create-post #community:hover #community-list{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+}
+
+#create-post #select-community:hover{
+    cursor: pointer;
+    color: #fff;
+    background-color: #2164B0;
+}
+/* ============ MY PROFILE ============ */
+#myprofile{
+    background-color: #000;
+    width: 30em;
+    padding-top: 1.5em;
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+    padding-bottom: 2em;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+}
+
+#myprofile img{
+    max-width: 7em;
+    max-height: 7em;
+    object-fit: contain;
+    border-radius: 2px;
+    margin-bottom: 2em;
+    margin-top: 0em;
+    float: left;
+}
+
+#profile-header{
+    margin-bottom: 20px;
+}
+
+#profile-header > button{
+    position: relative;
+    border: 1px outset;
+    border-radius: 3px;
+    color: black;
+    background-color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    left: 1em;
+    bottom: .2em;
+}
+
+#profile-header > img{
+    max-width: 5em;
+    max-height: 5em;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-bottom: 1em;
+    margin-top: 0em;
+    margin-left: 1em;
+    margin-right: 0.8em;
+}
+
+#myprofile h1 {
+    position: relative;
+    display: inline-block;
+    left: 5px;
+}
+
+#profile-info {
+    border-top: 1px solid white;
+    margin: auto;
+}
+
+#edit-profile:hover{
+    background-color: #2164B0;
+    color: #fff;
+}
+
+/* ============ LATEST POST AND COMMENTS ============ */
+.latest-posts{
+    width: auto;
+    height: auto;
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+    padding-bottom: .5em;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+    border: 1px solid white;
+}
+
+.latest-posts img{
+    max-width: 7em;
+    max-height: 7em;
+    padding-bottom: 1em;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.latest-posts button{
+    border-width: 0em;  
+    color: #fff;
+    background-color: transparent;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 0.2em;
+}
+
+.latest-posts button > img {
+    height: 1.2em;
+    align-items: center;
+    filter: invert(100%);
+    margin-right: .2em;
+}
+
+/* ============ COMMUNITIES PAGE ============ */
+.community-layout{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    height: auto;
+    padding-top: 1.5em;
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+    padding-bottom: 1.8em;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+}
+
+.community-header{
+    width: 30em;
+}
+
+.community {
+    width: 45em;
+}
+
+.community a{
+    color: #fff;
+    display: flex;
+}
+
+.community img,
+.community-header img{
+    border-radius: 50%;
+    width: 6em;
+    height: 6em;
+    padding-top: 0.6em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    padding-right: 1em;
+    padding-bottom: .6em;
+}
+
+.community-text{
+    padding-left: 1.5em;
+}
+
+.community:hover {
+    border: 2px solid #fff;
+}
+
+/* ============ LOGIN AND REGISTER ============ */
+.login-register-wp{
+    background-image: url("https://i.pinimg.com/originals/bd/56/5d/bd565dcc0a556add0b0a0ed6b26d686e.gif");
+    background-repeat: no-repeat;
+    background-size: 115%;
+}
+
+.login {
+    background-color: rgb(70, 69, 69);
+    width: 25em;
+    padding-left: 12em;
+    padding-right: 12em;
+    padding-bottom: 8em;
+    margin-left: 22em;
+    margin-top: 6em;
+    border-radius: 20px;
+}
+
+#login-header {
+    background-color: black;
+    width: 49em;
+    margin-left: -12em;
+    text-align: center;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#login-header h1{
+    font-size: 40px;
+    margin-bottom: -18px;
+    margin-top: 18px;
+}
+
+#login-header h4{
+    font-weight: 1;
+}
+
+#login-content{
+    background-color: black;
+    color: white;
+    width: 39em;
+    height: 20em;
+    margin-left: -7em;
+    margin-top: 3em;
+    margin-bottom: -5em;
+}
+
+#login-content h2{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    border-bottom: 1px solid white;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+#login-form{
+    margin-left: 3em;
+    margin-right: 3em;
+    color: white;
+}
+
+#login-form a{
+    color: white;
+    padding-right: 4em;
+    text-decoration: underline;
+}
+
+#right-align{
+    margin-top: -2em;
+    margin-right: 5.5em;
+    text-align: right;
+}
+
+#password{
+    float: right;
+}
+
+#login-form button{
+    background-color: #2164B0;
+    float: inline-end;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#login-form button:hover{
+    background-color: #fff;
+    color: #000;
 }
 
 /* ============ RESPONSIVE DESIGN ============ */
