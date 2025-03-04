@@ -1,9 +1,12 @@
 const express = require('express')
 const router = express.Router()
 
+const dataModule = require('../data');
+    const posts = dataModule.getPosts();
 const locals = {
-    title: "NodeJs Blog",
-    description: "Simple Blog created with NodeJs, Express & MongoDB."
+    title: "The Forum",
+    description: "Simple Blog created with NodeJs, Express & MongoDB.",
+        posts: posts
 }
 
 router.get('',(req,res)=>{
@@ -14,6 +17,21 @@ router.get('/home',(req,res)=>{
     res.render('home', { locals, layout: 'layouts/main' })
 })
 
+router.get('/login',(req,res)=>{
+    res.render('login-register', {
+        layout: 'layouts/auth',
+        formType: 'login'})
+})
+
+router.get('/register',(req,res)=>{
+    res.render('login-register', {
+        layout: 'layouts/auth',
+        formType: 'register'})
+})
+
+router.get('/about',(req,res)=>{
+    res.render('about')
+})
 router.get('/login',(req,res)=>{
     res.render('login', { locals, layout: 'layouts/main' })
 })

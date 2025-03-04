@@ -1,0 +1,13 @@
+<div class="auth">
+    <div id="auth-header">
+        <h1>THE FORUM</h1>
+        <h4>This is one of the forums of all time</h4>
+    </div>  
+    
+    <% if (formType === 'login') { %>
+        <%- include('partials/login-form') %>
+    <% } else if (formType === 'register') { %>
+        <%- include('partials/register-form') %>
+    <% } %>
+
+</div>
