@@ -1,0 +1,12 @@
+[
+    {
+        "userProfile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZO4F0lKoa1G1MOrQ7b0hrCsSupq1XH9WtYw&s",
+        "username": "user123",
+        "community": "Tech Enthusiasts",
+        "postTitle": "Exploring the Latest in AI Technology",
+        "postImg": "https://variety.com/wp-content/uploads/2021/07/Rick-Astley-Never-Gonna-Give-You-Up.png?w=1000&h=563&crop=1",
+        "downvotes": 5,
+        "upvotes": 120,
+        "comments": 10
+    }
+]
