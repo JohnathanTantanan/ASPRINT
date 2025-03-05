@@ -4,7 +4,7 @@
     --bg-darker: #1a1a1a;
     --text-light: #ffffff;
     --header-height: 4rem;
-    --sidebar-width: 12rem;
+    --sidebar-width: 13rem;
     --transition-speed: 0.2s;
 }
 
@@ -179,13 +179,11 @@ a.sidebar-buttons {
 /* ============ MAIN CONTENT ============ */
 .main {
     margin-left: var(--sidebar-width);
-    margin-top: var(--header-height);
+    margin-top: 1rem;
     padding: 3rem;
 }
 
-.main-content {
-    margin-top: 5%;
-    margin-left: 30%;
+.home-content {
     padding: 20px;
     position: absolute;
 }
@@ -250,7 +248,7 @@ a.sidebar-buttons {
     font-weight: 800;
 }
 
-.post-container button > img{
+.post-btns{
     height: 25px;
     align-items: center;
     filter: invert(100%);

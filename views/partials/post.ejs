@@ -1,21 +1,25 @@
-<div class="post-container">
-    <!-- vvv Make and link Post Page that loads content -->
-    <a href="post-MyUsername.html" class="link-overlay"></a>
-    <div class="profile-picture bypass-overlay">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZO4F0lKoa1G1MOrQ7b0hrCsSupq1XH9WtYw&s" alt="RickRoll">
-        <a href="viewprofile.html"><%= posts.username %></a> <a href="communities.html">from c/Rickity</a>
+<% posts.forEach(function(post) { %>
+    <div class="post-container">
+            <!-- vvv Make and link Post Page that loads content -->
+        <a href="/post" class="link-overlay"></a>
+        <div class="profile-picture bypass-overlay">
+            <img src="<%= post.userProfile %>" alt="user-profile">
+            <a href="viewprofile.html"><%= post.username %></a> <a href="communities.html">from c/<%= post.community %></a>
+        </div>
+        <h4><%= post.postTitle %></h4>
+        <img src="<%= post.postImg %>" alt="post-Img">
+        <button class="bypass-overlay">
+            <img src="/img/upvote-icon.svg" alt="Upvote" class="post-btns">
+            <p><%= post.upvotes %></p>
+        </button>
+        <button class="bypass-overlay">  
+            <img src="/img/downvote-icon.svg" alt="Downvote" class="post-btns">
+            <p><%= post.downvotes %></p>
+        </button>
+        <button class="bypass-overlay">
+            <img src="/img/comment-icon.svg" alt="Comment" class="post-btns"> 
+            <!-- In express.js, public directory is configured to be root dir so no need to include "public" in absolute file path -->
+            <!-- Insert comment count? -->
+        </button>
     </div>
-    <h4>NEVER GONNA GIVE YOU UP, NEVER GONNA LET YOU DOWN</h4>
-    <img src="https://variety.com/wp-content/uploads/2021/07/Rick-Astley-Never-Gonna-Give-You-Up.png?w=1000&h=563&crop=1" alt="Rick">
-    <button class="bypass-overlay">
-        <img src="images/upvote-icon.svg" alt="Upvote">
-        <p>4</p>
-    </button>
-    <button class="bypass-overlay">  
-        <img src="images/downvote-icon.svg" alt="Downvote">
-        <p>1</p>
-    </button>
-    <button class="bypass-overlay">
-        <img src="images/comment-icon.svg" alt="Comment">
-    </button>
-</div>
+<% }); %>

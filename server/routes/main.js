@@ -1,15 +1,17 @@
 const express = require('express')
 const router = express.Router()
 
-// const dataModule = require('../data');
+const dataModule = require('../../data');
 
-router.get('',(req,res)=>{
-    // const posts = dataModule.getPosts();
+router.get(['', '/home'],(req,res)=>{
+    const posts = dataModule.getPosts();
     const locals = {
+        layout: 'layouts/main',
         title: "The Forum",
-        description: "Simple Blog created with NodeJs, Express & MongoDB."
+        description: "Simple Blog created with NodeJs, Express & MongoDB.",
+        posts: posts
     }
-    res.render('index', { locals, layout: 'layouts/main' })
+    res.render('home', locals)
 })
 
 router.get('/login',(req,res)=>{
