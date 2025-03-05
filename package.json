@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Jeyshel/BlogPractice#readme",
   "description": "",
   "dependencies": {
+    "blogpractice": "file:",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
