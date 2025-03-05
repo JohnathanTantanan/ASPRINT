@@ -1,0 +1,65 @@
+[
+    {
+        "postId": "1",
+        "textContent": "Exploring the latest advancements in AI technology and their potential impact on various industries.",
+        "comments": [
+            {
+                "userProfile": "https://randomuser.me/api/portraits/women/45.jpg",
+                "username": "tech_guru",
+                "userComment": "Great insights on AI technology! I believe it will revolutionize many fields."
+            },
+            {
+                "userProfile": "https://randomuser.me/api/portraits/men/23.jpg",
+                "username": "ai_fan",
+                "userComment": "I agree! AI has so much potential, especially in healthcare and education."
+            },
+            {
+                "userProfile": "https://randomuser.me/api/portraits/women/30.jpg",
+                "username": "data_scientist",
+                "userComment": "Interesting read! I'm curious about the ethical implications of AI advancements."
+            }
+        ]
+    },
+    {
+        "postId": "2",
+        "textContent": "Discussing the future of machine learning and its applications in various sectors.",
+        "comments": [
+            {
+                "userProfile": "https://randomuser.me/api/portraits/men/32.jpg",
+                "username": "user123",
+                "userComment": "Machine learning is evolving rapidly. Excited to see where it goes next!"
+            },
+            {
+                "userProfile": "https://randomuser.me/api/portraits/men/23.jpg",
+                "username": "ai_fan",
+                "userComment": "The future of machine learning looks promising. Can't wait to see new innovations."
+            },
+            {
+                "userProfile": "https://randomuser.me/api/portraits/women/19.jpg",
+                "username": "robotics_enthusiast",
+                "userComment": "Machine learning will play a crucial role in the development of advanced robotics."
+            }
+        ]
+    },
+    {
+        "postId": "3",
+        "textContent": "Exploring the opportunities and challenges of AI in healthcare.",
+        "comments": [
+            {
+                "userProfile": "https://randomuser.me/api/portraits/women/45.jpg",
+                "username": "tech_guru",
+                "userComment": "AI in healthcare can save lives, but we need to address privacy concerns."
+            },
+            {
+                "userProfile": "https://randomuser.me/api/portraits/men/11.jpg",
+                "username": "ml_expert",
+                "userComment": "The potential of AI in healthcare is immense. Looking forward to more breakthroughs."
+            },
+            {
+                "userProfile": "https://randomuser.me/api/portraits/women/41.jpg",
+                "username": "tech_writer",
+                "userComment": "Great article! AI can transform healthcare, but ethical considerations are important."
+            }
+        ]
+    }
+]

@@ -1,13 +1,14 @@
 <% posts.forEach(function(post) { %>
     <div class="post-container">
             <!-- vvv Make and link Post Page that loads content -->
-        <a href="/post" class="link-overlay"></a>
+        <a href="/post-page<%= post.postId%>" class="link-overlay"></a>
         <div class="profile-picture bypass-overlay">
             <img src="<%= post.userProfile %>" alt="user-profile">
             <a href="viewprofile.html"><%= post.username %></a> <a href="communities.html">from c/<%= post.community %></a>
         </div>
         <h4><%= post.postTitle %></h4>
         <img src="<%= post.postImg %>" alt="post-Img">
+
         <button class="bypass-overlay">
             <img src="/img/upvote-icon.svg" alt="Upvote" class="post-btns">
             <p><%= post.upvotes %></p>

@@ -9,10 +9,10 @@
     - comments: Number of comments in the post
 */
 
-function getPosts(){
+function getData(dataPath){
 	const fs = require('fs');
-	let rawdata = fs.readFileSync('./posts.json');
+	let rawdata = fs.readFileSync(dataPath);
 	return JSON.parse(rawdata);
 }
 
-module.exports.getPosts = getPosts;
+module.exports.getData = getData;

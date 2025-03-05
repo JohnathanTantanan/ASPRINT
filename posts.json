@@ -1,5 +1,6 @@
 [
     {
+        "postId": "1",
         "userProfile": "https://randomuser.me/api/portraits/men/32.jpg",
         "username": "user123",
         "community": "TechEnthusiasts",
@@ -7,9 +8,10 @@
         "postImg": "https://variety.com/wp-content/uploads/2021/07/Rick-Astley-Never-Gonna-Give-You-Up.png?w=1000&h=563&crop=1",
         "downvotes": 5,
         "upvotes": 120,
-        "comments": 10
+        "numComments": 10
     },
     {
+        "postId": "2",
         "userProfile": "https://randomuser.me/api/portraits/women/45.jpg",
         "username": "tech_guru",
         "community": "AIResearchers",
@@ -17,9 +19,10 @@
         "postImg": "https://w.wallhaven.cc/full/gp/wallhaven-gporqq.jpg",
         "downvotes": 3,
         "upvotes": 150,
-        "comments": 20
+        "numComments": 20
     },
     {
+        "postId": "3",
         "userProfile": "https://randomuser.me/api/portraits/men/23.jpg",
         "username": "ai_fan",
         "community": "TechEnthusiasts",
@@ -27,9 +30,10 @@
         "postImg": "https://w.wallhaven.cc/full/zy/wallhaven-zywwky.jpg",
         "downvotes": 2,
         "upvotes": 200,
-        "comments": 30
+        "numComments": 30
     },
     {
+        "postId": "4",
         "userProfile": "https://randomuser.me/api/portraits/women/30.jpg",
         "username": "data_scientist",
         "community": "DataScience",
@@ -37,9 +41,10 @@
         "postImg": "https://w.wallhaven.cc/full/5g/wallhaven-5ge715.jpg",
         "downvotes": 1,
         "upvotes": 180,
-        "comments": 25
+        "numComments": 25
     },
     {
+        "postId": "5",
         "userProfile": "https://randomuser.me/api/portraits/men/11.jpg",
         "username": "ml_expert",
         "community": "MachineLearning",
@@ -47,9 +52,10 @@
         "postImg": "https://w.wallhaven.cc/full/vq/wallhaven-vq6x28.jpg",
         "downvotes": 4,
         "upvotes": 220,
-        "comments": 40
+        "numComments": 40
     },
     {
+        "postId": "6",
         "userProfile": "https://randomuser.me/api/portraits/women/19.jpg",
         "username": "robotics_enthusiast",
         "community": "Robotics",
@@ -57,9 +63,10 @@
         "postImg": "https://w.wallhaven.cc/full/jx/wallhaven-jxm1mw.jpg",
         "downvotes": 6,
         "upvotes": 140,
-        "comments": 15
+        "numComments": 15
     },
     {
+        "postId": "7",
         "userProfile": "https://randomuser.me/api/portraits/men/48.jpg",
         "username": "ai_researcher",
         "community": "AIResearchers",
@@ -67,9 +74,10 @@
         "postImg": "https://w.wallhaven.cc/full/o5/wallhaven-o5ov3l.jpg",
         "downvotes": 2,
         "upvotes": 160,
-        "comments": 18
+        "numComments": 18
     },
     {
+        "postId": "8",
         "userProfile": "https://randomuser.me/api/portraits/women/41.jpg",
         "username": "tech_writer",
         "community": "TechWriters",
@@ -77,9 +85,10 @@
         "postImg": "https://w.wallhaven.cc/full/7p/wallhaven-7pzj1y.png",
         "downvotes": 1,
         "upvotes": 110,
-        "comments": 12
+        "numComments": 12
     },
     {
+        "postId": "9",
         "userProfile": "https://randomuser.me/api/portraits/men/50.jpg",
         "username": "ai_enthusiast",
         "community": "TechEnthusiasts",
@@ -87,9 +96,10 @@
         "postImg": "https://w.wallhaven.cc/full/qd/wallhaven-qdo835.jpg",
         "downvotes": 3,
         "upvotes": 130,
-        "comments": 22
+        "numComments": 22
     },
     {
+        "postId": "10",
         "userProfile": "https://randomuser.me/api/portraits/women/37.jpg",
         "username": "future_tech",
         "community": "FutureTech",
@@ -97,6 +107,6 @@
         "postImg": "https://w.wallhaven.cc/full/3l/wallhaven-3lp2md.jpg",
         "downvotes": 4,
         "upvotes": 170,
-        "comments": 28
+        "numComments": 28
     }
 ]
