@@ -179,8 +179,11 @@ a.sidebar-buttons {
 /* ============ MAIN CONTENT ============ */
 .main {
     margin-left: var(--sidebar-width);
-    margin-top: 1rem;
+    margin-top: var(--header-height);
     padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .home-content {
@@ -188,16 +191,16 @@ a.sidebar-buttons {
     position: absolute;
 }
 
-.post-container{
+.post-container {
     position: relative;
     background-color: #000;
     width: 30em;
-    padding-top: 1.5em;
-    padding-left: 1.8em;
-    padding-right: 1.8em;
-    padding-bottom: 1.5em;
+    padding: 1.5em 1.8em;
     border-radius: 10px;
     margin-bottom: 1.5em;
+    /* Center horizontally */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .link-overlay{
