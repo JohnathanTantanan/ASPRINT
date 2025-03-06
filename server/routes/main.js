@@ -48,11 +48,12 @@ router.get('/about',(req,res)=>{
 
 router.get(['', '/popular'],(req,res)=>{
     const posts = dataModule.getData('./posts.json');
+    var sorted = posts.sort((a, b) => b.upvotes - a.upvotes);
     const locals = {
         layout: 'layouts/main',
         title: "The Forum",
         description: "Simple Blog created with NodeJs, Express & MongoDB.",
-        posts: posts
+        posts: sorted
     }
     res.render('popular', locals)
 });
