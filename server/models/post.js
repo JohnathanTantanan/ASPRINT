@@ -5,14 +5,15 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
-    images:{
-        type: String,
-        required: false
-    },
     content: {
         type: String,
         required: true
     },
+    images:{
+        type: String,
+        required: false
+    },
+
     createAt:{
         type: Date,
         default: Date.now
@@ -24,4 +25,4 @@ const PostSchema = new Schema({
 
 })
 
-modules.exports = mongoose.model('Post', PostSchema)
+module.exports = mongoose.model('Post', PostSchema)

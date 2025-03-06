@@ -1,14 +1,24 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
+const Post = require('../models/post')
+const dataModule = require('../../data')
 
-const dataModule = require('../../data');
+function insertPostData(){
+    Post.insertMany([
+        {
+            title:"Blog",
+            content:"This is a blog post"
+        },
+    ])
+}
+
 
 /**GET /
  * HOME
  */
 router.get(['', '/home'],(req,res)=>{
     const posts = dataModule.getData('./posts.json');
-    const locals = {
+    const locals = { 
         layout: 'layouts/main',
         title: "The Forum",
         description: "Simple Blog created with NodeJs, Express & MongoDB.",
