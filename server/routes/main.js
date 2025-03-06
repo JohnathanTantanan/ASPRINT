@@ -1,30 +1,27 @@
 const express = require('express')
 const router = express.Router()
-const Post = require('../models/post')
 const dataModule = require('../../data')
-
-function insertPostData(){
-    Post.insertMany([
-        {
-            title:"Blog",
-            content:"This is a blog post"
-        },
-    ])
-}
-
+//Server Model/Schema
+const Post = require('../models/Post')
 
 /**GET /
  * HOME
  */
-router.get('',(req,res)=>{
-    const posts = dataModule.getData('./posts.json');
+router.get(['', '/home'], async (req,res)=>{
+    //const posts = dataModule.getData('./posts.json');
     const locals = { 
         layout: 'layouts/main',
         title: "The Forum",
-        description: "Simple Blog created with NodeJs, Express & MongoDB.",
-        posts: posts
+        description: "Simple Blog created with NodeJs, Express & MongoDB."
     }
-    res.render('home', locals)
+
+    try {
+        const data = await Post.find();
+        res.render('home', {locals, data});
+    } catch (error) {
+        console.log(error);
+    }
+    
 });
 
 /**GET /

@@ -1,1 +1,26 @@
-<%- include('./partials/post.ejs', { posts: locals.posts }) %>
+<% data.forEach(post => { %>
+    <div class="post-container">
+        <!-- vvv Make and link Post Page that loads content -->
+        <a href="/post-page" class="link-overlay"></a>
+        <div class="profile-picture bypass-overlay">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="user-profile">
+            <a href="viewprofile.html"><%= post.username %></a> <a href="communities.html">from c/</a>
+        </div>
+        <h4><%= post.title %></h4>
+        <img src="https://variety.com/wp-content/uploads/2021/07/Rick-Astley-Never-Gonna-Give-You-Up.png?w=1000&h=563&crop=1" alt="post-Img">
+
+        <button class="bypass-overlay">
+            <img src="/img/upvote-icon.svg" alt="Upvote" id="upvote-btn">
+            <p><%= post.upvotes %></p>
+        </button>
+        <button class="bypass-overlay">  
+            <img src="/img/downvote-icon.svg" alt="Downvote" id="downvote-btn">
+            <p><%= post.downvotes %></p>
+        </button>
+        <button class="bypass-overlay">
+            <img src="/img/comment-icon.svg" alt="Comment" id="comment-btn"> 
+            <!-- In express.js, public directory is configured to be root dir so no need to include "public" in absolute file path -->
+            <!-- Insert comment count? -->
+        </button>
+    </div>
+<% }) %>

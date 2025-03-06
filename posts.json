@@ -1,112 +1,82 @@
 [
     {
-        "postId": "1",
-        "userProfile": "https://randomuser.me/api/portraits/men/32.jpg",
         "username": "user123",
         "community": "TechEnthusiasts",
-        "postTitle": "Exploring the Latest in AI Technology",
-        "postImg": "https://variety.com/wp-content/uploads/2021/07/Rick-Astley-Never-Gonna-Give-You-Up.png?w=1000&h=563&crop=1",
+        "title": "Exploring the Latest in AI Technology",
+        "content": "What is the latest in AI technology? Feel free to share any of your thoughts.",
         "downvotes": 5,
-        "upvotes": 120,
-        "numComments": 10
+        "upvotes": 120
     },
     {
-        "postId": "2",
-        "userProfile": "https://randomuser.me/api/portraits/women/45.jpg",
-        "username": "tech_guru",
+        "username": "ai_lover",
         "community": "AIResearchers",
-        "postTitle": "The Future of Machine Learning",
-        "postImg": "https://w.wallhaven.cc/full/gp/wallhaven-gporqq.jpg",
-        "downvotes": 3,
-        "upvotes": 150,
-        "numComments": 20
-    },
-    {
-        "postId": "3",
-        "userProfile": "https://randomuser.me/api/portraits/men/23.jpg",
-        "username": "ai_fan",
-        "community": "TechEnthusiasts",
-        "postTitle": "AI in Healthcare: Opportunities and Challenges",
-        "postImg": "https://w.wallhaven.cc/full/zy/wallhaven-zywwky.jpg",
+        "title": "AI and Its Impact on Society",
+        "content": "How do you think AI will shape our future society? Share your thoughts.",
         "downvotes": 2,
-        "upvotes": 200,
-        "numComments": 30
+        "upvotes": 180
     },
     {
-        "postId": "4",
-        "userProfile": "https://randomuser.me/api/portraits/women/30.jpg",
-        "username": "data_scientist",
+        "username": "tech_savvy",
+        "community": "TechEnthusiasts",
+        "title": "The Rise of Quantum Computing",
+        "content": "Quantum computing is set to revolutionize technology. What are your predictions?",
+        "downvotes": 3,
+        "upvotes": 150
+    },
+    {
+        "username": "data_guru",
         "community": "DataScience",
-        "postTitle": "Big Data and Its Impact on AI",
-        "postImg": "https://w.wallhaven.cc/full/5g/wallhaven-5ge715.jpg",
+        "title": "Data Science Trends in 2025",
+        "content": "What are the latest trends in data science that you are excited about?",
         "downvotes": 1,
-        "upvotes": 180,
-        "numComments": 25
+        "upvotes": 200
     },
     {
-        "postId": "5",
-        "userProfile": "https://randomuser.me/api/portraits/men/11.jpg",
-        "username": "ml_expert",
+        "username": "ml_master",
         "community": "MachineLearning",
-        "postTitle": "Deep Learning Techniques for Image Recognition",
-        "postImg": "https://w.wallhaven.cc/full/vq/wallhaven-vq6x28.jpg",
+        "title": "Advancements in Machine Learning Algorithms",
+        "content": "What are the most significant advancements in machine learning algorithms recently?",
         "downvotes": 4,
-        "upvotes": 220,
-        "numComments": 40
+        "upvotes": 220
     },
     {
-        "postId": "6",
-        "userProfile": "https://randomuser.me/api/portraits/women/19.jpg",
-        "username": "robotics_enthusiast",
-        "community": "Robotics",
-        "postTitle": "The Role of AI in Robotics",
-        "postImg": "https://w.wallhaven.cc/full/jx/wallhaven-jxm1mw.jpg",
-        "downvotes": 6,
-        "upvotes": 140,
-        "numComments": 15
-    },
-    {
-        "postId": "7",
-        "userProfile": "https://randomuser.me/api/portraits/men/48.jpg",
-        "username": "ai_researcher",
-        "community": "AIResearchers",
-        "postTitle": "Ethics in Artificial Intelligence",
-        "postImg": "https://w.wallhaven.cc/full/o5/wallhaven-o5ov3l.jpg",
-        "downvotes": 2,
-        "upvotes": 160,
-        "numComments": 18
-    },
-    {
-        "postId": "8",
-        "userProfile": "https://randomuser.me/api/portraits/women/41.jpg",
-        "username": "tech_writer",
-        "community": "TechWriters",
-        "postTitle": "Writing About AI: Tips and Tricks",
-        "postImg": "https://w.wallhaven.cc/full/7p/wallhaven-7pzj1y.png",
+        "username": "nature_lover",
+        "community": "NatureEnthusiasts",
+        "title": "The Beauty of National Parks",
+        "content": "What are your favorite national parks and why? Share your experiences.",
         "downvotes": 1,
-        "upvotes": 110,
-        "numComments": 12
+        "upvotes": 250
     },
     {
-        "postId": "9",
-        "userProfile": "https://randomuser.me/api/portraits/men/50.jpg",
-        "username": "ai_enthusiast",
-        "community": "TechEnthusiasts",
-        "postTitle": "AI in Everyday Life",
-        "postImg": "https://w.wallhaven.cc/full/qd/wallhaven-qdo835.jpg",
+        "username": "city_explorer",
+        "community": "UrbanAdventures",
+        "title": "Exploring the Hidden Gems of New York City",
+        "content": "What are some hidden gems in New York City that tourists often miss?",
+        "downvotes": 2,
+        "upvotes": 300
+    },
+    {
+        "username": "travel_bug",
+        "community": "WorldTravelers",
+        "title": "Top Destinations for 2025",
+        "content": "What are the top travel destinations for 2025? Share your travel plans and tips.",
+        "downvotes": 0,
+        "upvotes": 400
+    },
+    {
+        "username": "foodie",
+        "community": "CulinaryDelights",
+        "title": "Best Street Food Around the World",
+        "content": "What are some of the best street food dishes you've tried around the world?",
         "downvotes": 3,
-        "upvotes": 130,
-        "numComments": 22
+        "upvotes": 350
     },
     {
-        "postId": "10",
-        "userProfile": "https://randomuser.me/api/portraits/women/37.jpg",
-        "username": "future_tech",
-        "community": "FutureTech",
-        "postTitle": "The Next Big Thing in AI",
-        "postImg": "https://w.wallhaven.cc/full/3l/wallhaven-3lp2md.jpg",
-        "downvotes": 4,
-        "upvotes": 170,
-        "numComments": 28
+        "username": "history_buff",
+        "community": "HistoryLovers",
+        "title": "Uncovering Ancient Civilizations",
+        "content": "What ancient civilizations fascinate you the most and why?",
+        "downvotes": 1,
+        "upvotes": 275
     }
 ]
