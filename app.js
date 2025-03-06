@@ -4,6 +4,7 @@ const express = require('express') // Fixed typo in require
 const expressLayouts = require('express-ejs-layouts')
 const connectDB = require('./server/config/db')
 connectDB()
+
 const app = express()
 const PORT = 5000 || process.env.PORT
  

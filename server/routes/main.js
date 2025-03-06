@@ -16,7 +16,7 @@ function insertPostData(){
 /**GET /
  * HOME
  */
-router.get(['', '/home'],(req,res)=>{
+router.get('',(req,res)=>{
     const posts = dataModule.getData('./posts.json');
     const locals = { 
         layout: 'layouts/main',
