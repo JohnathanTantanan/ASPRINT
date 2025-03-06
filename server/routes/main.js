@@ -52,8 +52,23 @@ router.get('/register',(req,res)=>{
         formType: 'register'})
 });
 
-router.get('/about',(req,res)=>{
-    res.render('about')
+router.get('/communities',(req,res)=>{
+    res.render('communities', {
+        layout: 'layouts/main',
+        title: "The Forum",
+        description: "Simple Blog created with NodeJs, Express & MongoDB."})
+});
+
+router.get(['', '/popular'],(req,res)=>{
+    const posts = dataModule.getData('./posts.json');
+    var sorted = posts.sort((a, b) => b.upvotes - a.upvotes);
+    const locals = {
+        layout: 'layouts/main',
+        title: "The Forum",
+        description: "Simple Blog created with NodeJs, Express & MongoDB.",
+        posts: sorted
+    }
+    res.render('popular', locals)
 });
 
 module.exports = router;

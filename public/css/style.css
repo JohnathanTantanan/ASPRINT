@@ -248,7 +248,19 @@ a.sidebar-buttons {
     font-weight: 800;
 }
 
-.post-btns{
+#upvote-btn{
+    height: 25px;
+    align-items: center;
+    filter: invert(100%);
+}
+
+#downvote-btn{
+    height: 25px;
+    align-items: center;
+    filter: invert(100%);
+}
+
+#comment-btn{
     height: 25px;
     align-items: center;
     filter: invert(100%);
