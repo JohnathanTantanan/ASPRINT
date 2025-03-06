@@ -710,10 +710,6 @@ a.sidebar-buttons {
     text-align: right;
 }
 
-#password{
-    float: right;
-}
-
 #login-form button{
     background-color: #2164B0;
     float: inline-end;
@@ -833,7 +829,7 @@ a.sidebar-buttons {
     text-align: right;
 }
 
-#password{
+#username{
     float: right;
 }
 
