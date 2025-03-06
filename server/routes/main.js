@@ -20,10 +20,9 @@ router.get(['', '/home'], async (req,res)=>{
         res.render('home', {locals, data});
     } catch (error) {
         console.log(error);
-    }
+    } 
     
-});
-
+}); 
 /**GET /
  * POST PAGE
  */

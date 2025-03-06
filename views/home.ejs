@@ -4,11 +4,12 @@
         <a href="/post-page" class="link-overlay"></a>
         <div class="profile-picture bypass-overlay">
             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="user-profile">
-            <a href="viewprofile.html"><%= post.username %></a> <a href="communities.html">from c/</a>
+            <a href="viewprofile.html"><%= post.username %></a> <a href="communities.html">from c/</a> 
+            
         </div>
-        <h4><%= post.title %></h4>
+        <h4><%= post.title %></h4> 
         <img src="https://variety.com/wp-content/uploads/2021/07/Rick-Astley-Never-Gonna-Give-You-Up.png?w=1000&h=563&crop=1" alt="post-Img">
-
+ 
         <button class="bypass-overlay">
             <img src="/img/upvote-icon.svg" alt="Upvote" id="upvote-btn">
             <p><%= post.upvotes %></p>
@@ -22,5 +23,8 @@
             <!-- In express.js, public directory is configured to be root dir so no need to include "public" in absolute file path -->
             <!-- Insert comment count? -->
         </button>
+        
+        <sub><%= post.createAt.toDateString()%></sub>
+        
     </div>
 <% }) %>
