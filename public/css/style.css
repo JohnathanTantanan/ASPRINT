@@ -710,7 +710,7 @@ a.sidebar-buttons {
     text-align: right;
 }
 
-#login-form button{
+#login-form-button{
     background-color: #2164B0;
     float: inline-end;
     color: white;
@@ -723,7 +723,7 @@ a.sidebar-buttons {
     padding-right: 15px;
 }
 
-#login-form button:hover{
+#login-form-button:hover{
     background-color: #fff;
     color: #000;
 }
