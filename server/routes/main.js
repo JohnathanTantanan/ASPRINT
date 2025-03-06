@@ -56,16 +56,21 @@ router.get('/communities',(req,res)=>{
         description: "Simple Blog created with NodeJs, Express & MongoDB."})
 });
 
-router.get(['', '/popular'],(req,res)=>{
-    const posts = dataModule.getData('./posts.json');
-    var sorted = posts.sort((a, b) => b.upvotes - a.upvotes);
+router.get('/popular', async(req,res)=>{
+    //var sorted = posts.sort((a, b) => b.upvotes - a.upvotes);
     const locals = {
         layout: 'layouts/main',
         title: "The Forum",
         description: "Simple Blog created with NodeJs, Express & MongoDB.",
-        posts: sorted
     }
-    res.render('popular', locals)
+
+    try {
+        const data = await Post.find({ upvotes: {$gt: 200} }).sort({ upvotes: -1 }); // compute upvote - downvote
+        res.render('home', {locals, data});
+        // res.render('popular', locals)
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 module.exports = router;
