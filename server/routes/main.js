@@ -46,4 +46,15 @@ router.get('/about',(req,res)=>{
     res.render('about')
 });
 
+router.get(['', '/popular'],(req,res)=>{
+    const posts = dataModule.getData('./posts.json');
+    const locals = {
+        layout: 'layouts/main',
+        title: "The Forum",
+        description: "Simple Blog created with NodeJs, Express & MongoDB.",
+        posts: posts
+    }
+    res.render('popular', locals)
+});
+
 module.exports = router;
