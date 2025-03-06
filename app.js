@@ -9,6 +9,8 @@ const app = express()
 const PORT = 5000 || process.env.PORT
  
 app.use(express.static('public')) // sets public as root folder
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
   
 // Templating Engine
 app.use(expressLayouts)
