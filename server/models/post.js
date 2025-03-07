@@ -5,7 +5,8 @@ const PostSchema = new Schema({
     username:{ // change to original poster or poster
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true
+        required: true,
+        unique: false
     },
     community:{
         type: String,

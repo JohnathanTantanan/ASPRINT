@@ -6,6 +6,8 @@ const Post = require('../models/Post')
 const User = require('../models/User')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+var ObjectId = require('mongodb').ObjectId;
+var loggeduser = User.findOne({_id: new ObjectId("67ca9bd51f75539afbfc6714")});
 
 /**GET /
  * LOGIN AND REGISTER
@@ -47,18 +49,22 @@ router.get('/register', async(req,res)=>{
     }
 });
 
-router.get('/dashboard', authMiddleware, async(req,res)=>{
+router.get('/myprofile', authMiddleware, async(req,res)=>{
     try {
         const locals = { 
             layout: 'layouts/main',
             title: "The Forum",
             description: "Simple Blog created with NodeJs, Express & MongoDB."
         }
-
-        const data = await User.findById(req.userId).posts;
-        res.render('dashboard', {
+        
+        const user = await User.findOne({username: loggeduser.username});
+        var userId = user._id.toString();
+        const posts = await Post.find({username: new ObjectId(userId)});
+        
+        res.render('myprofile', {
             locals,
-            data});
+            user,
+            posts});
 
     } catch (error) {
         console.log(error);
@@ -90,7 +96,8 @@ router.post('/login', async (req,res)=>{
         res.cookie('token', token, {
             httpOnly: true
         });
-        res.redirect('/dashboard');
+        loggeduser = user;
+        res.redirect('/myprofile');
 
 
     } catch (error) {
