@@ -1,0 +1,38 @@
+[
+    {
+      "postId": {"$oid": "67c94726a80177c6780778c9"},
+      "commenter": "TechGuru99",
+      "createdAt": "2025-03-07T12:15:30Z",
+      "updatedAt": "2025-03-07T12:15:30Z",
+      "comment": "This is a great discussion! I think AI-powered tools will revolutionize how we interact online."
+    },
+    {
+      "postId": {"$oid": "67c94726a80177c6780778c9"},
+      "commenter": "CodeMaster21",
+      "createdAt": "2025-03-07T12:30:45Z",
+      "updatedAt": "2025-03-07T12:30:45Z",
+      "comment": "I agree, but we also need to consider the ethical implications of AI in forums. How do we handle moderation?"
+    },
+    {
+      "postId": {"$oid": "67c94726a80177c6780778c9"},
+      "commenter": "ForumNewbie",
+      "createdAt": "2025-03-07T12:45:20Z",
+      "updatedAt": "2025-03-07T12:45:20Z",
+      "comment": "This is my first time posting here. What are some beginner-friendly resources to learn about this topic?"
+    },
+    {
+      "postId": {"$oid": "67c94726a80177c6780778c9"},
+      "commenter": "AI_Enthusiast",
+      "createdAt": "2025-03-07T13:00:10Z",
+      "updatedAt": "2025-03-07T13:00:10Z",
+      "comment": "I recommend checking out some online courses on machine learning. Also, OpenAI has great documentation!"
+    },
+    {
+      "postId": {"$oid": "67c94726a80177c6780778c9"},
+      "commenter": "DevOpsWizard",
+      "createdAt": "2025-03-07T13:15:55Z",
+      "updatedAt": "2025-03-07T13:15:55Z",
+      "comment": "What are your thoughts on integrating AI with DevOps? I think automation can improve efficiency a lot."
+    }
+  ]
+  

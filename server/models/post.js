@@ -2,8 +2,9 @@ const { type } = require('express/lib/response')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const PostSchema = new Schema({
-    username:{
-        type: String,
+    username:{ // change to original poster or poster
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
     community:{
@@ -14,16 +15,15 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
-    content: {
-        type: String,
-        required: true
-    },
     images:{
         type: String,
         required: false
     },
-
-    createAt:{
+    content: {
+        type: String,
+        required: true
+    },
+    createdAt:{
         type: Date,
         default: Date.now
     },
@@ -38,7 +38,8 @@ const PostSchema = new Schema({
     downvotes:{
         type: Number,
         required: true
-    }
+    },
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'PostComments' }]
 })
 
 module.exports = mongoose.model('Post', PostSchema)

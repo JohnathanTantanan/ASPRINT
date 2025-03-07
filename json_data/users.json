@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "67ca62af3482fd190fe0cd9e"
+  },
+  "username": "TechGuru99",
+  "password": "hashed_password_1",
+  "description": "Passionate about AI, tech trends, and online communities.",
+  "posts": [],
+  "comments": [],
+  "communities": []
+},
+{
+  "_id": {
+    "$oid": "67ca62af3482fd190fe0cd9f"
+  },
+  "username": "CodeMaster21",
+  "password": "hashed_password_2",
+  "description": "Software developer with a love for clean code and best practices.",
+  "posts": [],
+  "comments": [],
+  "communities": []
+},
+{
+  "_id": {
+    "$oid": "67ca62af3482fd190fe0cda0"
+  },
+  "username": "GamerX",
+  "password": "hashed_password_3",
+  "description": "Hardcore gamer, cloud gaming enthusiast, and esports follower.",
+  "posts": [],
+  "comments": [],
+  "communities": []
+},
+{
+  "_id": {
+    "$oid": "67ca62af3482fd190fe0cda1"
+  },
+  "username": "ScienceGeek",
+  "password": "hashed_password_4",
+  "description": "Space and science fanatic, always following the latest discoveries.",
+  "posts": [],
+  "comments": [],
+  "communities": []
+},
+{
+  "_id": {
+    "$oid": "67ca62af3482fd190fe0cda2"
+  },
+  "username": "MovieBuff",
+  "password": "hashed_password_5",
+  "description": "Film critic in the making. Huge fan of sci-fi and classic movies.",
+  "posts": [],
+  "comments": [],
+  "communities": []
+}]

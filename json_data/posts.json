@@ -1,0 +1,62 @@
+[
+  {
+    "username": { "$oid": "67ca62af3482fd190fe0cd9e" },
+    "community": "Technology",
+    "title": "The Future of AI in Online Communities",
+    "images": "",
+    "content": "AI is changing how we interact online, from content moderation to personalized recommendations. What are your thoughts on AI’s role in forums?",
+    "createdAt": "2025-03-07T12:00:00Z",
+    "updatedAt": "2025-03-07T12:00:00Z",
+    "upvotes": 125,
+    "downvotes": 10,
+    "comments": []
+  },
+  {
+    "username": { "$oid": "67ca62af3482fd190fe0cd9f" },
+    "community": "Programming",
+    "title": "Best Practices for Writing Clean Code",
+    "images": "",
+    "content": "Clean code improves maintainability and readability. What are your favorite tips or best practices for writing clean, efficient code?",
+    "createdAt": "2025-03-07T13:30:00Z",
+    "updatedAt": "2025-03-07T13:30:00Z",
+    "upvotes": 98,
+    "downvotes": 3,
+    "comments": []
+  },
+  {
+    "username": { "$oid": "67ca62af3482fd190fe0cda0" },
+    "community": "Gaming",
+    "title": "Is Cloud Gaming the Future?",
+    "images": "",
+    "content": "With advancements in cloud computing, gaming no longer requires high-end hardware. Do you think cloud gaming will replace traditional consoles?",
+    "createdAt": "2025-03-07T14:15:00Z",
+    "updatedAt": "2025-03-07T14:15:00Z",
+    "upvotes": 150,
+    "downvotes": 25,
+    "comments": []
+  },
+  {
+    "username": { "$oid": "67ca62af3482fd190fe0cda1" },
+    "community": "Science",
+    "title": "The James Webb Telescope’s Latest Discoveries",
+    "images": "",
+    "content": "The James Webb Telescope continues to unveil new cosmic wonders. What do you think has been its most groundbreaking discovery so far?",
+    "createdAt": "2025-03-07T15:00:00Z",
+    "updatedAt": "2025-03-07T15:00:00Z",
+    "upvotes": 200,
+    "downvotes": 5,
+    "comments": []
+  },
+  {
+    "username": { "$oid": "67ca62af3482fd190fe0cda2" },
+    "community": "Movies",
+    "title": "Best Sci-Fi Movies of the Last Decade",
+    "images": "",
+    "content": "From Interstellar to Dune, the last decade has given us some incredible sci-fi films. What are your favorites and why?",
+    "createdAt": "2025-03-07T16:20:00Z",
+    "updatedAt": "2025-03-07T16:20:00Z",
+    "upvotes": 175,
+    "downvotes": 8,
+    "comments": []
+  }
+]
