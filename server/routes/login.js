@@ -49,8 +49,17 @@ router.get('/register', async(req,res)=>{
 
 router.get('/dashboard', authMiddleware, async(req,res)=>{
     try {
+        const locals = { 
+            layout: 'layouts/main',
+            title: "The Forum",
+            description: "Simple Blog created with NodeJs, Express & MongoDB."
+        }
+
+        const data = await User.findById(req.userId).posts;
         res.render('dashboard', {
-            layout: 'layouts/main'})
+            locals,
+            data});
+
     } catch (error) {
         console.log(error);
     }
@@ -74,7 +83,7 @@ router.post('/login', async (req,res)=>{
         const isMatch = await bcrypt.compare(password, user.password);
 
         if(!isMatch){
-            return res.status(401).json({message: 'Invalid Credentials'});
+            return res.status(401).json({message: 'Wrong Password'});
         }
 
         const token = jwt.sign({id: user._id}, process.env.JWT_SECRET);
