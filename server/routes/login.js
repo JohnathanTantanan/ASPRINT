@@ -62,8 +62,6 @@ router.get('/myprofile', authMiddleware, async(req,res)=>{
         var userId = user._id.toString();
         const posts = await Post.find({username: new ObjectId(userId)});
         const comments = await Comments.find({commenter: new ObjectId(userId)});
-
-        console.log(comments);
         
         res.render('myprofile', {
             locals,
