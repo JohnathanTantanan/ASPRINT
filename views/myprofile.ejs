@@ -15,8 +15,9 @@
 
 
 
-            <% posts.forEach(post => { %>
+            
             <h2>Latest Posts:</h2>
+            <% posts.forEach(post => { %>
             <div class="latest-posts">
                 <p><%= post.title %></p>
                 <img src=<%= post.images %> alt="Rick">
@@ -37,12 +38,13 @@
 
 
 
-
+            
             <h2> Comments: </h2>
+            <% comments.forEach(comment => { %>
             <div class="latest-posts">
-                <p>MAKE YOU CRY! SAY GOODBYE! TELLING A LIE! HURTING YOU! GIVING YOU UP! LETTING YOU DOWN! GOING AROUND AND DESERTING YOU! replied to Rick Astley</p>
+                <p><%= comment.comment %></p>
             </div>
-
+            <% }) %>
         </div>
         
     </div>
