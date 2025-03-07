@@ -3,7 +3,7 @@ const router = express.Router()
 const dataModule = require('../../data')
 //Server Model/Schema
 const Post = require('../models/Post')
-const PostComments = require('../models/PostComments')
+const PostComments = require('../models/Comments')
 
 
 /**GET /

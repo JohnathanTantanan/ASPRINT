@@ -4,7 +4,7 @@ const dataModule = require('../../data')
 //Server Model/Schema
 const Post = require('../models/Post')
 const User = require('../models/User')
-const PostComments = require('../models/PostComments')
+const Comments = require('../models/Comments')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 var ObjectId = require('mongodb').ObjectId;
@@ -61,7 +61,9 @@ router.get('/myprofile', authMiddleware, async(req,res)=>{
         const user = await User.findOne({username: loggeduser.username});
         var userId = user._id.toString();
         const posts = await Post.find({username: new ObjectId(userId)});
-        const comments = await PostComments.find({username: new ObjectId(userId)});
+        const comments = await Comments.find({commenter: new ObjectId(userId)});
+
+        console.log(comments);
         
         res.render('myprofile', {
             locals,
