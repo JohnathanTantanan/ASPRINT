@@ -64,7 +64,7 @@ router.get('/popular', async(req,res)=>{
     }
 
     try {
-        const data = await Post.find({ upvotes: {$gt: 200} }).sort({ upvotes: -1 }); // compute upvote - downvote
+        const data = await Post.find({ upvotes: {$gt: 100} }).sort({ upvotes: -1 }); // compute upvote - downvote
         res.render('home', {locals, data});
         // res.render('popular', locals)
     } catch (error) {
