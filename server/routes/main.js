@@ -3,6 +3,8 @@ const router = express.Router()
 const dataModule = require('../../data')
 //Server Model/Schema
 const Post = require('../models/Post')
+const PostComments = require('../models/PostComments')
+
 
 /**GET /
  * HOME
@@ -33,7 +35,7 @@ router.get('/post/:id/:title', async (req, res) => {
     };
 
     try {
-        const data = await Post.findById(req.params.id).populate('username');
+        const data = await Post.findById(req.params.id).populate('username').populate('comments');
         res.render('post-page', {locals, data});
     } catch (error) {
         console.log(error);

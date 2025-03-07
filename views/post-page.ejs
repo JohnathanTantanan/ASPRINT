@@ -27,14 +27,24 @@
         </div><hr>
 
         <input type="text" id="add-comment" placeholder="Add a Comment...">
-
         <!-- make partial -->
-        <div class="comment">
+        <!-- <div class="comment">
             <img src="https://media.tenor.com/x8v1oNUOmg4AAAAM/rickroll-roll.gif" alt="RickRoll">
             <div id="comment-editing">
             <a href="viewprofile.html">Username</a>
             <button id="edit-comment" onclick="editComment()"> Edit </button>
             </div>
             <p id="comments">NOOOO I GOT ROLLED</p>
-        </div>
+        </div> -->
+
+        <% data.comments.forEach(comment => { %>
+            <div class="comment">
+                <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Walter_White_S5B.png" alt="profile-picture">
+                <div id="comment-editing">
+                <a href="viewprofile.html"><%= comment.commenter.username %></a>
+                <button id="edit-comment" onclick="editComment()"> Edit </button>
+                </div>
+                <p id="comments"><%= comment.comment %></p>
+            </div>
+        <% }) %>
     </div>

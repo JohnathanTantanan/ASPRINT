@@ -8,7 +8,7 @@ const CommentSchema = new Schema({
         required: true
     },
     commenter:{
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
         required: true
     },
     createdAt:{

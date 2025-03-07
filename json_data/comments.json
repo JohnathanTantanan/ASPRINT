@@ -1,38 +1,57 @@
 [
-    {
-      "postId": {"$oid": "67c94726a80177c6780778c9"},
-      "commenter": "TechGuru99",
-      "createdAt": "2025-03-07T12:15:30Z",
-      "updatedAt": "2025-03-07T12:15:30Z",
-      "comment": "This is a great discussion! I think AI-powered tools will revolutionize how we interact online."
-    },
-    {
-      "postId": {"$oid": "67c94726a80177c6780778c9"},
-      "commenter": "CodeMaster21",
-      "createdAt": "2025-03-07T12:30:45Z",
-      "updatedAt": "2025-03-07T12:30:45Z",
-      "comment": "I agree, but we also need to consider the ethical implications of AI in forums. How do we handle moderation?"
-    },
-    {
-      "postId": {"$oid": "67c94726a80177c6780778c9"},
-      "commenter": "ForumNewbie",
-      "createdAt": "2025-03-07T12:45:20Z",
-      "updatedAt": "2025-03-07T12:45:20Z",
-      "comment": "This is my first time posting here. What are some beginner-friendly resources to learn about this topic?"
-    },
-    {
-      "postId": {"$oid": "67c94726a80177c6780778c9"},
-      "commenter": "AI_Enthusiast",
-      "createdAt": "2025-03-07T13:00:10Z",
-      "updatedAt": "2025-03-07T13:00:10Z",
-      "comment": "I recommend checking out some online courses on machine learning. Also, OpenAI has great documentation!"
-    },
-    {
-      "postId": {"$oid": "67c94726a80177c6780778c9"},
-      "commenter": "DevOpsWizard",
-      "createdAt": "2025-03-07T13:15:55Z",
-      "updatedAt": "2025-03-07T13:15:55Z",
-      "comment": "What are your thoughts on integrating AI with DevOps? I think automation can improve efficiency a lot."
-    }
-  ]
-  
+  {
+    "postId": { "$oid": "67ca636d3482fd190fe0cda4" },
+    "commenter": { "$oid": "67ca62af3482fd190fe0cd9f" },
+    "comment": "AI is definitely shaping the future of online interactions. Exciting times ahead!"
+  },
+  {
+    "postId": { "$oid": "67ca636d3482fd190fe0cda4" },
+    "commenter": { "$oid": "67ca62af3482fd190fe0cda0" },
+    "comment": "I worry about AI moderation. Can it really replace human judgment?"
+  },
+  {
+    "postId": { "$oid": "67ca636d3482fd190fe0cda5" },
+    "commenter": { "$oid": "67ca62af3482fd190fe0cda1" },
+    "comment": "Writing clean code is an art. Consistency is key!"
+  },
+  {
+    "postId": { "$oid": "67ca636d3482fd190fe0cda5" },
+    "commenter": { "$oid": "67ca62af3482fd190fe0cda2" },
+    "comment": "I follow the SOLID principles. They help structure code well."
+  },
+  {
+    "postId": { "$oid": "67ca636d3482fd190fe0cda6" },
+    "commenter": { "$oid": "67ca62af3482fd190fe0cd9e" },
+    "comment": "Cloud gaming is cool, but latency is still an issue for competitive play."
+  },
+  {
+    "postId": { "$oid": "67ca636d3482fd190fe0cda6" },
+    "commenter": { "$oid": "67ca62af3482fd190fe0cd9f" },
+    "comment": "If internet speeds improve globally, cloud gaming will dominate!"
+  },
+  {
+    "postId": { "$oid": "67ca636d3482fd190fe0cda7" },
+    "commenter": { "$oid": "67ca62af3482fd190fe0cda0" },
+    "comment": "The images from Webb are breathtaking. This is a new era for space exploration!"
+  },
+  {
+    "postId": { "$oid": "67ca636d3482fd190fe0cda8" },
+    "commenter": { "$oid": "67ca62af3482fd190fe0cda1" },
+    "comment": "Interstellar is hands down one of the best sci-fi films ever made."
+  },
+  {
+    "postId": { "$oid": "67ca636d3482fd190fe0cda8" },
+    "commenter": { "$oid": "67ca62af3482fd190fe0cda2" },
+    "comment": "Dune’s cinematography was mind-blowing. Can’t wait for the sequel!"
+  },
+  {
+    "postId": { "$oid": "67ca67733482fd190fe0cdbf" },
+    "commenter": { "$oid": "67ca62af3482fd190fe0cd9e" },
+    "comment": "Congrats! Getting the register to work is always a great feeling!"
+  },
+  {
+    "postId": { "$oid": "67ca67733482fd190fe0cdbf" },
+    "commenter": { "$oid": "67ca62af3482fd190fe0cd9f" },
+    "comment": "Nice job! What stack are you using for this project?"
+  }
+]
