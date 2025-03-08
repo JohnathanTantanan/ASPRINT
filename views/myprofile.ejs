@@ -1,31 +1,29 @@
 <div class="main-content">
-
-    
     <% if (user) { %>
     <div id="myprofile">
         <div id="profile-header">
             <% if (user.picture) { %>
-                <img src=<%= user.picture %>>
-            <% }else{ %>
+                <img src="<%= user.picture %>">
+            <% } else { %>
                 <img src="/img/user-icon-default.png">
             <% } %>
             <h1 id="username"><%= user.username %></h1>
-            <button id="edit-profile" onclick="editDescription()"> Edit </button>
+            <button id="edit-profile" onclick="toggleEditMode('edit-profile-form', ['username', 'profile-description'], 'edit-profile')">Edit</button>
         </div>
 
         <div id="profile-info">
             <p id="profile-description"><%= user.description %></p>
 
+            <!-- Include the edit form partial for profile -->
+            <%- include('partials/editpost', { formId: 'edit-profile-form', action: '/update-profile', user: user, displayElementsIds: ['username', 'profile-description'], editButtonId: 'edit-profile' }) %>
 
-
-
-            
             <h2>Latest Posts:</h2>
             <% posts.forEach(post => { %>
             <div class="latest-posts">
-                <p><%= post.title %></p>
+                <p id="post-title-display"><%= post.title %></p>
+                <div id="post-content-display"><%= post.content %></div>
                 <% if (post.images) { %>
-                    <img src=<%= post.images %> alt="Rick">
+                    <img src="<%= post.images %>" alt="Post Image">
                 <% } %>
                 <button>
                     <img src="https://w7.pngwing.com/pngs/349/305/png-transparent-computer-icons-internet-forum-comment-miscellaneous-monochrome-black-thumbnail.png" alt="Comment">
@@ -42,17 +40,16 @@
             </div>
             <% }) %>
 
-
-
-            
-            <h2> Comments: </h2>
+            <h2>Comments:</h2>
             <% comments.forEach(comment => { %>
             <div class="latest-posts">
                 <p><%= comment.comment %></p>
             </div>
             <% }) %>
         </div>
-        
     </div>
     <% } %>
 </div>
+
+<!-- Include the external JavaScript file -->
+<script src="/js/edit-profile.js"></script>

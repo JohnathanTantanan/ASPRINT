@@ -1,0 +1,8 @@
+<form id="<%= formId %>" action="<%= action %>" method="POST" style="display: none;">
+    <label for="username">Username:</label>
+    <input type="text" id="username-input" name="username" value="<%= user.username %>">
+    <label for="description">Description:</label>
+    <textarea id="description-input" name="description"><%= user.description %></textarea>
+    <button type="submit">Save</button>
+    <button type="button" onclick="toggleEditMode('<%= formId %>', <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
+</form>

@@ -64,6 +64,7 @@ router.get('/myprofile', authMiddleware, async(req,res)=>{
         const posts = await Post.find({poster: new ObjectId(userId)});
         const comments = await Comments.find({commenter: new ObjectId(userId)});
         communities = await Community.find();
+
         res.render('myprofile', {
             locals,
             user,
@@ -135,9 +136,14 @@ router.post('/login', async (req,res)=>{
         res.cookie('token', token, {
             httpOnly: true
         });
-        loggeduser = user;
-        res.redirect('/myprofile');
+        // Set the logged user in the session
+        req.session.loggeduser = {
+            id: user._id,
+            username: user.username,
+            description: user.description
+        };
 
+        res.redirect('/myprofile');
 
     } catch (error) {
         console.log(error);
@@ -174,7 +180,30 @@ router.post('/register', async (req,res)=>{
     }
 });
 
+/**POST /
+ * UPDATE POST
+ */
+router.post('/update-profile', authMiddleware, async (req, res) => {
+    try {
+        const { username, description } = req.body;
+        const userId = req.userId;
 
+        const updatedUser = await User.findByIdAndUpdate(userId, { username, description }, { new: true });
 
+        // Ensure the session user is updated
+        if (req.session.loggeduser) {
+            req.session.loggeduser.username = updatedUser.username;
+            req.session.loggeduser.description = updatedUser.description;
+        } else {
+            console.error('Session user is not defined');
+        }
+
+        res.redirect('/myprofile');
+        
+    } catch (error) {
+        console.error('Error updating profile:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
 
 module.exports = router;
