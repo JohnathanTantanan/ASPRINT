@@ -35,7 +35,7 @@ router.get(['', '/home'], async (req,res)=>{
     }
 
     try {
-        const data = await Post.find().populate('poster');
+        const data = await Post.find().populate('poster').sort({ createdAt: -1 });
         const user = await getUser(req);
         res.render('home', {locals, data, user}); 
     } catch (error) {
