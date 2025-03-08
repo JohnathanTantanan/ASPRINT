@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const dataModule = require('../../data')
 //Server Model/Schema
+const Community = require('../models/Community')
 const Post = require('../models/Post')
 const User = require('../models/User')
 const Comments = require('../models/Comments')
@@ -62,12 +63,14 @@ router.get('/myprofile', authMiddleware, async(req,res)=>{
         var userId = user._id.toString();
         const posts = await Post.find({poster: new ObjectId(userId)});
         const comments = await Comments.find({commenter: new ObjectId(userId)});
-
+        communities = await Community.find();
         res.render('myprofile', {
             locals,
             user,
             comments,
-            posts});
+            posts,
+            communities
+            });
 
     } catch (error) {
         console.log(error);
@@ -83,7 +86,7 @@ router.get('/logout', (req, res) => {
 
 
 /**GET /
- * VIEW USER PROFILE
+ * VIEW USER PROFILE 
  */
 router.get('/user-profile/:id', async (req, res) => {
     const locals = { 
@@ -97,7 +100,8 @@ router.get('/user-profile/:id', async (req, res) => {
         const user = await User.findById(req.params.id); // returns a single mongoose document 
         const comments = await Comments.find({ commenter: req.params.id }); // returns array of mongoose documents 
         const posts = await Post.find({ poster: req.params.id });
-        res.render('user-profile', {locals, user, comments, posts}); // should this be data.toObject()? why
+        const communities = await Community.find();
+        res.render('user-profile', {locals, user, comments, posts, communities}); // should this be data.toObject()? why
     } catch (error) {
         console.log(error);
     }

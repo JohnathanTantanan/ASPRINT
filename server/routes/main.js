@@ -129,8 +129,9 @@ router.get('/c/:id/:name', async (req,res)=>{
         const community = await Community.findById(req.params.id);
         const data = await Post.find({ community: req.params.id}).populate('poster');
         const comments = await Comments.find({ postId: req.params.id }).populate('commenter');
+        const communities = await Community.find();
         data.comments = comments; // manual population
-        res.render('home', {locals, data, user, community});
+        res.render('home', {locals, data, user, community, communities});
     } catch (error) {
         console.log(error);
     }
