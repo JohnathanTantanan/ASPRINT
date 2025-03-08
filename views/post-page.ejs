@@ -32,7 +32,10 @@
             <p><%= data.content %></p>
         </div><hr>
 
-        <input type="text" id="add-comment" placeholder="Add a Comment...">
+        <form method="POST" action="/addcomment/<%= data._id %>">
+            <input type="text" id="add-comment" placeholder="Add a Comment..." name="comment">
+        </form>
+        
 
         <%- include('./partials/comment.ejs') %>
     </div>

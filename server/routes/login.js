@@ -8,6 +8,7 @@ const User = require('../models/User')
 const Comments = require('../models/Comments')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const { redirect } = require('express/lib/response')
 var ObjectId = require('mongodb').ObjectId;
 var loggeduser = null;
 
@@ -173,6 +174,27 @@ router.post('/register', async (req,res)=>{
         console.log(error);
     }
 });
+
+/**POST /
+ * ADD COMMENT
+ */
+
+router.post('/addcomment/:id', async (req,res)=>{
+
+    let comment = new Comments({
+        postId: req.params.id,
+        commenter: loggeduser._id,
+        comment: req.body.comment
+    })
+
+    try {
+        comment.save();
+        res.redirect("/post/"+req.params.id+"/"+req.params.id.title);
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 
 
 

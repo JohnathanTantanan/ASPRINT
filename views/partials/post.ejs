@@ -9,7 +9,7 @@
                 <img src="/img/user-icon-default.png" alt="user-profile">
             <% } %>
 
-            <a href="viewprofile.html"><%= post.poster.username %></a>
+            <a href="/user-profile/<%= post.poster._id %>"><%= post.poster.username %></a>
             
             <% if (!locals.inCommunity) { %>
                 <a href="/c/<%= post.community._id %>/<%= post.community.name %>">from c/<%= post.community.name %></a>
