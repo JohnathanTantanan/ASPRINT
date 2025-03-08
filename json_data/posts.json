@@ -2,7 +2,7 @@
   "_id": {
     "$oid": "67ca636d3482fd190fe0cda4"
   },
-  "username": {
+  "poster": {
     "$oid": "67ca62af3482fd190fe0cd9e"
   },
   "community": "Technology",
@@ -19,7 +19,7 @@
   "_id": {
     "$oid": "67ca636d3482fd190fe0cda5"
   },
-  "username": {
+  "poster": {
     "$oid": "67ca62af3482fd190fe0cd9f"
   },
   "community": "Programming",
@@ -36,7 +36,7 @@
   "_id": {
     "$oid": "67ca636d3482fd190fe0cda6"
   },
-  "username": {
+  "poster": {
     "$oid": "67ca62af3482fd190fe0cda0"
   },
   "community": "Gaming",
@@ -53,7 +53,7 @@
   "_id": {
     "$oid": "67ca636d3482fd190fe0cda7"
   },
-  "username": {
+  "poster": {
     "$oid": "67ca62af3482fd190fe0cda1"
   },
   "community": "Science",
@@ -70,7 +70,7 @@
   "_id": {
     "$oid": "67ca636d3482fd190fe0cda8"
   },
-  "username": {
+  "poster": {
     "$oid": "67ca62af3482fd190fe0cda2"
   },
   "community": "Movies",
@@ -85,18 +85,18 @@
 },
 {
   "_id": {
-    "$oid": "67ca67733482fd190fe0cdbf"
+    "$oid": "67ca8e2b1f75539afbfc670e"
   },
-  "username": {
-    "$oid": "67ca68be78058439dafe4439"
+  "poster": {
+    "$oid": "67ca8b33fee1db931f23ddde"
   },
-  "community": "APDEV",
-  "title": "APDEV REGISTER WORKS",
-  "images": "",
-  "content": "OMG THE REGISTER WORKS",
+  "community": "Movies",
+  "title": "Best Sci-Fi Movies of the Last Decade",
+  "images": "https://media.npr.org/assets/img/2024/02/29/rev-1-dun2-t3-0026r_high_res_jpeg_wide-2a8f6918bcf0190c8fa3d26a5f2e732623a196d6.jpeg?s=1200&c=85&f=webp",
+  "content": "From Interstellar to Dune, the last decade has given us some incredible sci-fi films. What are your favorites and why?",
   "createdAt": "2025-03-07T16:20:00Z",
   "updatedAt": "2025-03-07T16:20:00Z",
-  "upvotes": 275,
-  "downvotes": 18,
+  "upvotes": 175,
+  "downvotes": 8,
   "comments": []
 }]

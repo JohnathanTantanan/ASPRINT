@@ -18,7 +18,7 @@ router.get(['', '/home'], async (req,res)=>{
     }
 
     try {
-        const data = await Post.find().populate('username');
+        const data = await Post.find().populate('poster');
         res.render('home', {locals, data}); // passing multiple variables as properties of an object
         // render takes two params (string, object)
     } catch (error) {
@@ -39,7 +39,7 @@ router.get('/post/:id/:title', async (req, res) => {
 
     try {
         //const postId = new mongoose.Types.ObjectId(req.params.id);
-        const data = await Post.findById(req.params.id).populate('username'); // returns a single mongoose document 
+        const data = await Post.findById(req.params.id).populate('poster'); // returns a single mongoose document 
         const comments = await Comments.find({ postId: req.params.id }).populate('commenter'); // returns array of mongoose documents 
         data.comments = comments; // manual population
         res.render('post-page', {locals, data}); // should this be .toObject()? why

@@ -2,7 +2,7 @@ const { type } = require('express/lib/response')
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const PostSchema = new Schema({
-    username:{ // change to original poster or poster
+    poster:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true,

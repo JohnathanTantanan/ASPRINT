@@ -5,7 +5,7 @@
         <a href="/post-page<%= post.postId%>" class="link-overlay"></a>
         <div class="profile-picture bypass-overlay">
             <img src="<%= post.userProfile %>" alt="user-profile">
-            <a href="viewprofile.html"><%= post.username %></a> <a href="communities.html">from c/<%= post.community %></a>
+            <a href="viewprofile.html"><%= post.poster %></a> <a href="communities.html">from c/<%= post.community %></a>
         </div>
         <h4><%= post.postTitle %></h4>
         <img src="<%= post.postImg %>" alt="post-Img">

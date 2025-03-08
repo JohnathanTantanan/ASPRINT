@@ -4,7 +4,7 @@
         <a href="/post/<%= post._id %>/<%= post.title %>" class="link-overlay"></a>
         <div class="profile-picture bypass-overlay">
             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="user-profile">
-            <a href="viewprofile.html"><%= post.username.username %></a> <a href="communities.html">from c/<%= post.community %></a> 
+            <a href="viewprofile.html"><%= post.poster.username %></a> <a href="communities.html">from c/<%= post.community %></a> 
             <br><sub class="post-date">Posted <%= post.createdAt.toDateString()%></sub>
         </div>
         <h4><%= post.title %></h4> 
