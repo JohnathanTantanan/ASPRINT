@@ -19,8 +19,12 @@
             <img src="/img/add-icon.svg" alt="Post icon">
         </a>
         
-        <a href="/myprofile" class="header-button">Profile</a>
-        <a href="/login" class="header-button">Login</a>
+        <% if (typeof user !== 'undefined' && user) { %>
+            <a href="/myprofile" class="header-button"><%= user.username %></a>
+            <a href="/logout" class="header-button">Logout</a>
+        <% } else { %>
+            <a href="/login" class="header-button">Login</a>
+        <% } %>
     </nav>
 </header>
 

@@ -74,6 +74,11 @@ router.get('/myprofile', authMiddleware, async(req,res)=>{
     }
 });
 
+router.get('/logout', (req, res) => {
+    res.clearCookie('token');
+    res.redirect('/');
+});
+
 /**POST /
  * LOGIN AND REGISTER
  */

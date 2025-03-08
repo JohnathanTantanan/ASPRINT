@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const jwt = require('jsonwebtoken')
+const User = require('../models/User')
 //const mongoose = require('mongoose');
 
 
@@ -7,6 +9,18 @@ const router = express.Router()
 const Post = require('../models/Post')
 const Comments = require('../models/Comments')
 
+const getUser = async (req) => {
+    try {
+        const token = req.cookies.token;
+        if (!token) return null;
+        
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const user = await User.findById(decoded.id);
+        return user;
+    } catch (error) {
+        return null;
+    }
+}
 
 /**GET /
  * HOME
@@ -21,8 +35,8 @@ router.get(['', '/home'], async (req,res)=>{
 
     try {
         const data = await Post.find().populate('poster');
-        res.render('home', {locals, data}); // passing multiple variables as properties of an object
-        // render takes two params (string, object)
+        const user = await getUser(req);
+        res.render('home', {locals, data, user}); 
     } catch (error) {
         console.log(error);
     }
