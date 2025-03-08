@@ -79,6 +79,33 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
 });
 
+
+
+
+/**GET /
+ * VIEW USER PROFILE
+ */
+router.get('/user-profile/:id', async (req, res) => {
+    const locals = { 
+        layout: 'layouts/main',
+        title: "The Forum",
+        description: "Simple Blog created with NodeJs, Express & MongoDB."
+    }
+
+    try {
+        //const postId = new mongoose.Types.ObjectId(req.params.id);
+        const user = await User.findById(req.params.id); // returns a single mongoose document 
+        const comments = await Comments.find({ commenter: req.params.id }); // returns array of mongoose documents 
+        const posts = await Post.find({ poster: req.params.id });
+        res.render('user-profile', {locals, user, comments, posts}); // should this be data.toObject()? why
+    } catch (error) {
+        console.log(error);
+    }
+
+    // Note: findById() can take in strings, but find() expects querys enclosed in {object literals}
+});
+
+
 /**POST /
  * LOGIN AND REGISTER
  */

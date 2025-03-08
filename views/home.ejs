@@ -8,7 +8,7 @@
             <% } else { %>
                 <img src="/img/user-icon-default.png" alt="user-profile">
             <% } %>
-            <a href="viewprofile.html"><%= post.poster.username %></a> <a href="communities.html">from c/<%= post.community %></a> 
+            <a href="/user-profile/<%= post.poster._id %>"><%= post.poster.username %></a> <a href="communities.html">from c/<%= post.community %></a> 
             <br><sub class="post-date">Posted <%= post.createdAt.toDateString()%></sub>
         </div>
         <h4><%= post.title %></h4> 
