@@ -1,7 +1,11 @@
 <% data.comments.forEach(comment => { %>
     <div class="comment">
         <!-- replace img link with data -->
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Walter_White_S5B.png" alt="profile-picture">
+         <% if(comment.commenter.picture) { %>
+            <img src="<%= comment.commenter.picture %>" alt="profile-picture">
+        <% } else { %> 
+            <img src="/img/user-icon-default.png" alt="profile-picture">
+        <% } %>
         <div id="comment-editing">
         <!-- define route for userprofile url -->
         <a href="/user-profile/<%= comment.commenter._id %>"><%= comment.commenter.username %></a>

@@ -1,15 +1,19 @@
 <!-- Static html ported, not yet adjusted -->
     <div class="post-container">
         <div class="profile-picture">
-            <img src="https://yt3.googleusercontent.com/0VEG-XT4JS5iMjk4LxW8UFQ2x9DamEZ3Sa4oQKonlKqgrO1URMv-AFjvcTOUpaEzfKO7jksOdA=s900-c-k-c0x00ffffff-no-rj" alt="RickRoll">
-            <a href="viewprofile.html"><%= data.poster.username %></a>
+            <% if(data.poster.picture) { %>
+                <img src="<%= data.poster.picture %>" alt="user-profile">
+            <% } else { %>
+                <img src="/img/user-icon-default.png" alt="user-profile">
+            <% } %>
+            <a href="/user-profile/<%= data.poster._id %>"><%= data.poster.username %></a>
             <div class="post-edit-buttons">
                 <button> Edit </button>
                 <button> Delete </button>
             </div>
         </div>
         <h4><%= data.title %></h4>
-        <img src="https://cdn.shopify.com/s/files/1/0075/1360/4160/files/BLOG_Wim_Hof-01.jpg?v=1620577627" alt="post-Img">
+        <img src=<%= data.images %> alt="post-Img">
         <button class="bypass-overlay">
             <img src="/img/upvote-icon.svg" alt="Upvote" id="upvote-btn">
             <p><%= data.upvotes %></p>

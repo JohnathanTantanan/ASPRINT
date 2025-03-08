@@ -3,12 +3,16 @@
         <!-- vvv Make and link Post Page that loads content -->
         <a href="/post/<%= post._id %>/<%= post.title %>" class="link-overlay"></a>
         <div class="profile-picture bypass-overlay">
-            <img src="/img/user-icon-default.png" alt="user-profile">
+            <% if(post.poster.picture) { %>
+                <img src="<%= post.poster.picture %>" alt="user-profile">
+            <% } else { %>
+                <img src="/img/user-icon-default.png" alt="user-profile">
+            <% } %>
             <a href="viewprofile.html"><%= post.poster.username %></a> <a href="communities.html">from c/<%= post.community %></a> 
             <br><sub class="post-date">Posted <%= post.createdAt.toDateString()%></sub>
         </div>
         <h4><%= post.title %></h4> 
-        <img src="https://variety.com/wp-content/uploads/2021/07/Rick-Astley-Never-Gonna-Give-You-Up.png?w=1000&h=563&crop=1" alt="post-Img">
+        <img src=<%= post.images %> alt="post-Img">
  
         <button class="bypass-overlay">
             <img src="/img/upvote-icon.svg" alt="Upvote" id="upvote-btn">
