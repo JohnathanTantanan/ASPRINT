@@ -9,6 +9,7 @@ const CommentSchema = new Schema({
     },
     commenter:{
         type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
     createdAt:{

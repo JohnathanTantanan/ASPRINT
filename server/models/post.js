@@ -40,7 +40,7 @@ const PostSchema = new Schema({
         type: Number,
         required: true
     },
-    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'PostComments' }]
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comments' }]
 })
 
 module.exports = mongoose.model('Post', PostSchema)

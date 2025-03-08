@@ -1,11 +1,12 @@
-<% data.forEach(comment => { %>
+<% data.comments.forEach(comment => { %>
     <div class="comment">
+        <!-- replace img link with data -->
         <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Walter_White_S5B.png" alt="profile-picture">
         <div id="comment-editing">
-        <a href="viewprofile.html"><%= comment.commenter %></a>
+        <!-- define route for userprofile url -->
+        <a href="/user-profile/<%= comment.commenter._id %>"><%= comment.commenter.username %></a>
         <button id="edit-comment" onclick="editComment()"> Edit </button>
         </div>
         <p id="comments"><%= comment.comment %></p>
     </div>
 <% }) %>
-

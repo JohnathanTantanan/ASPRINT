@@ -1,0 +1,112 @@
+============ main.js code as of 3/8/25 at 11:14 PST ============
+
+const express = require('express')
+const router = express.Router()
+const mongoose = require('mongoose');
+//Server Model/Schema
+const Post = require('../models/Post')
+const Comments = require('../models/Comments')
+
+
+/**GET /
+ * HOME
+ */
+router.get(['', '/home'], async (req,res)=>{
+    const locals = { 
+        layout: 'layouts/main',
+        title: "The Forum",
+        description: "Simple Blog created with NodeJs, Express & MongoDB."
+    }
+
+    try {
+        const data = await Post.find().populate('username');
+        res.render('home', {locals, data});
+    } catch (error) {
+        console.log(error);
+    }
+    
+});
+
+/**GET /
+ * POST PAGE
+ */
+router.get('/post/:id/:title', async (req, res) => {
+    const locals = {
+        layout: 'layouts/main',
+        title: req.params.title
+    };
+
+    // =========== Why does this work but.... ===========
+    try {
+        const postId = new mongoose.Types.ObjectId(req.params.id);
+        const data = await Post.findById(postId).populate('username');
+        const comments = await Comments.find({ postId }).populate('commenter');
+        data.comments = comments;
+        res.render('post-page', {locals, data}); // should this be .toObject()? why so?
+        // res.render('post-page', { locals, data: { ...data.toObject(), comments } });
+    } catch (error) {
+        console.log(error);
+    }
+
+    // =========== Why does this not work ===========
+    // try {
+    //     const data = await Post.findById(req.params.id).populate('username').populate('comments');
+    //     // const comments = await Comments.find(req.params.id).populate('commenter');
+    //     res.render('post-page', {locals, data});
+    // } catch (error) {
+    //     console.log(error);
+    // }
+
+    Answer: maybe because findById only returns a single document, then populating the array of comments does not work?
+            perhaps manual population is needed for array fields?
+
+    // =========== I don't fully unerstand this but why does it not work ===========
+    // try {
+    //     const postId = new mongoose.Types.ObjectId(req.params.id);
+    //     const data = await Post.findById(postId)
+    //         .populate('username') // Populate the username field in the Post document
+    //         .populate({
+    //             path: 'comments', // Populate the comments field in the Post document
+    //             populate: {
+    //                 path: 'commenter', // Populate the commenter field within each Comment
+    //                 model: 'User'
+    //             }
+    //         });
+    //     res.render('post-page', { locals, data });
+    // } catch (error) {
+    //     console.log(error);
+    //     res.status(500).send('Server Error');
+    // }
+});
+
+/**GET /
+ * COMMUNITIES PAGE
+ */
+router.get('/communities',(req,res)=>{
+    res.render('communities', {
+        layout: 'layouts/main',
+        title: "The Forum",
+        description: "Simple Blog created with NodeJs, Express & MongoDB."})
+});
+
+/**GET /
+ * POPULAR PAGE
+ */
+router.get('/popular', async(req,res)=>{
+    //var sorted = posts.sort((a, b) => b.upvotes - a.upvotes);
+    const locals = {
+        layout: 'layouts/main',
+        title: "The Forum",
+        description: "Simple Blog created with NodeJs, Express & MongoDB.",
+    }
+
+    try {
+        const data = await Post.find({ upvotes: {$gt: 100} }).sort({ upvotes: -1 }); // compute upvote - downvote
+        res.render('home', {locals, data});
+        // res.render('popular', locals)
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+module.exports = router;

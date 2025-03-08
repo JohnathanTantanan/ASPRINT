@@ -20,7 +20,7 @@ const UserSchema = new Schema({
         required: false
     },
     posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }],
-    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'PostComments' }],
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comments' }],
     communities: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Community' }],
 })
 

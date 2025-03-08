@@ -1,14 +1,15 @@
 const express = require('express')
 const router = express.Router()
-const dataModule = require('../../data')
+//const mongoose = require('mongoose');
 //Server Model/Schema
 const Post = require('../models/Post')
-const PostComments = require('../models/Comments')
+const Comments = require('../models/Comments')
 
 
 /**GET /
  * HOME
  */
+// [] is used to define multiple route definitions
 router.get(['', '/home'], async (req,res)=>{
     const locals = { 
         layout: 'layouts/main',
@@ -18,7 +19,8 @@ router.get(['', '/home'], async (req,res)=>{
 
     try {
         const data = await Post.find().populate('username');
-        res.render('home', {locals, data});
+        res.render('home', {locals, data}); // passing multiple variables as properties of an object
+        // render takes two params (string, object)
     } catch (error) {
         console.log(error);
     }
@@ -28,6 +30,7 @@ router.get(['', '/home'], async (req,res)=>{
 /**GET /
  * POST PAGE
  */
+// Placeholders in route definitions
 router.get('/post/:id/:title', async (req, res) => {
     const locals = {
         layout: 'layouts/main',
@@ -35,11 +38,17 @@ router.get('/post/:id/:title', async (req, res) => {
     };
 
     try {
-        const data = await Post.findById(req.params.id).populate('username').populate('comments');
-        res.render('post-page', {locals, data});
+        //const postId = new mongoose.Types.ObjectId(req.params.id);
+        const data = await Post.findById(req.params.id).populate('username'); // returns a single mongoose document 
+        const comments = await Comments.find({ postId: req.params.id }).populate('commenter'); // returns array of mongoose documents 
+        data.comments = comments; // manual population
+        res.render('post-page', {locals, data}); // should this be .toObject()? why
+        // res.render('post-page', { locals, data: { ...data.toObject(), comments } });
     } catch (error) {
         console.log(error);
     }
+
+    // Note: findById() can take in strings, but find() expects querys enclosed in {object literals}
 });
 
 /**GET /
