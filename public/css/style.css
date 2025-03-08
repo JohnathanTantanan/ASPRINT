@@ -486,6 +486,50 @@ a.sidebar-buttons {
     color: #fff;
     background-color: #2164B0;
 }
+
+/* ============ CREATE POST FORM ============ */
+#create-post select {
+    width: 45rem;
+    height: 2.5rem;
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 0 1rem;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+#create-post select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#create-post form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#create-post input[type="text"],
+#create-post textarea {
+    width: 45rem;
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1em;
+}
+
+#create-post input[type="text"]:focus,
+#create-post textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
 /* ============ MY PROFILE ============ */
 #myprofile{
     background-color: #000;

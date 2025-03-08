@@ -1,21 +1,22 @@
-
+<%- include('partials/header.ejs') %>
 
 <div class="main-content">
-    <div id = "create-post">
+    <div id="create-post">
         <h1>Create your post</h1>
-        <div id = "community">
-            <button id="select-community">Select Community</button>
-            <div id = "community-list">
-                <button id="community1">c/Rickity</button>
-                <button id="community2">c/Rizz</button>
-                <button id="community3">c/ChillGuy</button>
-                <button id="community4">c/Sigma</button>
-            </div> 
-        </div>
-        <input type="text" id="title" placeholder="Title...*">
-        <textarea id="content" placeholder="Content...*"></textarea>
-        <button id="discard">Discard</button>
-        <button id="postbutton">Post</button>
+        <form action="/submit-post" method="POST">
+            <div id="community">
+                <select name="community" id="select-community" required>
+                    <option value="" disabled selected>Select Community</option>
+                    <option value="Rickity">c/Rickity</option>
+                    <option value="Rizz">c/Rizz</option>
+                    <option value="ChillGuy">c/ChillGuy</option>
+                    <option value="Sigma">c/Sigma</option>
+                </select>
+            </div>
+            <input type="text" id="title" name="title" placeholder="Title...*" required>
+            <textarea id="content" name="content" placeholder="Content...*" required></textarea>
+            <button type="button" id="discard" onclick="window.location.href='/'">Discard</button>
+            <button type="submit" id="postbutton">Post</button>
+        </form>
     </div>
-
 </div>
