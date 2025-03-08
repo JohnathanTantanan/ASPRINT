@@ -69,18 +69,24 @@ router.get('/post/:id/:title', async (req, res) => {
 /**GET /
  * COMMUNITIES PAGE
  */
-router.get('/communities',(req,res)=>{
-    res.render('communities', {
+router.get('/communities', async (req,res)=>{
+    const locals = {
         layout: 'layouts/main',
         title: "Communities",
-        description: "Simple Blog created with NodeJs, Express & MongoDB."})
+        description: "Simple Blog created with NodeJs, Express & MongoDB."
+    }
+    try {
+        const user = await getUser(req);
+        res.render('communities', { locals, user });
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 /**GET /
  * POPULAR PAGE
  */
 router.get('/popular', async(req,res)=>{
-    //var sorted = posts.sort((a, b) => b.upvotes - a.upvotes);
     const locals = {
         layout: 'layouts/main',
         title: "Popular",
@@ -88,8 +94,11 @@ router.get('/popular', async(req,res)=>{
     }
 
     try {
-        const data = await Post.find({ upvotes: {$gt: 100} }).sort({ upvotes: -1 }).populate('poster'); // compute upvote - downvote
-        res.render('home', {locals, data});
+        const data = await Post.find({ upvotes: {$gt: 100} })
+            .sort({ upvotes: -1 })
+            .populate('poster');
+        const user = await getUser(req);
+        res.render('home', {locals, data, user});
     } catch (error) {
         console.log(error);
     }

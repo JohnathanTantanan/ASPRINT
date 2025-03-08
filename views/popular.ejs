@@ -1,2 +1,6 @@
-<%# Currently not in use %>
-<%- include('./partials/post.ejs', { posts: locals.posts }) %> 
+<div class="popular-header">
+    <h1>Popular Posts</h1>
+    <p>Posts with over 100 upvotes</p>
+</div>
+
+<%- include('./partials/post.ejs', { posts: data, user: user }) %>
