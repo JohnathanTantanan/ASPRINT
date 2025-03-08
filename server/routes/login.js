@@ -138,13 +138,8 @@ router.post('/login', async (req,res)=>{
             httpOnly: true
         });
         // Set the logged user in the session
-        req.session.loggeduser = {
-            id: user._id,
-            username: user.username,
-            description: user.description
-        };
-
-        res.redirect('/myprofile');
+        loggeduser = user;
+        res redirect('/myprofile');
 
     } catch (error) {
         console.log(error);
@@ -232,16 +227,6 @@ router.post('/update-profile', authMiddleware, async (req, res) => {
         const userId = req.userId;
 
         const updatedUser = await User.findByIdAndUpdate(userId, { username, description }, { new: true });
-
-        // Ensure the session user is updated
-        if (req.session.loggeduser) {
-            req.session.loggeduser.username = updatedUser.username;
-            req.session.loggeduser.description = updatedUser.description;
-        } else {
-            console.error('Session user is not defined');
-        }
-
-        res.redirect('/myprofile');
         
     } catch (error) {
         console.error('Error updating profile:', error);
