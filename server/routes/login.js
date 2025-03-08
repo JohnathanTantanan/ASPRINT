@@ -139,7 +139,7 @@ router.post('/login', async (req,res)=>{
         });
         // Set the logged user in the session
         loggeduser = user;
-        res redirect('/myprofile');
+        res.redirect('/myprofile');
 
     } catch (error) {
         console.log(error);
@@ -201,7 +201,7 @@ router.post('/addcomment/:id', async (req,res)=>{
  * ADD COMMENT
  */
 
-router.post('/addcomment/:id', async (req,res)=>{
+router.post('/addcomment/:id', authMiddleware, async (req,res)=>{
 
     let comment = new Comments({
         postId: req.params.id,
@@ -221,13 +221,14 @@ router.post('/addcomment/:id', async (req,res)=>{
 /**POST /
  * UPDATE POST
  */
-router.post('/update-profile', authMiddleware, async (req, res) => {
+router.post('/update-profile/:id', authMiddleware, async (req, res) => {
     try {
-        const { username, description } = req.body;
-        const userId = req.userId;
+        await User.findByIdAndUpdate(req.params.id, {
+            username: req.body.username,
+            description: req.body.description
+        });
 
-        const updatedUser = await User.findByIdAndUpdate(userId, { username, description }, { new: true });
-        
+        res.redirect("/logout");
     } catch (error) {
         console.error('Error updating profile:', error);
         res.status(500).json({ message: 'Internal Server Error' });
