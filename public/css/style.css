@@ -568,10 +568,11 @@ a.sidebar-buttons {
 }
 
 #profile-header{
-    margin-bottom: 20px;
+    margin-bottom: 4.5em;
 }
 
 #profile-header > button{
+    
     position: relative;
     border: 1px outset;
     border-radius: 3px;
