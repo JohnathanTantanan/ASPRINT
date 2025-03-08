@@ -75,7 +75,8 @@ router.get('/post/:id/:title', async (req, res) => {
         const data = await Post.findById(req.params.id).populate('poster'); // returns a single mongoose document 
         const comments = await Comments.find({ postId: req.params.id }).populate('commenter'); // returns array of mongoose documents 
         data.comments = comments; // manual population
-        res.render('post-page', {locals, data}); // should this be data.toObject()? why
+        const user = await getUser(req);
+        res.render('post-page', {locals, data, user}); // should this be data.toObject()? why
     } catch (error) {
         console.log(error);
     }
