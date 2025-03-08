@@ -7,10 +7,12 @@
                 <img src="/img/user-icon-default.png" alt="user-profile">
             <% } %>
             <a href="/user-profile/<%= data.poster._id %>"><%= data.poster.username %></a>
-            <div class="post-edit-buttons">
-                <button> Edit </button>
-                <button> Delete </button>
-            </div>
+            <% if (data.poster.username == user.username) { %>
+                <div class="post-edit-buttons">
+                    <button> Edit </button>
+                    <button> Delete </button>
+                </div>
+            <% } %>
         </div>
         <h4><%= data.title %></h4>
         <% if(data.images) { %>
@@ -37,5 +39,23 @@
         </form>
         
 
-        <%- include('./partials/comment.ejs') %>
+        <% data.comments.forEach(comment => { %>
+            <div class="comment">
+                <!-- replace img link with data -->
+                 <% if(comment.commenter.picture) { %>
+                    <img src="<%= comment.commenter.picture %>" alt="profile-picture">
+                <% } else { %> 
+                    <img src="/img/user-icon-default.png" alt="profile-picture">
+                <% } %>
+                <div id="comment-editing">
+                <!-- define route for userprofile url -->
+                <a href="/user-profile/<%= comment.commenter._id %>"><%= comment.commenter.username %></a>
+                <% if(comment.commenter.username == user.username) { %>
+                    <button id="edit-comment" onclick="editComment()"> Edit </button>
+                <% } %>
+                </div>
+                <p id="comments"><%= comment.comment %></p>
+            </div>
+        <% }) %>
+
     </div>
