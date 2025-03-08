@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "67cc1d84918b6ad140068b32"
+  },
+  "name": "Movies",
+  "description": "A community for movie lovers to discuss films, share reviews, and recommend must-watch movies."
+},
+{
+  "_id": {
+    "$oid": "67cc1d84918b6ad140068b33"
+  },
+  "name": "ChillGuy",
+  "description": "A laid-back space for casual discussions, memes, and relaxation after a long day."
+},
+{
+  "_id": {
+    "$oid": "67cc1d84918b6ad140068b34"
+  },
+  "name": "Rizz",
+  "description": "A community centered around confidence, charisma, and social skills—level up your game!"
+},
+{
+  "_id": {
+    "$oid": "67cc1d84918b6ad140068b35"
+  },
+  "name": "Sigma",
+  "description": "A space for self-improvement, motivation, discipline, and becoming the best version of yourself."
+},
+{
+  "_id": {
+    "$oid": "67cc1d84918b6ad140068b36"
+  },
+  "name": "Coding",
+  "description": "A hub for developers, programmers, and tech enthusiasts to share knowledge, resources, and projects."
+},
+{
+  "_id": {
+    "$oid": "67cc1d84918b6ad140068b37"
+  },
+  "name": "Nature",
+  "description": "A community for nature lovers, hikers, and environmentalists to appreciate and protect our planet."
+},
+{
+  "_id": {
+    "$oid": "67cc1d84918b6ad140068b38"
+  },
+  "name": "APDEV",
+  "description": "A space dedicated to application development, frameworks, and best practices in software engineering."
+},
+{
+  "_id": {
+    "$oid": "67cc1d84918b6ad140068b39"
+  },
+  "name": "Gaming",
+  "description": "A community for gamers to discuss the latest games, share strategies, and connect with fellow players."
+}]

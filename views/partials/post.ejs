@@ -1,15 +1,26 @@
-<%# Currently not in use, this is the old version using json. mongodb version was ported directly to home %>
-<% data.forEach(function(post) { %>
+<% data.forEach(post => { %>
     <div class="post-container">
-            <!-- vvv Make and link Post Page that loads content -->
-        <a href="/post-page<%= post.postId%>" class="link-overlay"></a>
+        <!-- vvv Make and link Post Page that loads content -->
+        <a href="/post/<%= post._id %>/<%= post.title %>" class="link-overlay"></a>
         <div class="profile-picture bypass-overlay">
-            <img src="<%= post.userProfile %>" alt="user-profile">
-            <a href="viewprofile.html"><%= post.poster %></a> <a href="communities.html">from c/<%= post.community %></a>
-        </div>
-        <h4><%= post.postTitle %></h4>
-        <img src="<%= post.postImg %>" alt="post-Img">
+            <% if(post.poster.picture) { %>
+                <img src="<%= post.poster.picture %>" alt="user-profile">
+            <% } else { %>
+                <img src="/img/user-icon-default.png" alt="user-profile">
+            <% } %>
 
+            <a href="viewprofile.html"><%= post.poster.username %></a>
+            
+            <% if (!locals.inCommunity) { %>
+                <a href="/c/<%= post.community._id %>/<%= post.community.name %>">from c/<%= post.community.name %></a>
+            <% } %> 
+            <br><sub class="post-date">Posted <%= post.createdAt.toDateString()%></sub>
+        </div>
+        <h4><%= post.title %></h4> 
+        <% if(post.images) { %>
+            <img src="<%= post.images %>" alt="post-Img">
+        <% } %>
+ 
         <button class="bypass-overlay">
             <img src="/img/upvote-icon.svg" alt="Upvote" id="upvote-btn">
             <p><%= post.upvotes %></p>
@@ -24,4 +35,4 @@
             <!-- Insert comment count? -->
         </button>
     </div>
-<% }); %>
+<% }) %>

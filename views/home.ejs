@@ -1,33 +1,12 @@
-<% data.forEach(post => { %>
-    <div class="post-container">
-        <!-- vvv Make and link Post Page that loads content -->
-        <a href="/post/<%= post._id %>/<%= post.title %>" class="link-overlay"></a>
-        <div class="profile-picture bypass-overlay">
-            <% if(post.poster.picture) { %>
-                <img src="<%= post.poster.picture %>" alt="user-profile">
-            <% } else { %>
-                <img src="/img/user-icon-default.png" alt="user-profile">
-            <% } %>
-            <a href="/user-profile/<%= post.poster._id %>"><%= post.poster.username %></a> <a href="communities.html">from c/<%= post.community %></a> 
-            <br><sub class="post-date">Posted <%= post.createdAt.toDateString()%></sub>
+<% if (locals.inCommunity) { %>
+    <div class="community-header community-layout">
+        <img src="https://media.tenor.com/x8v1oNUOmg4AAAAM/rickroll-roll.gif" alt="profile-picture">
+        <div class="community-text">
+            <h1>c/<%= community.name %></h1>
+            <p><%= community.description %></p>
+            <sub>Created <%= community.createdAt %></sub>
         </div>
-        <h4><%= post.title %></h4> 
-        <% if(post.images) { %>
-            <img src="<%= post.images %>" alt="post-Img">
-        <% } %>
- 
-        <button class="bypass-overlay">
-            <img src="/img/upvote-icon.svg" alt="Upvote" id="upvote-btn">
-            <p><%= post.upvotes %></p>
-        </button>
-        <button class="bypass-overlay">  
-            <img src="/img/downvote-icon.svg" alt="Downvote" id="downvote-btn">
-            <p><%= post.downvotes %></p>
-        </button>
-        <button class="bypass-overlay">
-            <img src="/img/comment-icon.svg" alt="Comment" id="comment-btn"> 
-            <!-- In express.js, public directory is configured to be root dir so no need to include "public" in absolute file path -->
-            <!-- Insert comment count? -->
-        </button>
     </div>
-<% }) %>
+<% } %>
+
+<%- include('./partials/post.ejs') %>

@@ -4,7 +4,8 @@ const Schema = mongoose.Schema
 const CommunitySchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     description: {
         type: String,
@@ -19,6 +20,10 @@ const CommunitySchema = new Schema({
         required: false
     },
     createdAt:{
+        type: Date,
+        default: Date.now
+    },
+    updatedAt:{
         type: Date,
         default: Date.now
     }

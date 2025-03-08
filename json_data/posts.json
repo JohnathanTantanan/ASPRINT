@@ -1,102 +1,116 @@
-[{
-  "_id": {
-    "$oid": "67ca636d3482fd190fe0cda4"
+[
+  {
+    "_id": {
+      "$oid": "67ca636d3482fd190fe0cda4"
+    },
+    "poster": {
+      "$oid": "67ca62af3482fd190fe0cd9e"
+    },
+    "community": {
+      "$oid": "67cc1d84918b6ad140068b36"
+    },
+    "title": "The Future of AI in Online Communities",
+    "images": "",
+    "content": "AI is changing how we interact online, from content moderation to personalized recommendations. What are your thoughts on AI’s role in forums?",
+    "createdAt": "2025-03-07T12:00:00Z",
+    "updatedAt": "2025-03-07T12:00:00Z",
+    "upvotes": 125,
+    "downvotes": 10,
+    "comments": []
   },
-  "poster": {
-    "$oid": "67ca62af3482fd190fe0cd9e"
+  {
+    "_id": {
+      "$oid": "67ca636d3482fd190fe0cda5"
+    },
+    "poster": {
+      "$oid": "67ca62af3482fd190fe0cd9f"
+    },
+    "community": {
+      "$oid": "67cc1d84918b6ad140068b36"
+    },
+    "title": "Best Practices for Writing Clean Code",
+    "images": "",
+    "content": "Clean code improves maintainability and readability. What are your favorite tips or best practices for writing clean, efficient code?",
+    "createdAt": "2025-03-07T13:30:00Z",
+    "updatedAt": "2025-03-07T13:30:00Z",
+    "upvotes": 98,
+    "downvotes": 3,
+    "comments": []
   },
-  "community": "Technology",
-  "title": "The Future of AI in Online Communities",
-  "images": "",
-  "content": "AI is changing how we interact online, from content moderation to personalized recommendations. What are your thoughts on AI’s role in forums?",
-  "createdAt": "2025-03-07T12:00:00Z",
-  "updatedAt": "2025-03-07T12:00:00Z",
-  "upvotes": 125,
-  "downvotes": 10,
-  "comments": []
-},
-{
-  "_id": {
-    "$oid": "67ca636d3482fd190fe0cda5"
+  {
+    "_id": {
+      "$oid": "67ca636d3482fd190fe0cda6"
+    },
+    "poster": {
+      "$oid": "67ca62af3482fd190fe0cda0"
+    },
+    "community": {
+      "$oid": "67cc1d84918b6ad140068b39"
+    },
+    "title": "Is Cloud Gaming the Future?",
+    "images": "",
+    "content": "With advancements in cloud computing, gaming no longer requires high-end hardware. Do you think cloud gaming will replace traditional consoles?",
+    "createdAt": "2025-03-07T14:15:00Z",
+    "updatedAt": "2025-03-07T14:15:00Z",
+    "upvotes": 150,
+    "downvotes": 25,
+    "comments": []
   },
-  "poster": {
-    "$oid": "67ca62af3482fd190fe0cd9f"
+  {
+    "_id": {
+      "$oid": "67ca636d3482fd190fe0cda7"
+    },
+    "poster": {
+      "$oid": "67ca62af3482fd190fe0cda1"
+    },
+    "community": {
+      "$oid": "67cc1d84918b6ad140068b37"
+    },
+    "title": "The James Webb Telescope’s Latest Discoveries",
+    "images": "",
+    "content": "The James Webb Telescope continues to unveil new cosmic wonders. What do you think has been its most groundbreaking discovery so far?",
+    "createdAt": "2025-03-07T15:00:00Z",
+    "updatedAt": "2025-03-07T15:00:00Z",
+    "upvotes": 200,
+    "downvotes": 5,
+    "comments": []
   },
-  "community": "Programming",
-  "title": "Best Practices for Writing Clean Code",
-  "images": "",
-  "content": "Clean code improves maintainability and readability. What are your favorite tips or best practices for writing clean, efficient code?",
-  "createdAt": "2025-03-07T13:30:00Z",
-  "updatedAt": "2025-03-07T13:30:00Z",
-  "upvotes": 98,
-  "downvotes": 3,
-  "comments": []
-},
-{
-  "_id": {
-    "$oid": "67ca636d3482fd190fe0cda6"
+  {
+    "_id": {
+      "$oid": "67ca636d3482fd190fe0cda8"
+    },
+    "poster": {
+      "$oid": "67ca62af3482fd190fe0cda2"
+    },
+    "community": {
+      "$oid": "67cc1d84918b6ad140068b32"
+    },
+    "title": "Best Sci-Fi Movies of the Last Decade",
+    "images": "",
+    "content": "From Interstellar to Dune, the last decade has given us some incredible sci-fi films. What are your favorites and why?",
+    "createdAt": "2025-03-07T16:20:00Z",
+    "updatedAt": "2025-03-07T16:20:00Z",
+    "upvotes": 175,
+    "downvotes": 8,
+    "comments": []
   },
-  "poster": {
-    "$oid": "67ca62af3482fd190fe0cda0"
-  },
-  "community": "Gaming",
-  "title": "Is Cloud Gaming the Future?",
-  "images": "",
-  "content": "With advancements in cloud computing, gaming no longer requires high-end hardware. Do you think cloud gaming will replace traditional consoles?",
-  "createdAt": "2025-03-07T14:15:00Z",
-  "updatedAt": "2025-03-07T14:15:00Z",
-  "upvotes": 150,
-  "downvotes": 25,
-  "comments": []
-},
-{
-  "_id": {
-    "$oid": "67ca636d3482fd190fe0cda7"
-  },
-  "poster": {
-    "$oid": "67ca62af3482fd190fe0cda1"
-  },
-  "community": "Science",
-  "title": "The James Webb Telescope’s Latest Discoveries",
-  "images": "",
-  "content": "The James Webb Telescope continues to unveil new cosmic wonders. What do you think has been its most groundbreaking discovery so far?",
-  "createdAt": "2025-03-07T15:00:00Z",
-  "updatedAt": "2025-03-07T15:00:00Z",
-  "upvotes": 200,
-  "downvotes": 5,
-  "comments": []
-},
-{
-  "_id": {
-    "$oid": "67ca636d3482fd190fe0cda8"
-  },
-  "poster": {
-    "$oid": "67ca62af3482fd190fe0cda2"
-  },
-  "community": "Movies",
-  "title": "Best Sci-Fi Movies of the Last Decade",
-  "images": "",
-  "content": "From Interstellar to Dune, the last decade has given us some incredible sci-fi films. What are your favorites and why?",
-  "createdAt": "2025-03-07T16:20:00Z",
-  "updatedAt": "2025-03-07T16:20:00Z",
-  "upvotes": 175,
-  "downvotes": 8,
-  "comments": []
-},
-{
-  "_id": {
-    "$oid": "67ca8e2b1f75539afbfc670e"
-  },
-  "poster": {
-    "$oid": "67ca8b33fee1db931f23ddde"
-  },
-  "community": "Movies",
-  "title": "Best Sci-Fi Movies of the Last Decade",
-  "images": "https://media.npr.org/assets/img/2024/02/29/rev-1-dun2-t3-0026r_high_res_jpeg_wide-2a8f6918bcf0190c8fa3d26a5f2e732623a196d6.jpeg?s=1200&c=85&f=webp",
-  "content": "From Interstellar to Dune, the last decade has given us some incredible sci-fi films. What are your favorites and why?",
-  "createdAt": "2025-03-07T16:20:00Z",
-  "updatedAt": "2025-03-07T16:20:00Z",
-  "upvotes": 175,
-  "downvotes": 8,
-  "comments": []
-}]
+  {
+    "_id": {
+      "$oid": "67ca8e2b1f75539afbfc670e"
+    },
+    "poster": {
+      "$oid": "67ca8b33fee1db931f23ddde"
+    },
+    "community": {
+      "$oid": "67cc1d84918b6ad140068b32"
+    },
+    "title": "Best Sci-Fi Movies of the Last Decade",
+    "images": "https://media.npr.org/assets/img/2024/02/29/rev-1-dun2-t3-0026r_high_res_jpeg_wide-2a8f6918bcf0190c8fa3d26a5f2e732623a196d6.jpeg?s=1200&c=85&f=webp",
+    "content": "From Interstellar to Dune, the last decade has given us some incredible sci-fi films. What are your favorites and why?",
+    "createdAt": "2025-03-07T16:20:00Z",
+    "updatedAt": "2025-03-07T16:20:00Z",
+    "upvotes": 175,
+    "downvotes": 8,
+    "comments": []
+  }
+]

@@ -20,7 +20,7 @@
         </a>
         
         <% if (typeof user !== 'undefined' && user) { %>
-            <a href="/myprofile" class="header-button"><%= user.username %></a>
+            <a href="/myprofile" class="header-button">u/<%= user.username %></a>
             <a href="/logout" class="header-button">Logout</a>
         <% } else { %>
             <a href="/login" class="header-button">Login</a>
@@ -43,6 +43,7 @@
             <span>Communities</span>
         </a>
 
+        <!-- GETTING ERROR HERE -->
         <select name="user_communities" id="communities">  
             <option value="1">My Communities</option>
             <% communities.forEach(community => { %>

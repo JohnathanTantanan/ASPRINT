@@ -9,7 +9,8 @@ const PostSchema = new Schema({
         unique: false
     },
     community:{
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Community',
         required: true
     },
     title: {

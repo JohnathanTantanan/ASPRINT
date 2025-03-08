@@ -30,12 +30,16 @@ const getUser = async (req) => {
 router.get(['', '/home'], async (req,res)=>{
     const locals = { 
         layout: 'layouts/main',
+        inCommunity: false,
         title: "The Forum",
         description: "Simple Blog created with NodeJs, Express & MongoDB."
     }
 
     try {
-        const data = await Post.find().populate('poster').sort({ createdAt: -1 });
+        const data = await Post.find()
+            .populate('poster')
+            .populate('community')
+            .sort({ createdAt: -1 });
         const user = await getUser(req);
         const communities = await Community.find();
         res.render('home', {
@@ -67,7 +71,7 @@ router.get('/createpost', async (req,res)=>{
 });
 
 /**GET /
- * A POST's PAGE
+ * A POST'S PAGE
  */
 // Placeholders in route definitions
 router.get('/post/:id/:title', async (req, res) => {
@@ -78,10 +82,10 @@ router.get('/post/:id/:title', async (req, res) => {
 
     try {
         //const postId = new mongoose.Types.ObjectId(req.params.id);
+        const user = await getUser(req);
         const data = await Post.findById(req.params.id).populate('poster'); // returns a single mongoose document 
         const comments = await Comments.find({ postId: req.params.id }).populate('commenter'); // returns array of mongoose documents 
         data.comments = comments; // manual population
-        const user = await getUser(req);
         res.render('post-page', {locals, data, user}); // should this be data.toObject()? why
     } catch (error) {
         console.log(error);
@@ -109,6 +113,30 @@ router.get('/communities', async (req,res)=>{
 });
 
 /**GET /
+ * A COMMUNITY'S DEDICATED PAGE
+ */
+router.get('/c/:id/:name', async (req,res)=>{
+    const locals = {
+        layout: 'layouts/main',
+        title: req.params.name,
+        inCommunity: true
+    };
+
+    try {
+        //const postId = new mongoose.Types.ObjectId(req.params.id);
+        const user = await getUser(req);
+        const community = await Community.findById(req.params.id);
+        const data = await Post.find({ community: req.params.id}).populate('poster');
+        const comments = await Comments.find({ postId: req.params.id }).populate('commenter');
+        data.comments = comments; // manual population
+        res.render('home', {locals, data, user, community});
+    } catch (error) {
+        console.log(error);
+    }
+
+});
+
+/**GET /
  * POPULAR PAGE
  */
 router.get('/popular', async(req,res)=>{
@@ -122,7 +150,8 @@ router.get('/popular', async(req,res)=>{
         const communities = await Community.find();
         const data = await Post.find({ upvotes: {$gt: 100} })
             .sort({ upvotes: -1 })
-            .populate('poster');
+            .populate('poster')
+            .populate('community');
         const user = await getUser(req);
         res.render('home', {
             locals, 
