@@ -37,7 +37,13 @@ router.get(['', '/home'], async (req,res)=>{
     try {
         const data = await Post.find().populate('poster').sort({ createdAt: -1 });
         const user = await getUser(req);
-        res.render('home', {locals, data, user}); 
+        const communities = await Community.find();
+        res.render('home', {
+            locals, 
+            data, 
+            user,
+            communities
+        }); 
     } catch (error) {
         console.log(error);
     }
@@ -113,11 +119,17 @@ router.get('/popular', async(req,res)=>{
     }
 
     try {
+        const communities = await Community.find();
         const data = await Post.find({ upvotes: {$gt: 100} })
             .sort({ upvotes: -1 })
             .populate('poster');
         const user = await getUser(req);
-        res.render('home', {locals, data, user});
+        res.render('home', {
+            locals, 
+            data, 
+            user,
+            communities
+        });
     } catch (error) {
         console.log(error);
     }
