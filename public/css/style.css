@@ -434,7 +434,21 @@ a.sidebar-buttons {
     display: inline-block;
     margin-top: 1em;
     margin-bottom: 1em;
+    transition: all var(--transition-speed) ease;
 }
+
+#create-post #discard:hover {
+    background-color: #ff4444;
+    color: white;
+    transform: translateY(-2px);
+}
+
+#create-post #postbutton:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
 #create-post textarea{
     width: 45rem;
     height: 10rem;

@@ -8,6 +8,7 @@ const User = require('../models/User')
 //Server Models/Schemas
 const Post = require('../models/Post')
 const Comments = require('../models/Comments')
+const Community = require('../models/Community')
 
 const getUser = async (req) => {
     try {
@@ -52,7 +53,8 @@ router.get('/createpost', async (req,res)=>{
 
     try {
         const user = await getUser(req);
-        res.render('createpost', {locals, user});
+        const communities = await Community.find();
+        res.render('createpost', {locals, user, communities});
     } catch (error) {
         console.log(error);
     }
@@ -92,7 +94,8 @@ router.get('/communities', async (req,res)=>{
     }
     try {
         const user = await getUser(req);
-        res.render('communities', { locals, user });
+        const communities = await Community.find();
+        res.render('communities', { locals, user, communities });
     } catch (error) {
         console.log(error);
     }
