@@ -13,7 +13,9 @@
             </div>
         </div>
         <h4><%= data.title %></h4>
-        <img src=<%= data.images %> alt="post-Img">
+        <% if(data.images) { %>
+            <img src="<%= data.images %>" alt="post-Img">
+        <% } %>
         <button class="bypass-overlay">
             <img src="/img/upvote-icon.svg" alt="Upvote" id="upvote-btn">
             <p><%= data.upvotes %></p>

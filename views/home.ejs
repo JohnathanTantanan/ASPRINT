@@ -12,7 +12,9 @@
             <br><sub class="post-date">Posted <%= post.createdAt.toDateString()%></sub>
         </div>
         <h4><%= post.title %></h4> 
-        <img src=<%= post.images %> alt="post-Img">
+        <% if(post.images) { %>
+            <img src="<%= post.images %>" alt="post-Img">
+        <% } %>
  
         <button class="bypass-overlay">
             <img src="/img/upvote-icon.svg" alt="Upvote" id="upvote-btn">
