@@ -820,17 +820,18 @@ a.sidebar-buttons {
     background-image: url("https://i.pinimg.com/originals/bd/56/5d/bd565dcc0a556add0b0a0ed6b26d686e.gif");
     background-repeat: no-repeat;
     background-size: 115%;
-    
+    display: flex;
+    justify-content: center;
 }
 
 .auth {
     background-color: rgb(70, 69, 69);
-    width: 25em;
+    width: 25rem;
+    height: 25rem;
+    margin-top: 6em;
     padding-left: 12em;
     padding-right: 12em;
     padding-bottom: 8em;
-    margin-left: 22em;
-    margin-top: 6em;
     border-radius: 20px;
 }
 
