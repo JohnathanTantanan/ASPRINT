@@ -43,6 +43,21 @@ router.get(['', '/home'], async (req,res)=>{
     
 });
 
+router.get('/createpost', async (req,res)=>{
+    const locals = {
+        layout: 'layouts/main',
+        title: "Create Post",
+        description: "Simple Blog created with NodeJs, Express & MongoDB."
+    }
+
+    try {
+        const user = await getUser(req);
+        res.render('createpost', {locals, user});
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 /**GET /
  * A POST's PAGE
  */
