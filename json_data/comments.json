@@ -1,6 +1,6 @@
 [{
   "_id": {
-    "$oid": "67ca6e0d0f36321dedd085d6"
+    "$oid": "67cbe24b918b6ad140068afb"
   },
   "postId": {
     "$oid": "67ca636d3482fd190fe0cda4"
@@ -12,7 +12,7 @@
 },
 {
   "_id": {
-    "$oid": "67ca6e0d0f36321dedd085d7"
+    "$oid": "67cbe24b918b6ad140068afc"
   },
   "postId": {
     "$oid": "67ca636d3482fd190fe0cda4"
@@ -24,7 +24,19 @@
 },
 {
   "_id": {
-    "$oid": "67ca6e0d0f36321dedd085d8"
+    "$oid": "67cbe24b918b6ad140068afd"
+  },
+  "postId": {
+    "$oid": "67ca636d3482fd190fe0cda4"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cda1"
+  },
+  "comment": "AI could be a double-edged sword. We need proper regulations."
+},
+{
+  "_id": {
+    "$oid": "67cbe24b918b6ad140068afe"
   },
   "postId": {
     "$oid": "67ca636d3482fd190fe0cda5"
@@ -32,11 +44,11 @@
   "commenter": {
     "$oid": "67ca62af3482fd190fe0cda1"
   },
-  "comment": "Writing clean code is an art. Consistency is key!"
+  "comment": "Writing clean code is an art. Consistency and readability are key!"
 },
 {
   "_id": {
-    "$oid": "67ca6e0d0f36321dedd085d9"
+    "$oid": "67cbe24b918b6ad140068aff"
   },
   "postId": {
     "$oid": "67ca636d3482fd190fe0cda5"
@@ -44,11 +56,23 @@
   "commenter": {
     "$oid": "67ca62af3482fd190fe0cda2"
   },
-  "comment": "I follow the SOLID principles. They help structure code well."
+  "comment": "I follow the SOLID principles. They really help structure code well."
 },
 {
   "_id": {
-    "$oid": "67ca6e0d0f36321dedd085da"
+    "$oid": "67cbe24b918b6ad140068b00"
+  },
+  "postId": {
+    "$oid": "67ca636d3482fd190fe0cda5"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cda2"
+  },
+  "comment": "Documentation is just as important as writing clean code!"
+},
+{
+  "_id": {
+    "$oid": "67cbe24b918b6ad140068b01"
   },
   "postId": {
     "$oid": "67ca636d3482fd190fe0cda6"
@@ -60,7 +84,7 @@
 },
 {
   "_id": {
-    "$oid": "67ca6e0d0f36321dedd085db"
+    "$oid": "67cbe24b918b6ad140068b02"
   },
   "postId": {
     "$oid": "67ca636d3482fd190fe0cda6"
@@ -72,7 +96,19 @@
 },
 {
   "_id": {
-    "$oid": "67ca6e0d0f36321dedd085dc"
+    "$oid": "67cbe24b918b6ad140068b03"
+  },
+  "postId": {
+    "$oid": "67ca636d3482fd190fe0cda6"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cd9f"
+  },
+  "comment": "Cloud gaming is great for casual players, but hardcore gamers might not like input lag."
+},
+{
+  "_id": {
+    "$oid": "67cbe24b918b6ad140068b04"
   },
   "postId": {
     "$oid": "67ca636d3482fd190fe0cda7"
@@ -84,7 +120,19 @@
 },
 {
   "_id": {
-    "$oid": "67ca6e0d0f36321dedd085dd"
+    "$oid": "67cbe24b918b6ad140068b05"
+  },
+  "postId": {
+    "$oid": "67ca636d3482fd190fe0cda7"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cda2"
+  },
+  "comment": "The James Webb Telescope is rewriting what we know about the universe!"
+},
+{
+  "_id": {
+    "$oid": "67cbe24b918b6ad140068b06"
   },
   "postId": {
     "$oid": "67ca636d3482fd190fe0cda8"
@@ -96,7 +144,7 @@
 },
 {
   "_id": {
-    "$oid": "67ca6e0d0f36321dedd085de"
+    "$oid": "67cbe24b918b6ad140068b07"
   },
   "postId": {
     "$oid": "67ca636d3482fd190fe0cda8"
@@ -108,7 +156,19 @@
 },
 {
   "_id": {
-    "$oid": "67ca6e0d0f36321dedd085df"
+    "$oid": "67cbe24b918b6ad140068b08"
+  },
+  "postId": {
+    "$oid": "67ca636d3482fd190fe0cda8"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cd9e"
+  },
+  "comment": "Blade Runner 2049 is an underrated masterpiece. Amazing cinematography!"
+},
+{
+  "_id": {
+    "$oid": "67cbe24b918b6ad140068b09"
   },
   "postId": {
     "$oid": "67ca67733482fd190fe0cdbf"
@@ -120,7 +180,7 @@
 },
 {
   "_id": {
-    "$oid": "67ca6e0d0f36321dedd085e0"
+    "$oid": "67cbe24b918b6ad140068b0a"
   },
   "postId": {
     "$oid": "67ca67733482fd190fe0cdbf"
@@ -132,13 +192,109 @@
 },
 {
   "_id": {
-    "$oid": "67caa9061f75539afbfc6716"
+    "$oid": "67cbe24b918b6ad140068b0b"
+  },
+  "postId": {
+    "$oid": "67ca67733482fd190fe0cdbf"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cda0"
+  },
+  "comment": "That’s awesome! Debugging registration systems can be a nightmare."
+},
+{
+  "_id": {
+    "$oid": "67cbe24b918b6ad140068b0c"
+  },
+  "postId": {
+    "$oid": "67ca636d3482fd190fe0cda4"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cda2"
+  },
+  "comment": "Machine learning models can be unpredictable. We need more transparency in AI."
+},
+{
+  "_id": {
+    "$oid": "67cbe24b918b6ad140068b0d"
+  },
+  "postId": {
+    "$oid": "67ca636d3482fd190fe0cda5"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cda0"
+  },
+  "comment": "Good coding habits start with proper indentation and naming conventions."
+},
+{
+  "_id": {
+    "$oid": "67cbe24b918b6ad140068b0e"
+  },
+  "postId": {
+    "$oid": "67ca636d3482fd190fe0cda6"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cd9e"
+  },
+  "comment": "Cloud gaming still needs better optimization for weaker connections."
+},
+{
+  "_id": {
+    "$oid": "67cbe24b918b6ad140068b0f"
+  },
+  "postId": {
+    "$oid": "67ca636d3482fd190fe0cda7"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cda1"
+  },
+  "comment": "We’re witnessing a golden age of space exploration. Can’t wait to see what’s next!"
+},
+{
+  "_id": {
+    "$oid": "67cbe24b918b6ad140068b10"
   },
   "postId": {
     "$oid": "67ca636d3482fd190fe0cda8"
   },
   "commenter": {
-    "$oid": "67ca8b33fee1db931f23ddde"
+    "$oid": "67ca62af3482fd190fe0cd9f"
   },
-  "comment": "Dune’s cinematography was mind-blowing. Can’t wait for the sequel!"
+  "comment": "Sci-fi movies are best when they have a strong emotional core, not just visuals."
+},
+{
+  "_id": {
+    "$oid": "67cbe24b918b6ad140068b11"
+  },
+  "postId": {
+    "$oid": "67ca67733482fd190fe0cdbf"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cda2"
+  },
+  "comment": "The login module was the hardest part for me. Kudos for getting it done!"
+},
+{
+  "_id": {
+    "$oid": "67cbe24b918b6ad140068b12"
+  },
+  "postId": {
+    "$oid": "67ca67733482fd190fe0cdbf"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cda1"
+  },
+  "comment": "Did you use OAuth for authentication, or did you build a custom solution?"
+},
+{
+  "_id": {
+    "$oid": "67cbe309918b6ad140068b13"
+  },
+  "postId": {
+    "$oid": "67ca636d3482fd190fe0cda4"
+  },
+  "commenter": {
+    "$oid": "67ca62af3482fd190fe0cd9f"
+  },
+  "comment": "This shows that I can comment again hahahaha"
 }]

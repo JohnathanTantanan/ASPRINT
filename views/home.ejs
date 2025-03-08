@@ -3,7 +3,7 @@
         <!-- vvv Make and link Post Page that loads content -->
         <a href="/post/<%= post._id %>/<%= post.title %>" class="link-overlay"></a>
         <div class="profile-picture bypass-overlay">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="user-profile">
+            <img src="/img/user-icon-default.png" alt="user-profile">
             <a href="viewprofile.html"><%= post.poster.username %></a> <a href="communities.html">from c/<%= post.community %></a> 
             <br><sub class="post-date">Posted <%= post.createdAt.toDateString()%></sub>
         </div>

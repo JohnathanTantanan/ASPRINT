@@ -1,7 +1,9 @@
 const express = require('express')
 const router = express.Router()
 //const mongoose = require('mongoose');
-//Server Model/Schema
+
+
+//Server Models/Schemas
 const Post = require('../models/Post')
 const Comments = require('../models/Comments')
 
@@ -28,7 +30,7 @@ router.get(['', '/home'], async (req,res)=>{
 });
 
 /**GET /
- * POST PAGE
+ * A POST's PAGE
  */
 // Placeholders in route definitions
 router.get('/post/:id/:title', async (req, res) => {
@@ -42,8 +44,7 @@ router.get('/post/:id/:title', async (req, res) => {
         const data = await Post.findById(req.params.id).populate('poster'); // returns a single mongoose document 
         const comments = await Comments.find({ postId: req.params.id }).populate('commenter'); // returns array of mongoose documents 
         data.comments = comments; // manual population
-        res.render('post-page', {locals, data}); // should this be .toObject()? why
-        // res.render('post-page', { locals, data: { ...data.toObject(), comments } });
+        res.render('post-page', {locals, data}); // should this be data.toObject()? why
     } catch (error) {
         console.log(error);
     }
@@ -57,7 +58,7 @@ router.get('/post/:id/:title', async (req, res) => {
 router.get('/communities',(req,res)=>{
     res.render('communities', {
         layout: 'layouts/main',
-        title: "The Forum",
+        title: "Communities",
         description: "Simple Blog created with NodeJs, Express & MongoDB."})
 });
 
@@ -68,14 +69,13 @@ router.get('/popular', async(req,res)=>{
     //var sorted = posts.sort((a, b) => b.upvotes - a.upvotes);
     const locals = {
         layout: 'layouts/main',
-        title: "The Forum",
+        title: "Popular",
         description: "Simple Blog created with NodeJs, Express & MongoDB.",
     }
 
     try {
-        const data = await Post.find({ upvotes: {$gt: 100} }).sort({ upvotes: -1 }); // compute upvote - downvote
+        const data = await Post.find({ upvotes: {$gt: 100} }).sort({ upvotes: -1 }).populate('poster'); // compute upvote - downvote
         res.render('home', {locals, data});
-        // res.render('popular', locals)
     } catch (error) {
         console.log(error);
     }
