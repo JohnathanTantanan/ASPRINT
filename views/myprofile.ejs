@@ -1,5 +1,4 @@
-<div class="main-content">
-    <% if (user) { %>
+<% if (user) { %>
     <div id="myprofile">
         <div id="profile-header">
             <% if (user.picture) { %>
@@ -11,16 +10,16 @@
             <button id="edit-profile" onclick="toggleEditMode('edit-profile-form', ['username', 'profile-description'], 'edit-profile')">Edit</button>
         </div>
 
-        <div id="profile-info">
-            <p id="profile-description"><%= user.description %></p>
+        <p id="profile-description"><%= user.description %></p>
 
+        <div id="profile-info">
             <!-- Include the edit form partial for profile -->
             <%- include('partials/editprofile', { formId: 'edit-profile-form', action: '/update-profile', user: user, displayElementsIds: ['username', 'profile-description'], editButtonId: 'edit-profile' }) %>
 
             <h2>Latest Posts:</h2>
             <% posts.forEach(post => { %>
             <div class="latest-posts">
-                <p id="post-title-display"><%= post.title %></p>
+                <h3 id="post-title-display"><%= post.title %></h3>
                 <div id="post-content-display"><%= post.content %></div>
                 <% if (post.images) { %>
                     <img src="<%= post.images %>" alt="Post Image">
@@ -48,8 +47,7 @@
             <% }) %>
         </div>
     </div>
-    <% } %>
-</div>
+<% } %>
 
 <!-- Include the external JavaScript file -->
 <script src="/js/canceledit.js"></script>
