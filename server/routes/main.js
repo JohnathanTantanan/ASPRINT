@@ -183,17 +183,11 @@ router.post('/submit-post', async (req, res) => {
 
         const { title, content, community } = req.body; // extract data submitted
 
-        const communityName = await Community.findOne({name: community})
-        if (!communityName) {
-            return res.status(400).send('Community not found');
-        }
-
         const post = await Post.create({
             poster: user._id,
             community: community, // community is already the ObjectId from the form
             title,
             content,
-            community: communityName._id,
             upvotes: 0,
             downvotes: 0
         });
