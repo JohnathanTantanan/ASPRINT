@@ -298,6 +298,9 @@ a.sidebar-buttons {
     padding-bottom: 1em;
     margin-bottom: 1em;
     border-bottom: 1px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .profile-picture img{
@@ -332,7 +335,7 @@ a.sidebar-buttons {
 .comment{
     background-color: black;
     width: 30em;
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     border-radius: 10px;
     margin-bottom: 1.5em;
     position: relative;
@@ -340,8 +343,8 @@ a.sidebar-buttons {
 }
 
 .comment img{
-    width: 3em;
-    height: 3em;
+    width: 2.5rem;
+    height: 2.5rem;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 5px;
@@ -905,17 +908,18 @@ a.sidebar-buttons {
 /* ============ Editing Partials ============ */
 .post-edit-buttons{
     display: inline-block;
-    margin-left: 12.5em;
-}
-
-.post-edit-buttons button{
-    background-color: #fff;
+    position: relative;
     margin-left: 10px;
-    border-radius: 10px;
 }
 
-.post-edit-buttons button:hover{
-    background-color: #2164B0;
+.edit-del-btn{
+    background-color: #fff!important;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.edit-del-btn:hover{
+    background-color: #2164B0!important;
     color: #fff;
 }
 
