@@ -8,7 +8,7 @@
                 <img src="/img/user-icon-default.png" alt="Profile picture">
             <% } %>
             <h2>u/<%= user.username %></h2>
-            <button id="edit-profile" onclick="editDescription()">Edit</button>
+            <button id="edit-profile" onclick="toggleEditMode('edit-profile-form', ['username', 'profile-description'], 'edit-profile')">Edit</button>
         </div>
 
         <div id="profile-info">
