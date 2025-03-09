@@ -4,6 +4,6 @@
     <label for="content"> Content: </label>
     <textarea id="content-input" name="content"><%= post.content %></textarea>
     <br>
-    <button type="submit cl">Save</button>
-    <button type="button" onclick="cancelEdit('<%= formId %>', { title: '<%= post.title %>', content: '<%= post.content %>' }, <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
+    <button type="submit">Save</button>
+    <button type="button" onclick="cancelEdit('<%= formId %>', { title: '<%= post.title %>', content: '<%= post.content %>' }, '<%= JSON.stringify(displayElementsIds) %>', '<%= editButtonId %>')">Cancel</button>
 </form>

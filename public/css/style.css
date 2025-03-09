@@ -204,6 +204,10 @@ a.sidebar-buttons {
     margin-right: auto;
 }
 
+.post-container a:hover{
+    text-decoration: underline;
+}
+
 .link-overlay{
     position: absolute;
     top: 0;
@@ -376,34 +380,6 @@ a.sidebar-buttons {
 #comment-editing {
     display: flex;
     align-items: center;
-}
-
-#edit-comment{
-    height: 20px;
-    width: auto;
-    margin-left: -20px;
-    border-radius: 10px;
-}
-
-#edit-comment:hover{
-    background-color: #2164B0;
-    color: #fff;
-}
-
-.post-edit-buttons{
-    display: inline-block;
-    margin-left: 12.5em;
-}
-
-.post-edit-buttons button{
-    background-color: #fff;
-    margin-left: 10px;
-    border-radius: 10px;
-}
-
-.post-edit-buttons button:hover{
-    background-color: #2164B0;
-    color: #fff;
 }
 
 /* ============ CREATE POST ============ */
@@ -666,7 +642,7 @@ a.sidebar-buttons {
     padding-left: 1.8rem;
     padding-right: 1.8rem;
     padding-bottom: 1.8rem;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 10px;
     margin-bottom: 1.5em;
     margin-left: 16rem;
     z-index: 20;
@@ -681,13 +657,13 @@ a.sidebar-buttons {
     display: flex;
 }
 
-.banner{
+/* .banner{
     height: 10rem;
     width: 68.5rem;
     margin-left: 16rem;
     z-index: 10;
     border-radius: 10px 10px 0px 0px;
-}
+} */
 
 .community img,
 .community-header #profile{
@@ -928,3 +904,31 @@ a.sidebar-buttons {
     color: #000;
 }
 
+/* ============ Edit Partials ============ */
+.post-edit-buttons{
+    display: inline-block;
+    margin-left: 12.5em;
+}
+
+.post-edit-buttons button{
+    background-color: #fff;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.post-edit-buttons button:hover{
+    background-color: #2164B0;
+    color: #fff;
+}
+
+#edit-comment{
+    height: 20px;
+    width: auto;
+    margin-left: -20px;
+    border-radius: 10px;
+}
+
+#edit-comment:hover{
+    background-color: #2164B0;
+    color: #fff;
+}
