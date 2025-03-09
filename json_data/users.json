@@ -2,7 +2,7 @@
   "_id": {
     "$oid": "67ca62af3482fd190fe0cd9e"
   },
-  "username": "TechGuru99",
+  "username": "ImOnForumDB",
   "password": "hashed_password_1",
   "description": "Passionate about AI, tech trends, and online communities.",
   "posts": [
@@ -122,6 +122,17 @@
   },
   "username": "milcah",
   "password": "$2b$10$1/CTwJu3jPNUQz2VzqtHXOpY.L0xrNOOL3UiZbzswnRCzix9kvJQq",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cd54101f7ceb6986d5ec2c"
+  },
+  "username": "Migs",
+  "password": "$2b$10$2jM67mhj6v/bHftpkPBLI.vS9KBhAbzPQCmYFaHRM2MGTXg/tT5Mi",
   "posts": [],
   "comments": [],
   "communities": [],
