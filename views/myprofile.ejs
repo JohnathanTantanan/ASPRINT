@@ -7,15 +7,15 @@
             <% } else { %>
                 <img src="/img/user-icon-default.png" alt="Profile picture">
             <% } %>
-            <h2>u/<%= user.username %></h2>
-            <button id="edit-profile" onclick="editDescription()">Edit</button>
+            <h2 id="username"> u/<%= user.username %></h2>
+            <button id="edit-profile" onclick="toggleEditMode('edit-profile-form', ['username', 'profile-description'], 'edit-profile')">Edit</button>
         </div>
 
         <div id="profile-info">
             <p id="profile-description"><%= user.description %></p>
 
             <!-- Include the edit form partial for profile -->
-            <%- include('partials/editpost', { formId: 'edit-profile-form', action: '/update-profile', user: user, displayElementsIds: ['username', 'profile-description'], editButtonId: 'edit-profile' }) %>
+            <%- include('partials/editprofile', { formId: 'edit-profile-form', action: '/update-profile', user: user, displayElementsIds: ['username', 'profile-description'], editButtonId: 'edit-profile' }) %>
 
             <h2>Latest Posts:</h2>
             <% posts.forEach(post => { %>
@@ -52,4 +52,4 @@
 </div>
 
 <!-- Include the external JavaScript file -->
-<script src="/js/edit-profile.js"></script>
+<script src="/js/edit.js"></script>
