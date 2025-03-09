@@ -48,7 +48,7 @@ router.get(['', '/home'], async (req,res)=>{
             data, 
             user,
             communities
-        }); 
+        });  
     } catch (error) {
         console.log(error);
     }

@@ -14,10 +14,13 @@
                 </div>
             <% } %>
         </div>
-        <h4><%= data.title %></h4>
+        <h3><%= data.title %></h3>
         <% if(data.images) { %>
             <img src="<%= data.images %>" alt="post-Img">
         <% } %>
+        <div class="post-content">
+            <p id="post-content"><%= data.content %></p>
+        </div><hr>
         <button class="bypass-overlay">
             <img src="/img/upvote-icon.svg" alt="Upvote" id="upvote-btn">
             <p><%= data.upvotes %></p>
@@ -30,9 +33,7 @@
             <img src="/img/comment-icon.svg" alt="Comment" id="comment-btn">
         </button><br>
 
-        <div class="post-content">
-            <p id="post-content"><%= data.content %></p>
-        </div><hr>
+       
 
         <form method="POST" action="/addcomment/<%= data._id %>">
             <input type="text" id="add-comment" placeholder="Add a Comment..." name="comment">
