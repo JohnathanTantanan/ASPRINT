@@ -42,35 +42,10 @@
             <input type="text" id="add-comment" placeholder="Add a Comment..." name="comment">
         </form>
 
-         <!-- Include the edit form partial for posts -->
-         <%- include('partials/editpost', { formId: 'edit-post-form', action: '/update-post', post: data, displayElementsIds: ['post-content'], editButtonId: 'edit-post' }) %>
+        <!-- Include the edit form partial for posts -->
+        <%- include('./partials/editpost.ejs', { formId: 'edit-post-form', action: '/update-post', post: data, displayElementsIds: ['post-content'], editButtonId: 'edit-post' }) %>
         
-         <% data.comments.forEach(comment => { %>
-            <div class="comment">
-                <div class="comment-editing">
-                    <div>
-                        <!-- replace img link with data -->
-                        <% if(comment.commenter.picture) { %>
-                            <img src="<%= comment.commenter.picture %>" alt="profile-picture">
-                        <% } else { %> 
-                            <img src="/img/user-icon-default.png" alt="profile-picture">
-                        <% } %>
-                    </div>
-                    <div>
-                        <!-- define route for userprofile url -->
-                        <a href="/user-profile/<%= comment.commenter._id %>"><%= comment.commenter.username %></a>
-                        <% if(comment.commenter.username == user.username) { %>
-                            <br><button class="edit-del-btn" id="edit-comment-<%= comment._id %>" onclick="toggleEditMode('edit-comment-form-<%= comment._id %>', ['comment-content-<%= comment._id %>'], 'edit-comment-<%= comment._id %>')">Edit</button>
-                            <button class="edit-del-btn"> Delete </button>
-                        <% } %>
-                    </div>
-                </div>
-                <p id="comment-content-<%= comment._id %>"><%= comment.comment %></p>
-        
-                <!-- Include the edit form partial for comments -->
-                <%- include('partials/editcomments', { formId: 'edit-comment-form-' + comment._id, comment: comment, displayElementsIds: ['comment-content-' + comment._id], editButtonId: 'edit-comment-' + comment._id }) %>
-            </div>
-        <% }) %>
+        <%- include('./partials/comment.ejs', { data: data }) %>
 
     </div>
     <script src="/js/canceledit.js"></script>

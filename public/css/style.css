@@ -282,8 +282,24 @@ a.sidebar-buttons {
     font-size: 14px;
 }
 
+.profile-picture{
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post-profile{ /* profile-header styling for the previews of posts */
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid white;
+}
+
 /*Username*/
-.profile-picture a{
+.profile-picture a,
+.post-profile a{
     display: inline-block;
     color: #fff;
     font-size: 15px;
@@ -294,16 +310,8 @@ a.sidebar-buttons {
     margin-right: -1em;
 }
 
-.profile-picture{
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-    border-bottom: 1px solid white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.profile-picture img{
+.profile-picture img,
+.post-profile img{
     width: 2.5em;
     height: 2.5em;
     object-fit: cover;
@@ -335,7 +343,7 @@ a.sidebar-buttons {
 .comment{
     background-color: black;
     width: 30em;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     border-radius: 10px;
     margin-bottom: 1.5em;
     position: relative;

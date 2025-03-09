@@ -3,7 +3,7 @@
         <!-- Would not be feasible in hbs -->
         <a href="/post/<%= post._id %>/<%= encodeURIComponent(post.title) %>" class="link-overlay"></a>
         
-        <div class="profile-picture bypass-overlay">
+        <div class="post-profile bypass-overlay">
             <% if(post.poster.picture) { %>
                 <img src="<%= post.poster.picture %>" alt="user-profile">
             <% } else { %>

@@ -1,19 +1,26 @@
-<!-- Currently Not in use -->
-
 <% data.comments.forEach(comment => { %>
     <div class="comment">
-        <!-- replace img link with data -->
-         <% if(comment.commenter.picture) { %>
-            <img src="<%= comment.commenter.picture %>" alt="profile-picture">
-        <% } else { %> 
-            <img src="/img/user-icon-default.png" alt="profile-picture">
-        <% } %>
-        <div id="comment-editing">
-        <!-- define route for userprofile url -->
-        <a href="/user-profile/<%= comment.commenter._id %>"><%= comment.commenter.username %></a>
-        <button id="edit-comment" onclick="editComment()"> Edit </button>
+        <div class="comment-editing">
+            <div>
+                <!-- replace img link with data -->
+                <% if(comment.commenter.picture) { %>
+                    <img src="<%= comment.commenter.picture %>" alt="profile-picture">
+                <% } else { %> 
+                    <img src="/img/user-icon-default.png" alt="profile-picture">
+                <% } %>
+            </div>
+            <div>
+                <!-- define route for userprofile url -->
+                <a href="/user-profile/<%= comment.commenter._id %>"><%= comment.commenter.username %></a>
+                <% if(comment.commenter.username == user.username) { %>
+                    <br><button class="edit-del-btn" id="edit-comment-<%= comment._id %>" onclick="toggleEditMode('edit-comment-form-<%= comment._id %>', ['comment-content-<%= comment._id %>'], 'edit-comment-<%= comment._id %>')">Edit</button>
+                    <button class="edit-del-btn"> Delete </button>
+                <% } %>
+            </div>
         </div>
-        <p id="comments"><%= comment.comment %></p>
+        <p id="comment-content-<%= comment._id %>"><%= comment.comment %></p>
+
+        <!-- Include the edit form partial for comments -->
+        <%- include('./editcomments', { formId: 'edit-comment-form-' + comment._id, comment: comment, displayElementsIds: ['comment-content-' + comment._id], editButtonId: 'edit-comment-' + comment._id }) %>
     </div>
 <% }) %>
-
