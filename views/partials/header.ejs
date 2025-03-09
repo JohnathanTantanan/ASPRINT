@@ -42,12 +42,5 @@
             <img src="/img/group-icon.svg" alt="Communities icon">
             <span>Communities</span>
         </a>
-
-        <select name="user_communities" id="communities">  
-            <option value="1">My Communities</option>
-            <% communities.forEach(community => { %>
-                <option value="<%= community.name %>"><img src="<%=community.picture%>" alt="Forum Logo">c/<%= community.name %></option>
-            <% }); %>
-        </select>
     </nav>
 </aside>
