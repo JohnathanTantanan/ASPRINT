@@ -42,7 +42,6 @@
          <!-- Include the edit form partial for posts -->
          <%- include('partials/editpost', { formId: 'edit-post-form', action: '/update-post', post: data, displayElementsIds: ['post-content'], editButtonId: 'edit-post' }) %>
         
-
          <% data.comments.forEach(comment => { %>
             <div class="comment">
                 <div class="comment-editing">
