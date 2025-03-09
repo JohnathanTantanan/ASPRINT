@@ -1,7 +1,7 @@
-<form id="<%= formId %>" action="/update-post/<%= post._id %>" method="POST" style="display: none;"class="latest-posts">
+<form id="<%= formId %>" action="/update-post/<%= post._id %>" method="POST" style="display: none;"class="post-edit-buttons">
     <label for="title">Title:</label>
     <input type="text" id="title-input" name="title" value="<%= post.title %>">
-    <label for="content"><br> Content: </label>
+    <label for="content"> Content: </label>
     <textarea id="content-input" name="content"><%= post.content %></textarea>
     <br>
     <button type="submit cl">Save</button>
