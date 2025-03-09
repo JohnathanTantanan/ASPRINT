@@ -7,7 +7,7 @@
                 <img src="/img/user-icon-default.png" alt="user-profile">
             <% } %>
             <a href="/user-profile/<%= data.poster._id %>"><%= data.poster.username %></a>
-            <% if (data.poster.username == user.username) { %>
+            <% if (user != null && data.poster.username == user.username) { %>
                 <div class="post-edit-buttons">
                     <button id="edit-post" onclick="toggleEditMode('edit-post-form', ['profile-description'], 'edit-post')">Edit</button>
                     <button> Delete </button>

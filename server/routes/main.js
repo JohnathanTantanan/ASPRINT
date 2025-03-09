@@ -5,7 +5,7 @@ const User = require('../models/User')
 //const mongoose = require('mongoose');
 
 
-//Server Models/Schemas
+//Server Models/Schemas 
 const Post = require('../models/Post')
 const Comments = require('../models/Comments')
 const Community = require('../models/Community')
@@ -20,7 +20,7 @@ const getUser = async (req) => {
         const user = await User.findById(decoded.id);
         return user;
     } catch (error) {
-        return null;
+        return null; 
     }
 }
 
