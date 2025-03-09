@@ -3,12 +3,12 @@
     <div id="myprofile">
         <div id="profile-header">
             <% if (user.picture) { %>
-                <img src="<%= user.picture %>">
+                <img src="<%= user.picture %>" alt="Profile picture">
             <% } else { %>
-                <img src="/img/user-icon-default.png">
+                <img src="/img/user-icon-default.png" alt="Profile picture">
             <% } %>
-            <h1 id="username"><%= user.username %></h1>
-            <button id="edit-profile" onclick="toggleEditMode('edit-profile-form', ['username', 'profile-description'], 'edit-profile')">Edit</button>
+            <h2>u/<%= user.username %></h2>
+            <button id="edit-profile" onclick="editDescription()">Edit</button>
         </div>
 
         <div id="profile-info">

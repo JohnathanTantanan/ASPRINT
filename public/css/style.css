@@ -570,49 +570,49 @@ a.sidebar-buttons {
     float: left;
 }
 
-#profile-header{
-    margin-bottom: 4.5em;
+#profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-#profile-header > button{
-    
-    position: relative;
-    border: 1px outset;
-    border-radius: 3px;
-    color: black;
-    background-color: white;
-    font-size: 20px;
-    font-weight: bold;
-    display: inline-block;
-    left: 1em;
-    bottom: .2em;
-}
-
-#profile-header > img{
-    max-width: 5em;
-    max-height: 5em;
-    object-fit: contain;
+#profile-header > img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
     border-radius: 50%;
-    margin-bottom: 1em;
-    margin-top: 0em;
-    margin-left: 1em;
-    margin-right: 0.8em;
+    margin: 0;
 }
 
-#myprofile h1 {
-    position: relative;
-    display: inline-block;
-    left: 5px;
+#profile-header > h2 {
+    flex-grow: 1;
+    margin: 0;
+}
+
+#edit-profile {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+#edit-profile:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
 }
 
 #profile-info {
     border-top: 1px solid white;
     margin: auto;
-}
-
-#edit-profile:hover{
-    background-color: #2164B0;
-    color: #fff;
 }
 
 /* ============ LATEST POST AND COMMENTS ============ */
