@@ -2,7 +2,7 @@
   "_id": {
     "$oid": "67ca62af3482fd190fe0cd9e"
   },
-  "username": "TechGuru99",
+  "username": "ImOnForumDB",
   "password": "hashed_password_1",
   "description": "Passionate about AI, tech trends, and online communities.",
   "posts": [
@@ -126,4 +126,27 @@
   "comments": [],
   "communities": [],
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cd54101f7ceb6986d5ec2c"
+  },
+  "username": "Migs",
+  "password": "$2b$10$2jM67mhj6v/bHftpkPBLI.vS9KBhAbzPQCmYFaHRM2MGTXg/tT5Mi",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cd5c4e105b2c8040b9dc08"
+  },
+  "username": "reyvin",
+  "password": "$2b$10$LGfil2GnDbBGI5N7Lhi9fekJUW/kTcbGOD8U9EbCc5MThZSNIbkjq",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "__v": 0,
+  "description": "i am your father\r\n"
 }]
