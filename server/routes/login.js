@@ -204,7 +204,6 @@ router.post('/addcomment/:id', authMiddleware, async (req,res)=>{
     }
 });
 
-
 /**POST /
  * UPDATE PROFILE
  */

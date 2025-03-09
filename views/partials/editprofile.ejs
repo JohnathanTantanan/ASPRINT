@@ -1,8 +1,9 @@
-<form id="<%= formId %>" action="/update-profile/<%= user._id %>" method="POST" style="display: none;">
+<form id="<%= formId %>" action="/update-profile/<%= user._id %>" method="POST" style="display: none;" class="post-edit-buttons">
     <label for="username">Username:</label>
     <input type="text" id="username-input" name="username" value="<%= user.username %>">
-    <label for="description">Description:</label>
+    <label for="description"><br>Description:</label>
     <textarea id="description-input" name="description"><%= user.description %></textarea>
-    <button type="submit">Save</button>
-    <button type="button" onclick="cancelEdit('<%= formId %>', { username: '<%= user.username %>', description: '<%= user.description %>' }, '<%= JSON.stringify(displayElementsIds) %>', '<%= editButtonId %>')">Cancel</button>
+    <br>
+    <button type="submit" class="edit-del-btn">Save</button>
+    <button type="button" class="edit-del-btn" onclick="cancelEdit('<%= formId %>', { username: '<%= user.username %>', description: '<%= user.description %>' }, <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
 </form>
