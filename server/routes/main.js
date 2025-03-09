@@ -176,18 +176,19 @@ router.post('/submit-post', async (req, res) => {
         }
 
         const { title, content, community } = req.body;
+
         const post = await Post.create({
             poster: user._id,
+            community: community, // community is already the ObjectId from the form
             title,
             content,
-            community,
             upvotes: 0,
             downvotes: 0
         });
 
         res.redirect(`/post/${post._id}/${post.title}`);
     } catch (error) {
-        console.log(error);
+        console.error('Post creation error:', error);
         res.status(500).send('Error creating post');
     }
 });

@@ -5,7 +5,7 @@
             <select name="community" id="select-community" required>
                 <option value="" disabled selected>Select Community</option>
                 <% communities.forEach(community => { %>
-                    <option value="<%= community.name %>">c/<%= community.name %></option>
+                    <option value="<%= community._id %>">c/<%= community.name %></option>
                 <% }) %>
             </select>
         </div>
