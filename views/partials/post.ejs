@@ -1,7 +1,8 @@
 <% data.forEach(post => { %>
     <div class="post-container">
-        <!-- vvv Make and link Post Page that loads content -->
-        <a href="/post/<%= post._id %>/<%= post.title %>" class="link-overlay"></a>
+        <!-- Would not be feasible in hbs -->
+        <a href="/post/<%= post._id %>/<%= encodeURIComponent(post.title) %>" class="link-overlay"></a>
+        
         <div class="profile-picture bypass-overlay">
             <% if(post.poster.picture) { %>
                 <img src="<%= post.poster.picture %>" alt="user-profile">

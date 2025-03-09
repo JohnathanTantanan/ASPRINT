@@ -10,6 +10,7 @@ const Post = require('../models/Post')
 const Comments = require('../models/Comments')
 const Community = require('../models/Community')
 
+// Show username when LoggedIn
 const getUser = async (req) => {
     try {
         const token = req.cookies.token;
@@ -54,6 +55,9 @@ router.get(['', '/home'], async (req,res)=>{
     
 });
 
+/**GET /
+ * CREATE POST PAGE
+ */
 router.get('/createpost', async (req,res)=>{
     const locals = {
         layout: 'layouts/main',
@@ -166,7 +170,7 @@ router.get('/popular', async(req,res)=>{
 });
  
 /**POST /
- * POST SUBMISSION
+ * POST SUBMISSION AND CREATION
  */
 router.post('/submit-post', async (req, res) => {
     try {
@@ -175,18 +179,25 @@ router.post('/submit-post', async (req, res) => {
             return res.redirect('/login');
         }
 
-        const { title, content, community } = req.body;
+        const { title, content, community } = req.body; // extract data submitted
+
+        const communityName = await Community.findOne({name: community})
+        if (!communityName) {
+            return res.status(400).send('Community not found');
+        }
 
         const post = await Post.create({
             poster: user._id,
             community: community, // community is already the ObjectId from the form
             title,
             content,
+            community: communityName._id,
             upvotes: 0,
             downvotes: 0
         });
 
-        res.redirect(`/post/${post._id}/${post.title}`);
+        const encodedTitle = encodeURIComponent(post.title) // encode special characters
+        res.redirect(`/post/${post._id}/${encodedTitle}`);
     } catch (error) {
         console.error('Post creation error:', error);
         res.status(500).send('Error creating post');

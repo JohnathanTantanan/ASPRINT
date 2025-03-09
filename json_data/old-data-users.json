@@ -97,24 +97,13 @@
   "_id": {
     "$oid": "67ca8b33fee1db931f23ddde"
   },
-  "username": "lance",
+  "username": "Lance",
   "password": "$2b$10$7NOoXTmEIUrIxh7PtiWquePb52dqDKzgSadheN6PhZUW9oXZQfGYW",
   "posts": [],
   "comments": [],
   "communities": [],
-  "description": "I AM LANCE WAHAHAHAHAH AND MYPROFILE WORKS!",
+  "description": "YEAAAAAAASSS",
   "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZO4F0lKoa1G1MOrQ7b0hrCsSupq1XH9WtYw&s"
-},
-{
-  "_id": {
-    "$oid": "67ca9247bc2f4c442abcd0b4"
-  },
-  "username": "JL",
-  "password": "$2b$10$f4N5TCJZJ90X6P2.0w2/UOD6JXaZ2MOOhGTYlIFKziEJVVYPtuSLW",
-  "posts": [],
-  "comments": [],
-  "communities": [],
-  "__v": 0
 },
 {
   "_id": {
@@ -122,6 +111,74 @@
   },
   "username": "milcah",
   "password": "$2b$10$1/CTwJu3jPNUQz2VzqtHXOpY.L0xrNOOL3UiZbzswnRCzix9kvJQq",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cc08a39f1d16c7b072e4db"
+  },
+  "username": "Mike",
+  "password": "$2b$10$UkbwthYXBSytIpXLYOFLr.VFeoHe8Y.danzbcA5hBC8PwKjhdYTpy",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cc091d7a4df9ce04317386"
+  },
+  "username": "JL2",
+  "password": "$2b$10$OvEhs0OfjDRoYL2rym3xtONA4twZdohqH8cQg0OQp7xi4cXsjou6K",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cc0a180ab8ec3f6b6b81cc"
+  },
+  "username": "JL3",
+  "password": "$2b$10$JoRw.yLir8hBhiM4gEHv8ugP04Mxa3mmK9r6fyLq/7yTwjmSrp0Fy",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cc10b7f2792a3c341ccc96"
+  },
+  "username": "Migs",
+  "password": "$2b$10$SYJiDpRQTkoYo2wugKZBheWa8bNIQP5lcDAuR5QRyIB/O529vTdzW",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cd138615cc7a679b10322a"
+  },
+  "username": "reyvin",
+  "password": "$2b$10$k3IsYqdLc1Jj7kvVYNXoVuxBQ2RrcF9hkNV3vipEbPCF8MpPU09Ry",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "__v": 0,
+  "description": "I am sigma boy\r\n\r\n",
+  "picture": "https://media.tenor.com/yEG23sxXIVQAAAAM/shrek-shrek-meme.gif"
+},
+{
+  "_id": {
+    "$oid": "67cd4c491aa8fe18fde52d6a"
+  },
+  "username": "JL",
+  "password": "$2b$10$K/I7L0F1v6cPsuy3.GGGl.x1LzMLHkiiy1lI35qfqqtysoDZf6UrW",
   "posts": [],
   "comments": [],
   "communities": [],

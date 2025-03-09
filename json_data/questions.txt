@@ -27,6 +27,7 @@ router.get(['', '/home'], async (req,res)=>{
     
 });
 
+
 /**GET /
  * POST PAGE
  */
