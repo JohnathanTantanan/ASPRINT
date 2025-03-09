@@ -277,10 +277,9 @@ a.sidebar-buttons {
 }
 
 .post-content{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     font-size: 14px;
-    min-height: 5em;
 }
 
 /*Username*/
@@ -322,7 +321,7 @@ a.sidebar-buttons {
     width: 90%;
     padding: 5px 10px;
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 1rem;
     margin-left: 12px;
     font-size: 14px;
     color: white;
@@ -333,9 +332,11 @@ a.sidebar-buttons {
 .comment{
     background-color: black;
     width: 30em;
-    padding-top: 1.5em;
+    padding-top: 0.5rem;
     border-radius: 10px;
     margin-bottom: 1.5em;
+    position: relative;
+    border: 1px solid grey;
 }
 
 .comment img{
@@ -347,6 +348,7 @@ a.sidebar-buttons {
     margin-top: 0em;
     margin-left: 1em;
     float: left;
+    display: inline;
 }
 
 .comment a{
@@ -361,11 +363,11 @@ a.sidebar-buttons {
 }
 
 .comment p{
-    display:block;
+    display:inline-block;
     color: #fff;
     font-size: 12px;
     font-weight: 1;
-    margin-left: 6.5em;
+    margin-left: 1rem;
 }
 
 .comment button{
@@ -376,11 +378,6 @@ a.sidebar-buttons {
     font-weight: 800;
     margin-left: 10px;
     cursor: pointer;
-}
-
-#comment-editing {
-    display: flex;
-    align-items: center;
 }
 
 /* ============ CREATE POST ============ */
@@ -905,7 +902,7 @@ a.sidebar-buttons {
     color: #000;
 }
 
-/* ============ Edit Partials ============ */
+/* ============ Editing Partials ============ */
 .post-edit-buttons{
     display: inline-block;
     position: absolute;
@@ -934,4 +931,9 @@ a.sidebar-buttons {
 #edit-comment:hover{
     background-color: #2164B0;
     color: #fff;
+}
+
+.comment-editing {
+    display: flex;
+    align-items: center;
 }
