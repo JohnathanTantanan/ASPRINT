@@ -9,7 +9,7 @@
             <a href="/user-profile/<%= data.poster._id %>"><%= data.poster.username %></a>
             <% if (data.poster.username == user.username) { %>
                 <div class="post-edit-buttons">
-                    <button> Edit </button>
+                    <button id="edit-post" onclick="toggleEditMode('edit-post-form', ['profile-description'], 'edit-post')">Edit</button>
                     <button> Delete </button>
                 </div>
             <% } %>
@@ -51,11 +51,11 @@
                 <!-- define route for userprofile url -->
                 <a href="/user-profile/<%= comment.commenter._id %>"><%= comment.commenter.username %></a>
                 <% if(comment.commenter.username == user.username) { %>
-                    <button id="edit-comment" onclick="editComment()"> Edit </button>
+                    <button id="edit-comment" onclick="toggleEditMode('edit-comment-form', ['comments'], 'edit-comment')">Edit</button>
                 <% } %>
                 </div>
                 <p id="comments"><%= comment.comment %></p>
             </div>
         <% }) %>
-
     </div>
+    <script src="/js/edit.js"></script>

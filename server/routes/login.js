@@ -210,10 +210,11 @@ router.post('/addcomment/:id', authMiddleware, async (req,res)=>{
     })
 
     try {
-        comment.save();
+        await comment.save();
         res.redirect("/post/"+req.params.id+"/"+req.params.id.title);
     } catch (error) {
         console.log(error);
+        res.status(500).json({ message: 'Internal Server Error' });
     }
 });
 
