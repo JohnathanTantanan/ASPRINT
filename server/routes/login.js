@@ -11,6 +11,7 @@ const jwt = require('jsonwebtoken')
 const { redirect } = require('express/lib/response')
 var ObjectId = require('mongodb').ObjectId;
 var loggeduser = null;
+const { getUser } = require('../middleware/auth');
 
 /**GET /
  * LOGIN AND REGISTER
@@ -176,25 +177,6 @@ router.post('/register', async (req,res)=>{
     }
 });
 
-/**POST /
- * ADD COMMENT
- */
-
-router.post('/addcomment/:id', async (req,res)=>{
-
-    let comment = new Comments({
-        postId: req.params.id,
-        commenter: loggeduser._id,
-        comment: req.body.comment
-    })
-
-    try {
-        comment.save();
-        res.redirect("/post/"+req.params.id+"/"+req.params.id.title);
-    } catch (error) {
-        console.log(error);
-    }
-});
 
 
 /**POST /
@@ -202,16 +184,20 @@ router.post('/addcomment/:id', async (req,res)=>{
  */
 
 router.post('/addcomment/:id', authMiddleware, async (req,res)=>{
-
-    let comment = new Comments({
-        postId: req.params.id,
-        commenter: loggeduser.id,
-        comment: req.body.comment
-    })
-
     try {
-        comment.save();
-        res.redirect("/post/"+req.params.id+"/"+req.params.id.title);
+        const user = await getUser(req);
+        if (!user) {
+            return res.redirect('/login');
+        }
+
+        let comment = new Comments({
+            postId: req.params.id,
+            commenter: user._id,
+            comment: req.body.comment
+        });
+
+        await comment.save();
+        res.redirect(`/post/${req.params.id}/${req.params.title}`);
     } catch (error) {
         console.log(error);
         res.status(500).json({ message: 'Internal Server Error' });
