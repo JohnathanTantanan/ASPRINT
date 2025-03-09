@@ -200,6 +200,41 @@ router.post('/submit-post', async (req, res) => {
     }
 });
 
+/**POST /
+ * UPDATE POST
+ */
+router.post('/update-post/:id', async (req, res) => {
+    try {
+        const { title, content } = req.body;
+        const postId = req.params.id;
+
+        const updatedPost = await Post.findByIdAndUpdate(postId, { title, content }, { new: true });
+
+        const encodedTitle = encodeURIComponent(updatedPost.title); // encode special characters
+        res.redirect(`/post/${updatedPost._id}/${encodedTitle}`);
+    } catch (error) {
+        console.error('Error updating post:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
+/**POST /
+ * UPDATE COMMENT
+ */
+router.post('/update-comment/:id', async (req, res) => {
+    try {
+        const { comment } = req.body;
+        const commentId = req.params.id;
+
+        const updatedComment = await Comments.findByIdAndUpdate(commentId, { comment }, { new: true });
+
+        res.redirect('back');
+    } catch (error) {
+        console.error('Error updating comment:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
 /**GET /
  * GET SEARCH TERM
  */

@@ -1,0 +1,7 @@
+<form id="<%= formId %>" action="/update-comment/<%= comment._id %>" method="POST" style="display: none;" class="comment">
+    <label for="comment">Comment:</label>
+    <textarea id="comment-input" name="comment"><%= comment.comment %></textarea>
+    <br>
+    <button type="submit" class="latest-posts"> Save</button>
+    <button type="button" class="latest-posts" onclick="cancelEdit('<%= formId %>', { comment: '<%= comment.comment %>' }, <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
+</form>

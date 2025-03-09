@@ -205,12 +205,12 @@ router.post('/addcomment/:id', authMiddleware, async (req,res)=>{
 
     let comment = new Comments({
         postId: req.params.id,
-        commenter: loggeduser._id,
+        commenter: loggeduser.id,
         comment: req.body.comment
     })
 
     try {
-        await comment.save();
+        comment.save();
         res.redirect("/post/"+req.params.id+"/"+req.params.id.title);
     } catch (error) {
         console.log(error);
@@ -220,7 +220,7 @@ router.post('/addcomment/:id', authMiddleware, async (req,res)=>{
 
 
 /**POST /
- * UPDATE POST
+ * UPDATE PROFILE
  */
 router.post('/update-profile/:id', authMiddleware, async (req, res) => {
     try {

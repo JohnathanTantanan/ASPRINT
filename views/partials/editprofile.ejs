@@ -4,5 +4,5 @@
     <label for="description">Description:</label>
     <textarea id="description-input" name="description"><%= user.description %></textarea>
     <button type="submit">Save</button>
-    <button type="button" onclick="toggleEditMode('<%= formId %>', '<%= JSON.stringify(displayElementsIds) %>', '<%= editButtonId %>')">Cancel</button>
+    <button type="button" onclick="cancelEdit('<%= formId %>', { username: '<%= user.username %>', description: '<%= user.description %>' }, <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
 </form>

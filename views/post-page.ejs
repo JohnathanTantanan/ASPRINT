@@ -9,7 +9,7 @@
             <a href="/user-profile/<%= data.poster._id %>"><%= data.poster.username %></a>
             <% if (user != null && data.poster.username == user.username) { %>
                 <div class="post-edit-buttons">
-                    <button id="edit-post" onclick="toggleEditMode('edit-post-form', ['profile-description'], 'edit-post')">Edit</button>
+                    <button id="edit-post" onclick="toggleEditMode('edit-post-form', ['post-content'], 'edit-post')">Edit</button>
                     <button> Delete </button>
                 </div>
             <% } %>
@@ -31,31 +31,40 @@
         </button><br>
 
         <div class="post-content">
-            <p><%= data.content %></p>
+            <p id="post-content"><%= data.content %></p>
         </div><hr>
 
         <form method="POST" action="/addcomment/<%= data._id %>">
             <input type="text" id="add-comment" placeholder="Add a Comment..." name="comment">
         </form>
+
+         <!-- Include the edit form partial for posts -->
+         <%- include('partials/editpost', { formId: 'edit-post-form', action: '/update-post', post: data, displayElementsIds: ['post-content'], editButtonId: 'edit-post' }) %>
         
 
-        <% data.comments.forEach(comment => { %>
+         <% data.comments.forEach(comment => { %>
             <div class="comment">
                 <!-- replace img link with data -->
-                 <% if(comment.commenter.picture) { %>
+                <% if(comment.commenter.picture) { %>
                     <img src="<%= comment.commenter.picture %>" alt="profile-picture">
                 <% } else { %> 
                     <img src="/img/user-icon-default.png" alt="profile-picture">
                 <% } %>
                 <div id="comment-editing">
-                <!-- define route for userprofile url -->
-                <a href="/user-profile/<%= comment.commenter._id %>"><%= comment.commenter.username %></a>
-                <% if(comment.commenter.username == user.username) { %>
-                    <button id="edit-comment" onclick="toggleEditMode('edit-comment-form', ['comments'], 'edit-comment')">Edit</button>
-                <% } %>
+                    <!-- define route for userprofile url -->
+                    <a href="/user-profile/<%= comment.commenter._id %>"><%= comment.commenter.username %></a>
+                    <% if(comment.commenter.username == user.username) { %>
+                        <button id="edit-comment-<%= comment._id %>" onclick="toggleEditMode('edit-comment-form-<%= comment._id %>', ['comment-content-<%= comment._id %>'], 'edit-comment-<%= comment._id %>')">Edit</button>
+                        <button> Delete </button>
+                    <% } %>
                 </div>
-                <p id="comments"><%= comment.comment %></p>
+                <p id="comment-content-<%= comment._id %>"><%= comment.comment %></p>
+        
+                <!-- Include the edit form partial for comments -->
+                <%- include('partials/editcomments', { formId: 'edit-comment-form-' + comment._id, comment: comment, displayElementsIds: ['comment-content-' + comment._id], editButtonId: 'edit-comment-' + comment._id }) %>
             </div>
         <% }) %>
+
     </div>
+    <script src="/js/canceledit.js"></script>
     <script src="/js/edit.js"></script>

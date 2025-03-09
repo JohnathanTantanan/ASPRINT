@@ -369,6 +369,7 @@ a.sidebar-buttons {
     border: 0px none;
     font-size: 16px;
     font-weight: 800;
+    margin-left: 10px;
 }
 
 #comment-editing {
