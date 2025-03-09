@@ -9,7 +9,7 @@
     <form action="/search" method="GET" id="search-form" role="search">
         <input type="text" 
                id="search" 
-               name="q" 
+               name="searchTerm" 
                placeholder="Search"
                aria-label="Search the forum">
     </form>
@@ -43,7 +43,6 @@
             <span>Communities</span>
         </a>
 
-        <!-- GETTING ERROR HERE -->
         <select name="user_communities" id="communities">  
             <option value="1">My Communities</option>
             <% communities.forEach(community => { %>

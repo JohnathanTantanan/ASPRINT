@@ -1,10 +1,10 @@
 <% if (locals.inCommunity) { %>
     <div class="community-header community-layout">
-        <img src="https://media.tenor.com/x8v1oNUOmg4AAAAM/rickroll-roll.gif" alt="profile-picture">
+        <img src="/img/community-icon-default.png" alt="profile-picture">
         <div class="community-text">
             <h1>c/<%= community.name %></h1>
             <p><%= community.description %></p>
-            <sub>Created <%= community.createdAt %></sub>
+            <sub>Created: <%= community.createdAt.toDateString() %></sub>
         </div>
     </div>
 <% } %>

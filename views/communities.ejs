@@ -2,7 +2,13 @@
     <% communities.forEach(community => { %>
         <div class="community community-layout">
             <a href="/c/<%= community._id %>/<%= community.name %>" class="link-overlay"></a>
-            <img src="<%= community.banner || community.picture %>" alt="<%= community.name %>">
+            <% if (community.picture) { %>
+                <img src="<%= community.picture %>" alt="<%= community.name %>">
+            <% } else { %>
+                <img src="/img/community-icon-default.png" alt="<%= community.name %>">
+            <% } %>
+             
+            <!-- Community banner layout still WIP  -->
             <div class="community-text">
                 <h1>c/<%= community.name %></h1>
                 <p><%= community.description %></p>

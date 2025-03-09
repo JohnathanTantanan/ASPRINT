@@ -21,7 +21,7 @@ const UserSchema = new Schema({
     },
     posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }],
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comments' }],
-    communities: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Community' }],
+    communities: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Community' }]
 })
 
 module.exports = mongoose.model('User', UserSchema)

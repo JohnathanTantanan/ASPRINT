@@ -71,7 +71,7 @@ router.get('/createpost', async (req,res)=>{
 });
 
 /**GET /
- * A POST'S PAGE
+ * A POST'S DEDICATED PAGE
  */
 // Placeholders in route definitions
 router.get('/post/:id/:title', async (req, res) => {
@@ -84,9 +84,9 @@ router.get('/post/:id/:title', async (req, res) => {
         //const postId = new mongoose.Types.ObjectId(req.params.id);
         const user = await getUser(req);
         const data = await Post.findById(req.params.id).populate('poster'); // returns a single mongoose document 
-        const communities = await Community.find();
         const comments = await Comments.find({ postId: req.params.id }).populate('commenter'); // returns array of mongoose documents 
         data.comments = comments; // manual population
+        const communities = await Community.find();
         res.render('post-page', {locals, data, user, communities}); // should this be data.toObject()? why
     } catch (error) {
         console.log(error);
@@ -129,13 +129,12 @@ router.get('/c/:id/:name', async (req,res)=>{
         const community = await Community.findById(req.params.id);
         const data = await Post.find({ community: req.params.id}).populate('poster');
         const comments = await Comments.find({ postId: req.params.id }).populate('commenter');
-        const communities = await Community.find();
         data.comments = comments; // manual population
+        const communities = await Community.find();
         res.render('home', {locals, data, user, community, communities});
     } catch (error) {
         console.log(error);
     }
-
 });
 
 /**GET /
@@ -166,7 +165,7 @@ router.get('/popular', async(req,res)=>{
     }
 });
 
-/**GET /
+/**POST /
  * POST SUBMISSION
  */
 router.post('/submit-post', async (req, res) => {
@@ -191,6 +190,65 @@ router.post('/submit-post', async (req, res) => {
         console.log(error);
         res.status(500).send('Error creating post');
     }
+});
+
+/**GET /
+ * GET SEARCH TERM
+ */
+router.get('/search', async (req,res)=>{
+
+    // FOR GET METHOD
+    try {
+        const locals = {
+            layout: 'layouts/main',
+            title: "Search - The Forum",
+            inCommunity: false
+        };
+
+        let searchTerm = req.query.searchTerm; // Use req.query for GET requests
+        const searchInsensitive = searchTerm.replace(/[^a-zA-Z0-9]/g, ""); // Sanitize search term
+
+        const query = {
+            $or: [
+                { title: {$regex: new RegExp(searchInsensitive, 'i')}},
+                { content: {$regex: new RegExp(searchInsensitive, 'i')}}
+            ]
+        } // Case-insensitive search
+        const data = await Post.find(query).populate('poster').populate('community');
+        const communities = await Community.find();
+        const user = await getUser(req);
+
+        res.render('home', { locals, data, communities, user});
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Error performing search');
+    }
+
+    // FOR POST METHOD
+    // try {
+    //     const locals = {
+    //         layout: 'layouts/main',
+    //         title: "Search - The Forum",
+    //         inCommunity: false
+    //     };
+
+    //     let searchTerm = req.body.searchTerm
+    //     // regex, removes any non-numerical/alphabetical character (replace with empty String)
+    //     const searchInsensitive = searchTerm.replace(/[^a-zA-Z0-9]/g, "")
+
+    //     const data = await Post.find({
+    //         $or: [
+    //             { title: {$regex: new RegExp(searchInsensitive, 'i')}},
+    //             { content: {$regex: new RegExp(searchInsensitive, 'i')}}
+    //         ]
+    //     }).populate('poster').populate('community');
+    //     const user = await getUser(req);
+    //     const communities = await Community.find();
+    //     res.render('home', { locals, data, communities, user });
+    //     //res.send(searchTerm)
+    // } catch (error) {
+    //     console.log(error);
+    // }
 });
 
 module.exports = router;

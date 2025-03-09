@@ -4,7 +4,7 @@ const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
 const connectDB = require('./server/config/db')
 connectDB()
-
+// Other dependencies
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
@@ -12,6 +12,7 @@ const MongoStore = require('connect-mongo')
 const app = express()
 const PORT = 3000 || process.env.PORT
  
+// Middlewares
 app.use(express.static('public')) // sets public as root folder
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
