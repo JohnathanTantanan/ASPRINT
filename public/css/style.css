@@ -4,7 +4,7 @@
     --bg-darker: #1a1a1a;
     --text-light: #ffffff;
     --header-height: 4rem;
-    --sidebar-width: 13rem;
+    --sidebar-width: 14rem;
     --transition-speed: 0.2s;
 }
 
@@ -144,6 +144,7 @@ body {
     gap: 1rem;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     margin-top: 0;  /* Remove the margin */
+    z-index: 50;
 }
 
 a.sidebar-buttons {
@@ -216,7 +217,7 @@ a.sidebar-buttons {
 
 .bypass-overlay{
     position: relative;
-    z-index: 3;
+    z-index: 30;
 }
 
 
@@ -657,17 +658,15 @@ a.sidebar-buttons {
     align-items: center;
     background-color: #000;
     height: auto;
-    padding-top: 1.5em;
-    padding-left: 1.8em;
-    padding-right: 1.8em;
-    padding-bottom: 1.8em;
-    border-radius: 10px;
+    width: 65rem;
+    padding-top: 1.5rem;
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+    padding-bottom: 1.8rem;
+    border-radius: 0px 0px 10px 10px;
     margin-bottom: 1.5em;
-    margin-top: 1.5em;
-}
-
-.community-header{
-    width: 30em;
+    margin-left: 16rem;
+    z-index: 20;
 }
 
 .community {
@@ -679,8 +678,16 @@ a.sidebar-buttons {
     display: flex;
 }
 
+.banner{
+    height: 10rem;
+    width: 68.5rem;
+    margin-left: 16rem;
+    z-index: 10;
+    border-radius: 10px 10px 0px 0px;
+}
+
 .community img,
-.community-header img{
+.community-header #profile{
     border-radius: 50%;
     width: 6em;
     height: 6em;
