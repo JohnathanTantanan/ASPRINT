@@ -44,19 +44,23 @@
 
          <% data.comments.forEach(comment => { %>
             <div class="comment">
-                <!-- replace img link with data -->
-                <% if(comment.commenter.picture) { %>
-                    <img src="<%= comment.commenter.picture %>" alt="profile-picture">
-                <% } else { %> 
-                    <img src="/img/user-icon-default.png" alt="profile-picture">
-                <% } %>
-                <div id="comment-editing">
-                    <!-- define route for userprofile url -->
-                    <a href="/user-profile/<%= comment.commenter._id %>"><%= comment.commenter.username %></a>
-                    <% if(comment.commenter.username == user.username) { %>
-                        <button id="edit-comment-<%= comment._id %>" onclick="toggleEditMode('edit-comment-form-<%= comment._id %>', ['comment-content-<%= comment._id %>'], 'edit-comment-<%= comment._id %>')">Edit</button>
-                        <button> Delete </button>
-                    <% } %>
+                <div class="comment-editing">
+                    <div>
+                        <!-- replace img link with data -->
+                        <% if(comment.commenter.picture) { %>
+                            <img src="<%= comment.commenter.picture %>" alt="profile-picture">
+                        <% } else { %> 
+                            <img src="/img/user-icon-default.png" alt="profile-picture">
+                        <% } %>
+                    </div>
+                    <div>
+                        <!-- define route for userprofile url -->
+                        <a href="/user-profile/<%= comment.commenter._id %>"><%= comment.commenter.username %></a>
+                        <% if(comment.commenter.username == user.username) { %>
+                            <br><button id="edit-comment-<%= comment._id %>" onclick="toggleEditMode('edit-comment-form-<%= comment._id %>', ['comment-content-<%= comment._id %>'], 'edit-comment-<%= comment._id %>')">Edit</button>
+                            <button> Delete </button>
+                        <% } %>
+                    </div>
                 </div>
                 <p id="comment-content-<%= comment._id %>"><%= comment.comment %></p>
         
