@@ -24,7 +24,7 @@ const getUser = async (req) => {
     }
 }
 
-// UPVOTES AND DOWNVOTES
+// UPVOTES AND DOWNVOTES (WIP)
 router.post('/post/upvote/:id', async (req, res) => {
     try {
         const postId = req.params.id;
@@ -300,7 +300,7 @@ router.get('/search', async (req,res)=>{
         };
 
         let searchTerm = req.query.searchTerm; // Use req.query for GET requests
-        const searchInsensitive = searchTerm.replace(/[^a-zA-Z0-9]/g, ""); // Sanitize search term
+        const searchInsensitive = searchTerm.replace(/[^a-zA-Z0-9]/g, ""); // case-insensitive search
 
         const query = {
             $or: [
