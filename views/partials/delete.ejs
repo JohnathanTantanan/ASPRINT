@@ -1,3 +1,3 @@
-<form method="POST" action="<%= action %>" style="display:inline;">
-    <button type="submit" class="edit-del-btn">Delete</button>
+<form action="<%= action %>" method="POST" style="display: inline;">
+    <button type="submit" class="edit-del-btn" onclick="return confirm('Are you sure you want to delete?')">Delete</button>
 </form>

@@ -16,27 +16,7 @@
         
         <div id="profile-info">
             <h2>Latest Posts:</h2>
-            <% posts.forEach(post => { %>
-            <div class="latest-posts">
-                <h3 id="post-title-display"><%= post.title %></h3>
-                <div id="post-content-display"><%= post.content %></div>
-                <% if (post.images) { %>
-                    <img src="<%= post.images %>" alt="Post Image">
-                <% } %>
-                <button>
-                    <img src="https://w7.pngwing.com/pngs/349/305/png-transparent-computer-icons-internet-forum-comment-miscellaneous-monochrome-black-thumbnail.png" alt="Comment">
-                    Comment 
-                </button>
-                <button> 
-                    <img src="img/upvote-icon.svg" alt="Upvote">
-                    <%= post.upvotes %>
-                </button>
-                <button> 
-                    <img src="img/downvote-icon.svg" alt="Downvote">
-                    <%= post.downvotes %>
-                </button>
-            </div>
-            <% }) %>
+            <%- include('partials/profile-post', { data: posts, comments: comments }) %>
 
             <h2>Comments:</h2>
             <% comments.forEach(comment => { %>
