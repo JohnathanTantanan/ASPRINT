@@ -41,7 +41,17 @@
             <button>
                 <img src="/img/comment-icon.svg" alt="Comment" id="comment-btn"> 
                 <!-- In express.js, public directory is configured to be root dir so no need to include "public" in absolute file path -->
-                <!-- Insert comment count? -->
+                <% 
+                    var count = 0; 
+                    comments.forEach(comment => { 
+                        if(String(comment.postId) === String(post._id)) 
+                        {
+                        count++; 
+                        }
+                    }) 
+                %>
+                <p><%= count %></p>
+                
             </button>
             <!-- <button id="test-button">test</button> -->
         </div>

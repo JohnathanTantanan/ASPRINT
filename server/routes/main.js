@@ -43,10 +43,12 @@ router.get(['', '/home'], async (req,res)=>{
             .sort({ createdAt: -1 });
         const user = await getUser(req);
         const communities = await Community.find();
+        const comments = await Comments.find();
         res.render('home', {
             locals, 
             data, 
             user,
+            comments,
             communities
         });  
     } catch (error) {
