@@ -5,5 +5,6 @@
     <textarea id="description-input" name="description"><%= user.description %></textarea>
     <br>
     <button type="submit" class="edit-del-btn">Save</button>
+                                                                                     <!-- Leave unquoted because its a ejs expression-->   
     <button type="button" class="edit-del-btn" onclick="toggleEditMode('<%= formId %>', <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
 </form>
