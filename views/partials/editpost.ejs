@@ -4,5 +4,5 @@
     <label for="content">Content:</label>
     <textarea id="content-input" name="content"><%= post.content %></textarea>
     <button type="submit" class="edit-del-btn">Save</button>
-    <button type="button" class="edit-del-btn" onclick="cancelEdit('<%= formId %>', { title: '<%= post.title %>', content: '<%= post.content %>' }, <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
+    <button type="button" class="edit-del-btn" onclick="toggleEditMode('<%= formId %>', <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
 </form>

@@ -44,9 +44,8 @@
 
         <!-- Include the edit form partial for posts -->
         <%- include('./partials/editpost.ejs', { formId: 'edit-post-form', action: '/update-post', post: data, displayElementsIds: ['post-content'], editButtonId: 'edit-post' }) %>
-        
+        <!-- Partial for comments -->
         <%- include('./partials/comment.ejs', { data: data }) %>
 
     </div>
-    <script src="/js/canceledit.js"></script>
-    <script src="/js/edit.js"></script>
+    <script src="/js/script.js"></script>

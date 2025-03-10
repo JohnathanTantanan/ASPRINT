@@ -11,11 +11,10 @@
         </div>
 
         <p id="profile-description"><%= user.description %></p>
-
+        <!-- Include the edit form partial for profile -->
+        <%- include('partials/editprofile', { formId: 'edit-profile-form', action: '/update-profile', user: user, displayElementsIds: ['username', 'profile-description'], editButtonId: 'edit-profile' }) %>
+        
         <div id="profile-info">
-            <!-- Include the edit form partial for profile -->
-            <%- include('partials/editprofile', { formId: 'edit-profile-form', action: '/update-profile', user: user, displayElementsIds: ['username', 'profile-description'], editButtonId: 'edit-profile' }) %>
-
             <h2>Latest Posts:</h2>
             <% posts.forEach(post => { %>
             <div class="latest-posts">
@@ -49,7 +48,6 @@
     </div>
 
 <!-- Include the external JavaScript file -->
-<script src="/js/canceledit.js"></script>
-<script src="/js/edit.js"></script>
+<script src="/js/script.js"></script>
 <% } %>
 

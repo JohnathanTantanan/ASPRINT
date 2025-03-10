@@ -5,5 +5,5 @@
     <textarea id="description-input" name="description"><%= user.description %></textarea>
     <br>
     <button type="submit" class="edit-del-btn">Save</button>
-    <button type="button" class="edit-del-btn" onclick="cancelEdit('<%= formId %>', { username: '<%= user.username %>', description: '<%= user.description %>' }, <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
+    <button type="button" class="edit-del-btn" onclick="toggleEditMode('<%= formId %>', <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
 </form>
