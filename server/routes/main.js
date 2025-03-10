@@ -24,6 +24,20 @@ const getUser = async (req) => {
     }
 }
 
+// UPVOTES AND DOWNVOTES
+router.post('/post/upvote/:id', async (req, res) => {
+    try {
+        const postId = req.params.id;
+        const post = await Post.findById(postId);
+        post.upvotes += 1;
+        await post.save();
+        res.json({ success: true, upvotes: post.upvotes });
+    } catch (error) {
+        console.error('Error upvoting post:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
 /**GET /
  * HOME
  */
@@ -43,10 +57,12 @@ router.get(['', '/home'], async (req,res)=>{
             .sort({ createdAt: -1 });
         const user = await getUser(req);
         const communities = await Community.find();
+        const comments = await Comments.find();
         res.render('home', {
             locals, 
             data, 
             user,
+            comments,
             communities
         });  
     } catch (error) {
@@ -134,10 +150,10 @@ router.get('/c/:id/:name', async (req,res)=>{
         const user = await getUser(req);
         const community = await Community.findById(req.params.id);
         const data = await Post.find({ community: req.params.id}).populate('poster');
-        const comments = await Comments.find({ postId: req.params.id }).populate('commenter');
+        const comments = await Comments.find();
         data.comments = comments; // manual population
         const communities = await Community.find();
-        res.render('home', {locals, data, user, community, communities});
+        res.render('home', {locals, data, user, community, communities, comments});
     } catch (error) {
         console.log(error);
     }
@@ -155,15 +171,17 @@ router.get('/popular', async(req,res)=>{
 
     try {
         const communities = await Community.find();
-        const data = await Post.find({ upvotes: {$gt: 100} })
+        const data = await Post.find()
             .sort({ upvotes: -1 })
             .populate('poster')
             .populate('community');
         const user = await getUser(req);
+        const comments = await Comments.find();
         res.render('home', {
             locals, 
             data, 
             user,
+            comments,
             communities
         });
     } catch (error) {
@@ -246,7 +264,7 @@ router.post('/update-comment/:id', async (req, res) => {
         const { comment } = req.body;
         const commentId = req.params.id;
 
-        const updatedComment = await Comments.findByIdAndUpdate(commentId, { comment }, { new: true });
+        await Comments.findByIdAndUpdate(commentId, { comment }, {updatedAt: new Date()}, { new: true });
 
         res.redirect('back');
     } catch (error) {

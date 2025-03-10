@@ -3,5 +3,5 @@
     <textarea id="comment-input" name="comment"><%= comment.comment %></textarea>
     <br>
     <button type="submit" class="edit-del-btn"> Save</button>
-    <button type="button" class="edit-del-btn" onclick="toggleEditMode('<%= formId %>', <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
+    <button type="button" class="edit-del-btn" onclick="toggleEditMode('<%= formId %>', '<%= JSON.stringify(displayElementsIds) %>', '<%= editButtonId %>')">Cancel</button>
 </form>

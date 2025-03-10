@@ -13,3 +13,28 @@ function toggleEditMode(editFormId, displayElementsIds, editButtonId) {
         editButton.style.display = 'inline-block';
     }
 }
+
+// JQUERY/AJAX FUNCTIONS
+$(document).ready(function(){
+    function upvotePost(postId){
+        // const postId = $(this).attr('postId');
+        console.log('Upvoting post:', postId);
+        // $.ajax({
+        //     url: `/post/upvote/${postId}`,
+        //     method: 'POST',
+        //     success: function(result) {
+        //         if (result.success) {
+        //             $(this).closest('button').find('.upvote-count').text(result.upvotes);
+        //         }
+        //     }.bind(this),
+        //     error: function(xhr, status, error) {
+        //         console.error('Failed to upvote post:', error);
+        //     }
+        // });
+    }
+
+    $('.upvote-button').click(function(){
+        //upvotePost($(this).attr('postId'));
+        console.log('Upvoting post...');
+    });
+});

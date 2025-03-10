@@ -222,9 +222,25 @@ a.sidebar-buttons {
 .bypass-overlay{
     position: relative;
     z-index: 30;
+    /* background-color: blue;
+    opacity: 80%; */
 }
 
+#test-button{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    opacity: 80%;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
+#test-button:hover{
+    background-color: green;
+}
 
 /* ============ POST ELEMENTS ============ */
 
@@ -258,16 +274,23 @@ a.sidebar-buttons {
     font-weight: 800;
 }
 
-#upvote-btn{
+.upvote-btn{
     height: 25px;
     align-items: center;
-    filter: invert(100%);
+    filter: invert(30%);
+    cursor: pointer;
 }
 
-#downvote-btn{
+.downvote-btn{
     height: 25px;
     align-items: center;
+    filter: invert(30%);
+    cursor: pointer;
+}
+.upvote-btn:hover,
+.downvote-btn:hover{
     filter: invert(100%);
+
 }
 
 #comment-btn{
@@ -295,6 +318,14 @@ a.sidebar-buttons {
     padding-bottom: 1em;
     margin-bottom: 1em;
     border-bottom: 1px solid white;
+}
+
+.content{
+    opacity: 0.6;
+}
+
+.pad{
+    padding-bottom: 1em;
 }
 
 /*Username*/
