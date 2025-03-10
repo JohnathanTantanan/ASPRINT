@@ -1,0 +1,17 @@
+<% data.forEach(post => { %>
+    <div class="latest-posts">
+        <div class="profile-post-header">
+            <div class="post-title">
+                <a href="/post/<%= post._id %>/<%= encodeURIComponent(post.title) %>"><%= post.title %></a>
+            </div>
+            <% if (user && post.poster.toString() === user._id.toString()) { %>
+                <%- include('./delete', { action: '/delete-post/' + post._id }) %>
+            <% } %>
+        </div>
+
+        <div class="post-content">
+            <p><%= post.content.substring(0, 80) + (post.content.length > 80 ? "..." : "") %></p>
+        </div>
+
+    </div>
+<% }) %>

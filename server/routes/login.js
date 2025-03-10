@@ -173,7 +173,6 @@ router.post('/register', async (req,res)=>{
                     username,
                     password: hashedPassword
                 });
-                res.status(201).json({message: 'User Created', user});
                 res.redirect('/login');
             }   catch (error) {
                 if(error.code === 11000){
