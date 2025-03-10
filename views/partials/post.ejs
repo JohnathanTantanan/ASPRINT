@@ -38,9 +38,9 @@
                 <img src="/img/upvote-icon.svg" alt="Upvote" >
                 <p class="upvote-count"><%= post.upvotes %></p>
             </button>
-            <button class="downvote-btn">  
+            <button class="downvote-btn" postId="<%= post._id %>">  
                 <img src="/img/downvote-icon.svg" alt="Downvote">
-                <p><%= post.downvotes %></p>
+                <p class="downvote-count"><%= post.downvotes %></p>
             </button>
             <button>
                 <img src="/img/comment-icon.svg" alt="Comment" id="comment-btn"> 

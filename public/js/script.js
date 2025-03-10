@@ -15,6 +15,8 @@ function toggleEditMode(editFormId, displayElementsIds, editButtonId) {
 }
 
 // JQUERY/AJAX FUNCTIONS
+
+/* 
 $(document).ready(function(){
     // make modular for both vote options
     function upvotePost(postId, button){
@@ -45,4 +47,61 @@ $(document).ready(function(){
         console.log('Button clicked, postId:', postId);
         upvotePost(postId, this);
     });
+});
+*/
+
+$(document).ready(function(){
+
+    function upvote(postId, button){
+        $.ajax({
+            url: `/post/upvote/${postId}`,
+            method: 'POST',
+            success: function(res){
+                if(res.success) {
+                    const upvoteCount = $(button).find('.upvote-count');
+                    const downvoteCount = $(button).siblings('.downvote-btn').find('.downvote-count');
+                    upvoteCount.text(res.upvotes);
+                    downvoteCount.text(res.downvotes);
+                }
+            }
+        })
+    }
+
+    function downvote(postId, button){
+        $.ajax({
+            url: `/post/downvote/${postId}`,
+            method: 'POST',
+            success: function(res){
+                if(res.success) {
+                    const downvoteCount = $(button).find('.downvote-count');
+                    const upvoteCount = $(button).siblings('.upvote-btn').find('.upvote-count');
+                    downvoteCount.text(res.downvotes);
+                    upvoteCount.text(res.upvotes);
+                }
+            }
+        })
+    }
+
+    $('.upvote-btn').click(function(){
+        const postId = $(this).attr('postId');
+        upvote(postId, this);
+        if($(this).css('fill') == 'blue') {
+            $(this).css('fill', 'white');
+        } else {
+            $(this).css('fill', 'blue');
+            $(this).siblings('.downvote-btn').css('fill', 'white');
+        }
+    });
+
+    $('.downvote-btn').click(function(){
+        const postId = $(this).attr('postId');
+        downvote(postId, this);
+        if($(this).css('fill') == 'blue') {
+            $(this).css('fill', 'white');
+        } else {
+            $(this).css('fill', 'blue');
+            $(this).siblings('.upvote-btn').css('fill', 'white');
+        }
+    });
+
 });
