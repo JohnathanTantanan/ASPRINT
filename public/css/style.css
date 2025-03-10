@@ -332,6 +332,17 @@ a.sidebar-buttons {
     float: left;
 }
 
+.post-img > img{
+    width: 30em;
+    height: 15em;
+    display: block;
+    border-radius: 10px;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    justify-self: center;
+    align-self: center;
+}
+
 .post-date{
     margin-left: 1rem;
 } 
