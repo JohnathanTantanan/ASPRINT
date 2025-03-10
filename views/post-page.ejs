@@ -30,15 +30,15 @@
         <!-- Include the edit form partial for posts -->
         <%- include('./partials/editpost.ejs', { formId: 'edit-post-form', action: '/update-post', post: data, displayElementsIds: ['post-content'], editButtonId: 'edit-post' }) %>
         <hr>
-        <button class="bypass-overlay">
-            <img src="/img/upvote-icon.svg" alt="Upvote" class="upvote-btn">
-            <p><%= data.upvotes %></p>
+        <button class="upvote-btn">
+            <img src="/img/upvote-icon.svg" alt="Upvote" class="upvote-btn" postId="<%= data._id %>">
+            <p class="upvote-count"><%= data.upvotes %></p>
         </button>
-        <button class="bypass-overlay">  
+        <button class="downvote-btn">  
             <img src="/img/downvote-icon.svg" alt="Downvote" class="downvote-btn">
             <p><%= data.downvotes %></p>
         </button>
-        <button class="bypass-overlay">
+        <button>
             <img src="/img/comment-icon.svg" alt="Comment" id="comment-btn">
         </button><br>
 

@@ -8,6 +8,9 @@ connectDB()
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')
+//AJAX
+const bodyParser = require('body-parser');
+
 
 const app = express()
 const PORT = 3000 || process.env.PORT
@@ -25,6 +28,10 @@ app.use(session({
     store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
     //cookie: { maxAge: new Date(Date.now() + 3600000) }
 }))
+//AJAX Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
   
 // Templating Engine
 app.use(expressLayouts)

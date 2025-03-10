@@ -3,7 +3,7 @@
         <!-- Would not be feasible in hbs -->
         <a href="/post/<%= post._id %>/<%= encodeURIComponent(post.title) %>" class="link-overlay"></a>
         
-        <div class="post-profile bypass-overlay">
+        <span class="post-profile bypass-overlay">
             <% if(post.poster.picture) { %>
                 <img src="<%= post.poster.picture %>" alt="user-profile">
             <% } else { %>
@@ -16,31 +16,36 @@
                 <a href="/c/<%= post.community._id %>/<%= post.community.name %>">from c/<%= post.community.name %></a>
             <% } %> 
             <br><sub class="post-date">Posted <%= post.createdAt.toDateString()%></sub>
-        </div>
-        <h4><%= post.title %></h4> 
+        </span>
+        <hr><h4><%= post.title %></h4> 
         <% if(post.images) { %>
             <img src="<%= post.images %>" alt="post-Img">
         <% } %>
+
         <% 
             var content = post.content.substring(0, 130);
             if(post.content.length > 130) {
                 content += "...";
             }
         %>
-        <div class="pad"><p class="content"><%= content %></p></div>
+        
+        <div>
+            <p class="content"><%= content %></p>
+        </div>
  
-        <div class="bypass-overlay">
-            <button>
-                <img src="/img/upvote-icon.svg" alt="Upvote" class="upvote-btn" postId="<%= post._id %>">
+        <span class="bypass-overlay">
+            <button class="upvote-btn" postId="<%= post._id %>">
+                <img src="/img/upvote-icon.svg" alt="Upvote" >
                 <p class="upvote-count"><%= post.upvotes %></p>
             </button>
-            <button>  
-                <img src="/img/downvote-icon.svg" alt="Downvote" class="downvote-btn">
+            <button class="downvote-btn">  
+                <img src="/img/downvote-icon.svg" alt="Downvote">
                 <p><%= post.downvotes %></p>
             </button>
             <button>
                 <img src="/img/comment-icon.svg" alt="Comment" id="comment-btn"> 
                 <!-- In express.js, public directory is configured to be root dir so no need to include "public" in absolute file path -->
+                <!-- COMMENTS UNDEFINED WHEN SEARCHING FOR POSTS -->
                 <% 
                     var count = 0; 
                     comments.forEach(comment => { 
@@ -54,7 +59,7 @@
                 
             </button>
             <!-- <button id="test-button">test</button> -->
-        </div>
+        </span>
         
     </div>
 <% }) %>
