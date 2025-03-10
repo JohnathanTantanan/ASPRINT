@@ -23,23 +23,23 @@ If both commands return version numbers, Node.js and npm are correctly installed
 - Move the extracted `CCAPDEV-Phase2-Group10` folder to a safe directory.
 - Open **Command Prompt** and navigate to the project directory:
 
-  command:
+ ``` sh
   cd path\to\CCAPDEV-Phase2-Group10
-  
+ ```
 
 ### 2. Install Dependencies
 Run the following command to install all required packages:
 
-command:
+```sh
 npm install dotenv express express-ejs-layouts cookie-parser express-session connect-mongo body-parser mongoose gridfs-stream multer multer-gridfs-storage jsonwebtoken bcryptjs nodemon --save --legacy-peer-deps
-
+```
 
 ### 3. Run the Server
 Start the Node.js server with:
 
-command:
+```sh
 npm run dev
-
+```
 - The server will be listening on **port 3000**.
 
 ### 4. Open the Web Application
