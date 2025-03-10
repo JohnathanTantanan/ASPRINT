@@ -1,6 +1,6 @@
 <div id="create-post">
     <h1>Create your post</h1>
-    <form action="/submit-post" method="POST">
+    <form action="/submit-post" method="POST" enctype="multipart/form-data">
         <div id="community">
             <select name="community" id="select-community" required>
                 <option value="" disabled selected>Select Community</option>
@@ -11,6 +11,8 @@
         </div>
         <input type="text" id="title" name="title" placeholder="Title...*" required>
         <textarea id="content" name="content" placeholder="Content...*" required></textarea>
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image">
         <div>
             <button type="button" id="discard" onclick="window.location.href='/'">Discard</button>
             <button type="submit" id="postbutton">Post</button>

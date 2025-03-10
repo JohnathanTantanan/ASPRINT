@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const jwt = require('jsonwebtoken')
 const User = require('../models/User')
+const multer = require('multer')
 //const mongoose = require('mongoose');
 
 
@@ -23,6 +24,18 @@ const getUser = async (req) => {
         return null; 
     }
 }
+
+// Set up multer for file uploads
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}-${file.originalname}`);
+    }
+});
+
+const upload = multer({ storage });
 
 // UPVOTES AND DOWNVOTES
 router.post('/post/upvote/:id', async (req, res) => {
@@ -188,29 +201,48 @@ router.get('/popular', async(req,res)=>{
         console.log(error);
     }
 });
- 
+
+/**GET /
+ * ABOUT PAGE
+ */
+router.get('/about', (req, res) => {
+    const locals = { 
+        layout: 'layouts/main',
+        title: "About Us",
+        description: "Learn more about The Forum."
+    };
+
+    res.render('about', { locals });
+});
+
 /**POST /
  * POST SUBMISSION AND CREATION
  */
-router.post('/submit-post', async (req, res) => {
+router.post('/submit-post', upload.single('image'), async (req, res) => {
     try {
         const user = await getUser(req);
         if (!user) {
             return res.redirect('/login');
         }
 
-        const { title, content, community } = req.body; // extract data submitted
+        const { title, content, community } = req.body;
 
-        const post = await Post.create({
+        const post = new Post({
             poster: user._id,
-            community: community, // community is already the ObjectId from the form
-            title,
-            content,
+            community: community,
+            title: title,
+            content: content,
             upvotes: 0,
             downvotes: 0
         });
 
-        const encodedTitle = encodeURIComponent(post.title) // encode special characters
+        if (req.file) {
+            post.images = `/uploads/${req.file.filename}`;
+        }
+
+        await post.save();
+
+        const encodedTitle = encodeURIComponent(post.title);
         res.redirect(`/post/${post._id}/${encodedTitle}`);
     } catch (error) {
         console.error('Post creation error:', error);
@@ -221,12 +253,17 @@ router.post('/submit-post', async (req, res) => {
 /**POST /
  * UPDATE POST
  */
-router.post('/update-post/:id', async (req, res) => {
+router.post('/update-post/:id', upload.single('image'), async (req, res) => {
     try {
         const { title, content } = req.body;
         const postId = req.params.id;
 
         const updatedPost = await Post.findByIdAndUpdate(postId, { title, content }, { new: true });
+
+        if (req.file) {
+            updatedPost.images = `/uploads/${req.file.filename}`;
+            await updatedPost.save();
+        }
 
         const encodedTitle = encodeURIComponent(updatedPost.title); // encode special characters
         res.redirect(`/post/${updatedPost._id}/${encodedTitle}`);
@@ -287,7 +324,7 @@ router.get('/search', async (req,res)=>{
         };
 
         let searchTerm = req.query.searchTerm; // Use req.query for GET requests
-        const searchInsensitive = searchTerm.replace(/[^a-zA-Z0-9]/g, ""); // Sanitize search term
+        const searchInsensitive = searchTerm.replace(/[^a-zA-Z0-9]/g, ""); // case-insensitive search
 
         const query = {
             $or: [

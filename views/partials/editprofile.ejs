@@ -1,9 +1,12 @@
-<form id="<%= formId %>" action="/update-profile/<%= user._id %>" method="POST" style="display: none;" class="post-edit-buttons">
+<form id="<%= formId %>" action="/update-profile/<%= user._id %>" method="POST" enctype="multipart/form-data" style="display: none;" class="post-edit-buttons">
     <label for="username">Username:</label>
     <input type="text" id="username-input" name="username" value="<%= user.username %>">
     <label for="description"><br>Description:</label>
     <textarea id="description-input" name="description"><%= user.description %></textarea>
     <br>
+    <label for="image"><br>Upload Profile Picture:</label>
+    <input type="file" id="image-input" name="image">
     <button type="submit" class="edit-del-btn">Save</button>
+                                                                                     <!-- Leave unquoted because its a ejs expression-->   
     <button type="button" class="edit-del-btn" onclick="toggleEditMode('<%= formId %>', <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
 </form>

@@ -32,9 +32,6 @@ body {
     max-width: 100%;
     margin: 0 auto;
 }
-textarea{
-    resize: none;
-}
 
 /* ============ HEADER ELEMENTS ============ */
 .header {
@@ -229,22 +226,6 @@ a.sidebar-buttons {
     opacity: 80%; */
 }
 
-#test-button{
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: red;
-    opacity: 80%;
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-#test-button:hover{
-    background-color: green;
-}
-
 /* ============ POST ELEMENTS ============ */
 
 /*Post Thumbnail*/
@@ -275,25 +256,25 @@ a.sidebar-buttons {
     border: 0px none;
     font-size: 16px;
     font-weight: 800;
+    margin-top: 1rem;
 }
 
-.upvote-btn{
+.upvote-btn > img{
     height: 25px;
     align-items: center;
     filter: invert(30%);
     cursor: pointer;
 }
 
-.downvote-btn{
+.downvote-btn > img{
     height: 25px;
     align-items: center;
     filter: invert(30%);
     cursor: pointer;
 }
-.upvote-btn:hover,
-.downvote-btn:hover{
+.upvote-btn > img:hover,
+.downvote-btn > img:hover{
     filter: invert(100%);
-
 }
 
 #comment-btn{
@@ -320,15 +301,10 @@ a.sidebar-buttons {
 .post-profile{ /* profile-header styling for the previews of posts */
     padding-bottom: 1em;
     margin-bottom: 1em;
-    border-bottom: 1px solid white;
 }
 
 .content{
     opacity: 0.6;
-}
-
-.pad{
-    padding-bottom: 1em;
 }
 
 /*Username*/
@@ -354,6 +330,17 @@ a.sidebar-buttons {
     margin-top: 0em;
     margin-left: 1em;
     float: left;
+}
+
+.post-img > img{
+    width: 30em;
+    height: 15em;
+    display: block;
+    border-radius: 10px;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    justify-self: center;
+    align-self: center;
 }
 
 .post-date{

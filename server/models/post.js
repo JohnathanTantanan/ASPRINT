@@ -54,6 +54,7 @@ const PostSchema = new Schema({
         }
     }],
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comments' }]
+    // Maybe add a voted[] field to track users who already voted, avoid duplicates
 })
 
 module.exports = mongoose.model('Post', PostSchema)

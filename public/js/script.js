@@ -16,25 +16,33 @@ function toggleEditMode(editFormId, displayElementsIds, editButtonId) {
 
 // JQUERY/AJAX FUNCTIONS
 $(document).ready(function(){
-    function upvotePost(postId){
-        // const postId = $(this).attr('postId');
+    // make modular for both vote options
+    function upvotePost(postId, button){
         console.log('Upvoting post:', postId);
-        // $.ajax({
-        //     url: `/post/upvote/${postId}`,
-        //     method: 'POST',
-        //     success: function(result) {
-        //         if (result.success) {
-        //             $(this).closest('button').find('.upvote-count').text(result.upvotes);
-        //         }
-        //     }.bind(this),
-        //     error: function(xhr, status, error) {
-        //         console.error('Failed to upvote post:', error);
-        //     }
-        // });
+        $.ajax({
+            url: `/post/upvote/${postId}`,
+            method: 'POST',
+            success: function(result) {
+                if (result.success) {
+                    const upvoteCount = $(button).find('.upvote-count');
+                    if (upvoteCount.length) {
+                        upvoteCount.text(result.upvotes);
+                        console.log('Upvote count updated:', result.upvotes);
+                    } else {
+                        console.error('Upvote count element not found');
+                    }
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Failed to upvote post:', error);
+            }
+        });
     }
 
-    $('.upvote-button').click(function(){
-        //upvotePost($(this).attr('postId'));
-        console.log('Upvoting post...');
+    // Attach event listener to upvote buttons
+    $('.upvote-btn').click(function(){
+        const postId = $(this).attr('postId');
+        console.log('Button clicked, postId:', postId);
+        upvotePost(postId, this);
     });
 });
