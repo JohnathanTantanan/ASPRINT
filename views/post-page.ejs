@@ -20,7 +20,9 @@
         
         <h3><%= data.title %></h3>
         <% if(data.images) { %>
+            <div class="post-img">
             <img src="<%= data.images %>" alt="post-Img">
+            </div>
         <% } %>
         <div class="post-content">
             <p id="post-content"><%= data.content %></p>

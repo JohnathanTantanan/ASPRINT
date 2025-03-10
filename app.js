@@ -14,6 +14,7 @@ const PORT = 3000 || process.env.PORT
  
 // Middlewares
 app.use(express.static('public')) // sets public as root folder
+app.use('/uploads', express.static('uploads')) // serve static files from the uploads directory
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
