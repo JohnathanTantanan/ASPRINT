@@ -237,7 +237,7 @@ router.post('/submit-post', upload.single('image'), async (req, res) => {
         });
 
         if (req.file) {
-            post.image = `/uploads/${req.file.filename}`;
+            post.images = `/uploads/${req.file.filename}`;
         }
 
         await post.save();
@@ -261,7 +261,7 @@ router.post('/update-post/:id', upload.single('image'), async (req, res) => {
         const updatedPost = await Post.findByIdAndUpdate(postId, { title, content }, { new: true });
 
         if (req.file) {
-            updatedPost.image = `/uploads/${req.file.filename}`;
+            updatedPost.images = `/uploads/${req.file.filename}`;
             await updatedPost.save();
         }
 
