@@ -188,7 +188,20 @@ router.get('/popular', async(req,res)=>{
         console.log(error);
     }
 });
- 
+
+/**GET /
+ * ABOUT PAGE
+ */
+router.get('/about', (req, res) => {
+    const locals = { 
+        layout: 'layouts/main',
+        title: "About Us",
+        description: "Learn more about The Forum."
+    };
+
+    res.render('about', { locals });
+});
+
 /**POST /
  * POST SUBMISSION AND CREATION
  */
