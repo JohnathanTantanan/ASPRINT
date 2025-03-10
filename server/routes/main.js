@@ -219,6 +219,26 @@ router.post('/update-post/:id', async (req, res) => {
 });
 
 /**POST /
+ * DELETE POST
+ */
+router.post('/delete-post/:id', async (req, res) => {
+    try {
+        const postId = req.params.id;
+        const post = await Post.findById(postId);
+
+        if (!post) {
+            return res.status(404).json({ message: 'Post not found' });
+        }
+        
+        await Post.findByIdAndDelete(postId);
+        res.redirect('/');
+    } catch (error) {
+        console.error('Error deleting post:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
+/**POST /
  * UPDATE COMMENT
  */
 router.post('/update-comment/:id', async (req, res) => {

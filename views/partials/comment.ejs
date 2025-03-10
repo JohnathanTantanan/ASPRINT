@@ -14,7 +14,7 @@
                 <a href="/user-profile/<%= comment.commenter._id %>"><%= comment.commenter.username %></a>
                 <% if(comment.commenter.username == user.username) { %>
                     <br><button class="edit-del-btn" id="edit-comment-<%= comment._id %>" onclick="toggleEditMode('edit-comment-form-<%= comment._id %>', ['comment-content-<%= comment._id %>'], 'edit-comment-<%= comment._id %>')">Edit</button>
-                    <button class="edit-del-btn"> Delete </button>
+                    <%- include('./delete', { action: '/delete-comment/' + comment._id }) %>
                 <% } %>
             </div>
         </div>

@@ -204,6 +204,27 @@ router.post('/addcomment/:id', authMiddleware, async (req,res)=>{
     }
 });
 
+
+/**POST /
+ * DELETE COMMENT
+ */
+router.post('/delete-comment/:id', authMiddleware, async (req, res) => {
+    try {
+        const commentId = req.params.id;
+        const comment = await Comments.findById(commentId);
+
+        if (!comment) {
+            return res.status(404).json({ message: 'Comment not found' });
+        }
+
+        await Comments.findByIdAndDelete(commentId);
+        res.redirect('back');
+    } catch (error) {
+        console.error('Error deleting comment:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
 /**POST /
  * UPDATE PROFILE
  */

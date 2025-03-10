@@ -13,7 +13,7 @@
             <% if (user != null && data.poster.username == user.username) { %>
                 <div class="post-edit-buttons">
                     <button class="edit-del-btn" id="edit-post" onclick="toggleEditMode('edit-post-form', ['post-content'], 'edit-post')">Edit</button>
-                    <button class="edit-del-btn"> Delete </button>
+                    <%- include('./partials/delete', { action: '/delete-post/' + data._id }) %>
                 </div>
             <% } %>
         </div>
