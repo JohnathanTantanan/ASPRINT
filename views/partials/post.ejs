@@ -31,11 +31,11 @@
  
         <div class="bypass-overlay">
             <button>
-                <img src="/img/upvote-icon.svg" alt="Upvote" class="upvote-btn" onclick="upvotePost('<%= post._id %>')">
+                <img src="/img/upvote-icon.svg" alt="Upvote" class="upvote-btn" postId="<%= post._id %>">
                 <p class="upvote-count"><%= post.upvotes %></p>
             </button>
             <button>  
-                <img src="/img/downvote-icon.svg" alt="Downvote" class="downvote-btn" postId="<%= post._id %>">
+                <img src="/img/downvote-icon.svg" alt="Downvote" class="downvote-btn">
                 <p><%= post.downvotes %></p>
             </button>
             <button>
