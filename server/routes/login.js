@@ -9,6 +9,7 @@ const Comments = require('../models/Comments')
 const bcrypt = require('bcryptjs') 
 const jwt = require('jsonwebtoken')
 const { redirect } = require('express/lib/response')
+const multer = require('multer')
 var ObjectId = require('mongodb').ObjectId;
 var loggeduser = null;
 const { getUser } = require('../middleware/auth');
@@ -32,6 +33,18 @@ const authMiddleware = async (req,res,next) => {
         }
 }
 
+
+// Set up multer for file uploads (Profile Picture)
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}-${file.originalname}`);
+    }
+});
+
+const upload = multer({ storage });
 /**GET /
  * LOGIN AND REGISTER
  */
@@ -228,14 +241,23 @@ router.post('/delete-comment/:id', authMiddleware, async (req, res) => {
 /**POST /
  * UPDATE PROFILE
  */
-router.post('/update-profile/:id', authMiddleware, async (req, res) => {
+router.post('/update-profile/:id', authMiddleware, upload.single('image'), async (req, res) => {
     try {
-        await User.findByIdAndUpdate(req.params.id, {
-            username: req.body.username,
-            description: req.body.description
-        });
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.redirect('/login');
+        }
 
-        res.redirect("/logout");
+        const { username, description } = req.body;
+        user.username = username;
+        user.description = description;
+
+        if (req.file) {
+            user.picture = `/uploads/${req.file.filename}`;
+        }
+
+        await user.save();
+        res.redirect('/login');
     } catch (error) {
         console.error('Error updating profile:', error);
         res.status(500).json({ message: 'Internal Server Error' });
