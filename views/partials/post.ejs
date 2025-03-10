@@ -21,6 +21,13 @@
         <% if(post.images) { %>
             <img src="<%= post.images %>" alt="post-Img">
         <% } %>
+        <% 
+            var content = post.content.substring(0, 130);
+            if(post.content.length > 130) {
+                content += "...";
+            }
+        %>
+        <div class="pad"><p class="content"><%= content %></p></div>
  
         <div class="bypass-overlay">
             <button>
