@@ -23,7 +23,25 @@ const CommentSchema = new Schema({
     comment: {
         type: String,
         required: true,
-    }
+    },
+    upvotes: {
+        type: Number,
+        default: 0
+    },
+    downvotes: {
+        type: Number,
+        default: 0
+    },
+    voters: [{
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
+        voteType: {
+            type: String,
+            enum: ['upvote', 'downvote']
+        }
+    }]
 })
 
 module.exports = mongoose.model('Comments', CommentSchema)
