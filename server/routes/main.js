@@ -24,6 +24,20 @@ const getUser = async (req) => {
     }
 }
 
+// UPVOTES AND DOWNVOTES
+router.post('/post/upvote/:id', async (req, res) => {
+    try {
+        const postId = req.params.id;
+        const post = await Post.findById(postId);
+        post.upvotes += 1;
+        await post.save();
+        res.json({ success: true, upvotes: post.upvotes });
+    } catch (error) {
+        console.error('Error upvoting post:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
 /**GET /
  * HOME
  */
