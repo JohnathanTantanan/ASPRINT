@@ -16,17 +16,17 @@ function toggleEditMode(editFormId, displayElementsIds, editButtonId) {
 
 // JQUERY/AJAX FUNCTIONS
 $(document).ready(function(){
-    // make function modular for both votes
-    function upvotePost(postId){
+    // make modular for both vote options
+    function upvotePost(postId, button){
         console.log('Upvoting post:', postId);
         $.ajax({
             url: `/post/upvote/${postId}`,
             method: 'POST',
             success: function(result) {
                 if (result.success) {
-                    const upvotes = $(this).find('.upvote-count');
-                    if (upvotes.length) {
-                        upvotes.text(result.upvotes);
+                    const upvoteCount = $(button).find('.upvote-count');
+                    if (upvoteCount.length) {
+                        upvoteCount.text(result.upvotes);
                         console.log('Upvote count updated:', result.upvotes);
                     } else {
                         console.error('Upvote count element not found');
@@ -39,10 +39,10 @@ $(document).ready(function(){
         });
     }
 
-    // Event Listeners
+    // Attach event listener to upvote buttons
     $('.upvote-btn').click(function(){
         const postId = $(this).attr('postId');
         console.log('Button clicked, postId:', postId);
-        upvotePost(postId);
+        upvotePost(postId, this);
     });
 });
