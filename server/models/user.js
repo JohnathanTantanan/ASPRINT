@@ -21,17 +21,7 @@ const UserSchema = new Schema({
     },
     posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post' }],
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comments' }],
-    communities: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Community' }],
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now
-    }
-}, {
-    timestamps: true // This will auto-update the updatedAt field
+    communities: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Community' }]
 })
 
 module.exports = mongoose.model('User', UserSchema)

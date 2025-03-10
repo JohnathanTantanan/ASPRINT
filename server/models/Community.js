@@ -26,26 +26,6 @@ const CommunitySchema = new Schema({
     updatedAt:{
         type: Date,
         default: Date.now
-    },
-    moderators: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    }],
-    members: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    }],
-    rules: [{
-        title: String,
-        description: String
-    }],
-    postCount: {
-        type: Number,
-        default: 0
-    },
-    memberCount: {
-        type: Number,
-        default: 0
     }
 })
 
