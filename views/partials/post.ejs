@@ -24,11 +24,11 @@
  
         <div class="bypass-overlay">
             <button>
-                <img src="/img/upvote-icon.svg" alt="Upvote" class="upvote-btn" postId="<%= post._id %>" onclick="console.log('upvote clicked')">
-                <p><%= post.upvotes %></p>
+                <img src="/img/upvote-icon.svg" alt="Upvote" class="upvote-btn" postId="<%= post._id %>">
+                <p class="upvote-count"><%= post.upvotes %></p>
             </button>
             <button>  
-                <img src="/img/downvote-icon.svg" alt="Downvote" class="downvote-btn" postId="<%= post._id %>" onclick="console.log('downvote clicked')">
+                <img src="/img/downvote-icon.svg" alt="Downvote" class="downvote-btn" postId="<%= post._id %>">
                 <p><%= post.downvotes %></p>
             </button>
             <button>
@@ -41,6 +41,5 @@
         
     </div>
 <% }) %>
-<button> </button>
 <!-- Maybe remove, layot should already link this -->
-<script src="/js/srcipt.js"></script>
+<!-- <script src="/js/srcipt.js"></script> -->
