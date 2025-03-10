@@ -264,7 +264,7 @@ router.post('/update-comment/:id', async (req, res) => {
         const { comment } = req.body;
         const commentId = req.params.id;
 
-        await Comments.findByIdAndUpdate(commentId, { comment }, {updatedAt: new Date()}, { new: true });
+        await Comments.findByIdAndUpdate(commentId, { comment: comment, updatedAt: new Date()}, { new: true });
 
         res.redirect('back');
     } catch (error) {
