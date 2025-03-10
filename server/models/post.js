@@ -46,7 +46,8 @@ const PostSchema = new Schema({
     voters: [{
         user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
+            ref: 'User',
+            unique: true
         },
         voteType: {
             type: String,
