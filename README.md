@@ -31,7 +31,7 @@ If both commands return version numbers, Node.js and npm are correctly installed
 Run the following command to install all required packages:
 
 command:
-npm install dotenv express express-ejs-layouts cookie-parser express-session connect-mongo body-parser mongoose gridfs-stream multer multer-gridfs-storage jsonwebtoken bcryptjs nodemon --save
+npm install dotenv express express-ejs-layouts cookie-parser express-session connect-mongo body-parser mongoose gridfs-stream multer multer-gridfs-storage jsonwebtoken bcryptjs nodemon --save --legacy-peer-deps
 
 
 ### 3. Run the Server
