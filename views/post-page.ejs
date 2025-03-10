@@ -29,11 +29,11 @@
         <%- include('./partials/editpost.ejs', { formId: 'edit-post-form', action: '/update-post', post: data, displayElementsIds: ['post-content'], editButtonId: 'edit-post' }) %>
         <hr>
         <button class="bypass-overlay">
-            <img src="/img/upvote-icon.svg" alt="Upvote" id="upvote-btn">
+            <img src="/img/upvote-icon.svg" alt="Upvote" class="upvote-btn">
             <p><%= data.upvotes %></p>
         </button>
         <button class="bypass-overlay">  
-            <img src="/img/downvote-icon.svg" alt="Downvote" id="downvote-btn">
+            <img src="/img/downvote-icon.svg" alt="Downvote" class="downvote-btn">
             <p><%= data.downvotes %></p>
         </button>
         <button class="bypass-overlay">
@@ -52,4 +52,5 @@
         <%- include('./partials/comment.ejs', { data: data }) %>
 
     </div>
-    <script src="/js/script.js"></script>
+    <!-- already linked in layout -->
+    <script src="/js/script.js"></script> 

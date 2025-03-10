@@ -13,3 +13,15 @@ function toggleEditMode(editFormId, displayElementsIds, editButtonId) {
         editButton.style.display = 'inline-block';
     }
 }
+
+// JQUERY/AJAX FUNCTIONS
+// document.querySelectorAll('.upvote-btn').forEach(button => {
+//     button.addEventListener('click', async () => {
+//         const postId = button.getAttribute('postId');
+//         const response = await fetch(`/post/${postId}/upvote`, { method: 'POST' });
+//         const result = await response.json();
+//         if (result.success) {
+//             button.querySelector('.upvote-count').textContent = result.upvotes;
+//         }
+//     });
+// });

@@ -22,20 +22,25 @@
             <img src="<%= post.images %>" alt="post-Img">
         <% } %>
  
-        <button class="bypass-overlay">
-            <img src="/img/upvote-icon.svg" alt="Upvote" id="upvote-btn">
-            <p><%= post.upvotes %></p>
-        </button>
-        <button class="bypass-overlay">  
-            <img src="/img/downvote-icon.svg" alt="Downvote" id="downvote-btn">
-            <p><%= post.downvotes %></p>
-        </button>
-        <button class="bypass-overlay">
-            <img src="/img/comment-icon.svg" alt="Comment" id="comment-btn"> 
-            <!-- In express.js, public directory is configured to be root dir so no need to include "public" in absolute file path -->
-            <!-- Insert comment count? -->
-        </button>
+        <div class="bypass-overlay">
+            <button>
+                <img src="/img/upvote-icon.svg" alt="Upvote" class="upvote-btn" postId="<%= post._id %>" onclick="console.log('upvote clicked')">
+                <p><%= post.upvotes %></p>
+            </button>
+            <button>  
+                <img src="/img/downvote-icon.svg" alt="Downvote" class="downvote-btn" postId="<%= post._id %>" onclick="console.log('downvote clicked')">
+                <p><%= post.downvotes %></p>
+            </button>
+            <button>
+                <img src="/img/comment-icon.svg" alt="Comment" id="comment-btn"> 
+                <!-- In express.js, public directory is configured to be root dir so no need to include "public" in absolute file path -->
+                <!-- Insert comment count? -->
+            </button>
+            <!-- <button id="test-button">test</button> -->
+        </div>
+        
     </div>
 <% }) %>
-
-<!-- <script src="/js/srcipt.js"></script> -->
+<button> </button>
+<!-- Maybe remove, layot should already link this -->
+<script src="/js/srcipt.js"></script>
