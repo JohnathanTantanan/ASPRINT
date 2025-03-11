@@ -305,15 +305,15 @@ router.get('/search', async (req,res)=>{
 
     // FOR GET METHOD
     try {
-        const locals = {
-            layout: 'layouts/main',
-            title: "Search - The Forum",
-            inCommunity: false
-        };
-
         let searchTerm = req.query.searchTerm; // Use req.query for GET requests
         const searchInsensitive = searchTerm.replace(/[^a-zA-Z0-9]/g, ""); // case-insensitive search
-        
+
+        const locals = {
+            layout: 'layouts/main',
+            title: `${searchTerm} - Search The Forum!`,
+            search: searchTerm,
+            inCommunity: false
+        };
         const query = {
             $or: [
                 { title: {$regex: new RegExp(searchInsensitive, 'i')}},
@@ -324,6 +324,7 @@ router.get('/search', async (req,res)=>{
         const communities = await Community.find();
         const user = await getUser(req);
         const comments = await Comments.find();
+
         res.render('home', { locals, data, communities, user, comments});
     } catch (error) {
         console.log(error);

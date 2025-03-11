@@ -1043,3 +1043,25 @@ a.sidebar-buttons {
 .profile-post-header form {
     margin-top: -5px;
 }
+
+/* ============ SEARCH RESULTS ============ */
+.search-results {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    word-wrap: normal;
+    /* background-color: #2164B0; */
+}
+
+.search-results img{
+    height: 20rem;
+    width: 20rem;
+    align-self: center;
+}
+
+.search-results h3{
+    margin: 0;
+    opacity: 70%;
+    font-weight: 200;
+}
