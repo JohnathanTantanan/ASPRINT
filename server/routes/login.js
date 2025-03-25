@@ -265,6 +265,11 @@ router.post('/update-profile/:id', authMiddleware, upload.single('image'), async
 
 // UPVOTES AND DOWNVOTES
 router.post('/post/upvote/:id', async (req, res) => {
+    // if (loggeduser === null) {
+    //     console.log('Please Login to vote on Posts');
+    //     return res.status(401).json({ message: 'Please Login to vote on Posts' });
+    // }
+    
     try {
         const postId = req.params.id;
         const post = await Post.findById(postId);
