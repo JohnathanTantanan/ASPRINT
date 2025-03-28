@@ -30,11 +30,11 @@
         <!-- Include the edit form partial for posts -->
         <%- include('./partials/editpost.ejs', { formId: 'edit-post-form', action: '/update-post', post: data, displayElementsIds: ['post-content'], editButtonId: 'edit-post' }) %>
         <hr>
-        <button class="upvote-btn">
-            <img src="/img/upvote-icon.svg" alt="Upvote" class="upvote-btn" postId="<%= data._id %>">
+        <button class="upvote-btn" postId="<%= data._id %>">
+            <img src="/img/upvote-icon.svg" alt="Upvote" class="upvote-btn">
             <p class="upvote-count"><%= data.upvotes %></p>
         </button>
-        <button class="downvote-btn">  
+        <button class="downvote-btn" postId="<%= data._id %>">  
             <img src="/img/downvote-icon.svg" alt="Downvote" class="downvote-btn">
             <p><%= data.downvotes %></p>
         </button>

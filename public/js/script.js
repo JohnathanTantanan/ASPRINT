@@ -67,6 +67,21 @@ $(document).ready(function(){
         })
     }
 
+    // TWEAK LISTENERS, active state disappears on reload
+    //Listener
+    $('.upvote-btn').click(function(){
+        const postId = $(this).attr('postId');
+        console.log('Upvote, postId:', postId);
+
+        upvote(postId, this);
+
+         // Toggle the active class on the upvote button
+         $(this).toggleClass('vote-active');
+         // Remove the active class from the sibling downvote button
+         $(this).siblings('.downvote-btn').removeClass('vote-active');
+ 
+    });
+
     function downvote(postId, button){
         $.ajax({
             url: `/post/downvote/${postId}`,

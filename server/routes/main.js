@@ -302,7 +302,6 @@ router.post('/update-comment/:id', async (req, res) => {
  * GET SEARCH TERM
  */
 router.get('/search', async (req,res)=>{
-
     // FOR GET METHOD
     try {
         let searchTerm = req.query.searchTerm; // Use req.query for GET requests

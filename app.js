@@ -45,3 +45,4 @@ app.use('/', require('./server/routes/login'))
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`) // Fixed template literal syntax
 })
+

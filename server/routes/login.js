@@ -99,8 +99,6 @@ router.get('/logout', (req, res) => {
 });
 
 
-
-
 /**GET /
  * VIEW USER PROFILE 
  */
