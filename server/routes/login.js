@@ -187,8 +187,6 @@ router.post('/register', async (req,res)=>{
     }
 });
 
-
-
 /**POST /
  * ADD COMMENT
  */
@@ -262,42 +260,42 @@ router.post('/update-profile/:id', authMiddleware, upload.single('image'), async
 });
 
 // UPVOTES AND DOWNVOTES
-router.post('/post/upvote/:id', async (req, res) => {
-    // if (loggeduser === null) {
-    //     console.log('Please Login to vote on Posts');
-    //     return res.status(401).json({ message: 'Please Login to vote on Posts' });
-    // }
-    
+router.post('/post/upvote/:id', async (req, res) => {    
     try {
         const postId = req.params.id;
         const post = await Post.findById(postId);
         const user = loggeduser;
-        var found = false;
-        
-        post.voters.filter(voter => {
-            if(voter.user.toString() === user._id.toString()){
-                if(voter.voteType === 'upvote'){
-                    post.upvotes -= 1;
-                    post.voters.pull({user: user._id, voteType: 'upvote'});
-                    found = true;
-                } else if (voter.voteType === 'downvote'){
-                    post.upvotes += 1;
-                    post.downvotes -= 1;
-                    post.voters.pull({user: user._id, voteType: 'downvote'});
-                    post.voters.push({user: user._id, voteType: 'upvote'});
-                    found = true;
-                }
-            }
-        });
-    
-        if(!found){
-            post.upvotes += 1;
-            post.voters.push({user: user._id, voteType: 'upvote'});
-            
+
+        if (!user) {
+            return res.status(401).json({ message: 'Please log in to vote' });
         }
+
+        const existingVote = post.voters.find(voter => voter.user.toString() === user._id.toString());
+        
+        if (existingVote) {
+            if (existingVote.voteType === 'upvote') {
+                // Remove the upvote
+                post.upvotes -= 1;
+                post.voters = post.voters.filter(voter => voter.user.toString() !== user._id.toString());
+            } else if (existingVote.voteType === 'downvote') {
+                // Change downvote to upvote
+                post.downvotes -= 1;
+                post.upvotes += 1;
+                existingVote.voteType = 'upvote';
+            }
+        } else {
+            // Add a new upvote
+            post.upvotes += 1;
+            post.voters.push({ user: user._id, voteType: 'upvote' });
+        }
+        //Testing
+        console.log('====== UPVOTE ROUTE ====');
+        console.log('PostID in URL:', req.params.id);
+        console.log('PostfindyId:', post._id);
+        console.log('LoggedUser:', loggeduser);
+
         await post.save();
         res.json({ success: true, upvotes: post.upvotes, downvotes: post.downvotes });
-
     } catch (error) {
         console.error('Error upvoting post:', error);
         res.status(500).json({ message: 'Internal Server Error' });
@@ -309,32 +307,32 @@ router.post('/post/downvote/:id', async (req, res) => {
         const postId = req.params.id;
         const post = await Post.findById(postId);
         const user = loggeduser;
-        var found = false;
         
-        post.voters.filter(voter => {
-            if(voter.user.toString() === user._id.toString()){
-                if(voter.voteType === 'downvote'){
-                    post.downvotes -= 1;
-                    post.voters.pull({user: user._id, voteType: 'downvote'});
-                    found = true;
-                } else if (voter.voteType === 'upvote'){
-                    post.downvotes += 1;
-                    post.upvotes -= 1;
-                    post.voters.pull({user: user._id, voteType: 'upvote'});
-                    post.voters.push({user: user._id, voteType: 'downvote'});
-                    found = true;
-                }
-            }
-        });
-    
-        if(!found){
-            post.downvotes += 1;
-            post.voters.push({user: user._id, voteType: 'downvote'});
-            
+        if (!user) {
+            return res.status(401).json({ message: 'Please log in to vote' });
         }
-        await post.save();
-        res.json({ success: true, downvotes: post.downvotes, upvotes: post.upvotes });
 
+        const existingVote = post.voters.find(voter => voter.user.toString() === user._id.toString());
+
+        if (existingVote) {
+            if (existingVote.voteType === 'downvote') {
+                // Remove the downvote
+                post.downvotes -= 1;
+                post.voters = post.voters.filter(voter => voter.user.toString() !== user._id.toString());
+            } else if (existingVote.voteType === 'upvote') {
+                // Change upvote to downvote
+                post.upvotes -= 1;
+                post.downvotes += 1;
+                existingVote.voteType = 'downvote';
+            }
+        } else {
+            // Add a new downvote
+            post.downvotes += 1;
+            post.voters.push({ user: user._id, voteType: 'downvote' });
+        }
+
+        await post.save();
+        res.json({ success: true, upvotes: post.upvotes, downvotes: post.downvotes });
     } catch (error) {
         console.error('Error downvoting post:', error);
         res.status(500).json({ message: 'Internal Server Error' });

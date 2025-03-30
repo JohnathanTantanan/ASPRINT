@@ -51,8 +51,9 @@ $(document).ready(function(){
 */
 
 $(document).ready(function(){
-
     function upvote(postId, button){
+        console.log('====== UPVOTE AJAX SCRIPT====');
+        console.log('PostId:', postId);
         $.ajax({
             url: `/post/upvote/${postId}`,
             method: 'POST',
@@ -63,24 +64,12 @@ $(document).ready(function(){
                     upvoteCount.text(res.upvotes);
                     downvoteCount.text(res.downvotes);
                 }
+            },
+            error: function(xhr, status, error) {
+                console.error('Failed to upvote post:', error);
             }
         })
     }
-
-    // TWEAK LISTENERS, active state disappears on reload
-    //Listener
-    $('.upvote-btn').click(function(){
-        const postId = $(this).attr('postId');
-        console.log('Upvote, postId:', postId);
-
-        upvote(postId, this);
-
-         // Toggle the active class on the upvote button
-         $(this).toggleClass('vote-active');
-         // Remove the active class from the sibling downvote button
-         $(this).siblings('.downvote-btn').removeClass('vote-active');
- 
-    });
 
     function downvote(postId, button){
         $.ajax({
@@ -93,30 +82,45 @@ $(document).ready(function(){
                     downvoteCount.text(res.downvotes);
                     upvoteCount.text(res.upvotes);
                 }
+            },
+            error: function(xhr, status, error) {
+                console.error('Failed to upvote post:', error);
             }
         })
     }
 
-    $('.upvote-btn').click(function(){
+    // TWEAK LISTENERS, active state disappears on reload
+    // Listener for upvote
+    $(document).on('click', '.upvote-btn', function () {
         const postId = $(this).attr('postId');
+        console.log('Upvote, postId in script.js:', postId);
+        // Testing
+        if (!postId) {
+            console.error('Post ID is missing');
+            return;
+        }
         upvote(postId, this);
-        if($(this).css('fill') == 'blue') {
-            $(this).css('fill', 'white');
-        } else {
-            $(this).css('fill', 'blue');
-            $(this).siblings('.downvote-btn').css('fill', 'white');
-        }
+
+        // Toggle the active class on the upvote button
+        $(this).toggleClass('vote-active');
+        // Remove the active class from the sibling downvote button
+        $(this).siblings('.downvote-btn').removeClass('vote-active');
     });
 
-    $('.downvote-btn').click(function(){
+    // Listener for downvote
+    $(document).on('click', '.downvote-btn', function () {
         const postId = $(this).attr('postId');
+        console.log('Downvote, postId in script.js:', postId);
         downvote(postId, this);
-        if($(this).css('fill') == 'blue') {
-            $(this).css('fill', 'white');
-        } else {
-            $(this).css('fill', 'blue');
-            $(this).siblings('.upvote-btn').css('fill', 'white');
-        }
+
+        // Toggle the active class on the downvote button
+        $(this).toggleClass('vote-active');
+        // Remove the active class from the sibling upvote button
+        $(this).siblings('.upvote-btn').removeClass('vote-active');
     });
 
+    //** NOTES
+    // Added event delegation in listeners for dynamically added elements, ensure listener is attached
+    // The click event is attached to the $(document) or another parent element that always exists
+    // */
 });
