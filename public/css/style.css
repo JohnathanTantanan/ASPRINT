@@ -279,6 +279,10 @@ a.sidebar-buttons {
     filter: invert(100%);
 }
 
+.vote-active > img{
+    filter: invert(100%);
+}
+
 #comment-btn{
     height: 25px;
     align-items: center;

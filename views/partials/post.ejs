@@ -34,14 +34,28 @@
         </div>
  
         <span class="bypass-overlay">
-            <button class="upvote-btn" postId="<%= post._id %>">
-                <img src="/img/upvote-icon.svg" alt="Upvote" >
-                <p class="upvote-count"><%= post.upvotes %></p>
-            </button>
-            <button class="downvote-btn" postId="<%= post._id %>">  
-                <img src="/img/downvote-icon.svg" alt="Downvote">
-                <p class="downvote-count"><%= post.downvotes %></p>
-            </button>
+
+            <% if (user) { %>
+                <%# Check if user has voted, shade correspoinding vote by adding class vote-active, else add nothing/empty string %>
+                <button class="upvote-btn <%= post.voters.some(voter => voter.user.toString() === user._id.toString() && voter.voteType === 'upvote') ? 'vote-active' : '' %>" postId="<%= post._id %>">
+                    <img src="/img/upvote-icon.svg" alt="Upvote">
+                    <p class="upvote-count"><%= post.upvotes %></p>
+                </button>
+                <button class="downvote-btn <%= post.voters.some(voter => voter.user.toString() === user._id.toString() && voter.voteType === 'downvote') ? 'vote-active' : '' %>" postId="<%= post._id %>">
+                    <img src="/img/downvote-icon.svg" alt="Downvote">
+                    <p class="downvote-count"><%= post.downvotes %></p>
+                </button>
+            <% } else { %>
+                <button class="upvote-btn" postId="<%= post._id %>">
+                    <img src="/img/upvote-icon.svg" alt="Upvote">
+                    <p class="upvote-count"><%= post.upvotes %></p>
+                </button>
+                <button class="downvote-btn" postId="<%= post._id %>">
+                    <img src="/img/downvote-icon.svg" alt="Downvote">
+                    <p class="downvote-count"><%= post.downvotes %></p>
+                </button>
+            <% } %>
+
             <button>
                 <img src="/img/comment-icon.svg" alt="Comment" id="comment-btn"> 
                 <!-- In express.js, public directory is configured to be root dir so no need to include "public" in absolute file path -->

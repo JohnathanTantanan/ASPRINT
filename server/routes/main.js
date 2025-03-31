@@ -38,7 +38,6 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
-
 /**GET /
  * HOME
  */
@@ -48,7 +47,7 @@ router.get(['', '/home'], async (req,res)=>{
         layout: 'layouts/main',
         inCommunity: false,
         title: "The Forum",
-        description: "Simple Blog created with NodeJs, Express & MongoDB."
+        description: "Simple Blog created with NodeJS, Express & MongoDB."
     }
 
     try {
@@ -57,6 +56,7 @@ router.get(['', '/home'], async (req,res)=>{
             .populate('community')
             .sort({ createdAt: -1 });
         const user = await getUser(req);
+        console.log('User in main.js:', user);
         const communities = await Community.find();
         const comments = await Comments.find();
         res.render('home', {
@@ -65,7 +65,7 @@ router.get(['', '/home'], async (req,res)=>{
             user,
             comments,
             communities
-        });  
+        });
     } catch (error) {
         console.log(error);
     }
@@ -90,6 +90,7 @@ router.get('/createpost', async (req,res)=>{
         console.log(error);
     }
 });
+
 
 /**GET /
  * A POST'S DEDICATED PAGE
@@ -117,6 +118,7 @@ router.get('/post/:id/:title', async (req, res) => {
 
     // Note: findById() can take in strings, but find() expects querys enclosed in {object literals}
 });
+
 
 /**GET /
  * COMMUNITIES PAGE

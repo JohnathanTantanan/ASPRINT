@@ -30,14 +30,27 @@
         <!-- Include the edit form partial for posts -->
         <%- include('./partials/editpost.ejs', { formId: 'edit-post-form', action: '/update-post', post: data, displayElementsIds: ['post-content'], editButtonId: 'edit-post' }) %>
         <hr>
-        <button class="upvote-btn" postId="<%= data._id %>">
-            <img src="/img/upvote-icon.svg" alt="Upvote" class="upvote-btn">
-            <p class="upvote-count"><%= data.upvotes %></p>
-        </button>
-        <button class="downvote-btn" postId="<%= data._id %>">  
-            <img src="/img/downvote-icon.svg" alt="Downvote" class="downvote-btn">
-            <p><%= data.downvotes %></p>
-        </button>
+
+        <% if (user) { %>
+                <%# Check if user has voted, shade correspoinding vote by adding class vote-active, else add nothing/empty string %>
+                <button class="upvote-btn <%= data.voters.some(voter => voter.user.toString() === user._id.toString() && voter.voteType === 'upvote') ? 'vote-active' : '' %>" postId="<%= data._id %>">
+                    <img src="/img/upvote-icon.svg" alt="Upvote">
+                    <p class="upvote-count"><%= data.upvotes %></p>
+                </button>
+                <button class="downvote-btn <%= data.voters.some(voter => voter.user.toString() === user._id.toString() && voter.voteType === 'downvote') ? 'vote-active' : '' %>" postId="<%= data._id %>">
+                    <img src="/img/downvote-icon.svg" alt="Downvote">
+                    <p class="downvote-count"><%= data.downvotes %></p>
+                </button>
+            <% } else { %>
+                <button class="upvote-btn" postId="<%= data._id %>">
+                    <img src="/img/upvote-icon.svg" alt="Upvote">
+                    <p class="upvote-count"><%= data.upvotes %></p>
+                </button>
+                <button class="downvote-btn" postId="<%= data._id %>">
+                    <img src="/img/downvote-icon.svg" alt="Downvote">
+                    <p class="downvote-count"><%= data.downvotes %></p>
+                </button>
+            <% } %>
         <button>
             <img src="/img/comment-icon.svg" alt="Comment" id="comment-btn">
         </button><br>
