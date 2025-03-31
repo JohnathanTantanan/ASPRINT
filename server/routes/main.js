@@ -72,18 +72,22 @@ router.get(['', '/home'], async (req,res)=>{
     
 });
 
+
 /**GET /
  * CREATE POST PAGE
  */
 router.get('/createpost', async (req,res)=>{
-    const locals = {
-        layout: 'layouts/main',
-        title: "Create Post",
-        description: "Simple Blog created with NodeJs, Express & MongoDB."
-    }
-
     try {
         const user = await getUser(req);
+        if (!user) {
+            return res.redirect('/login');
+        }
+
+        const locals = {
+            layout: 'layouts/main',
+            title: "Create Post",
+            description: "Simple Blog created with NodeJs, Express & MongoDB."
+        }
         const communities = await Community.find();
         res.render('createpost', {locals, user, communities});
     } catch (error) {
