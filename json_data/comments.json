@@ -1,154 +1,140 @@
 [
   {
-    "_id": "67eb251fd702301ac9ff71da",
-    "post_id": "67eb251fd702301ac9ff71da",
-    "user_id": "67eb21a0d702301ac9ff71c4",
-    "content": "AI is definitely transforming industries. The ethical concerns will be crucial moving forward.",
-    "createdAt": "2025-04-01T08:45:00.000Z",
-    "updatedAt": "2025-04-01T08:45:00.000Z"
+    "postId": "67eb251fd702301ac9ff71da",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71c4"
+    },
+    "comment": "AI is evolving rapidly. The future holds exciting possibilities!"
   },
   {
-    "_id": "67eb251fd702301ac9ff71db",
-    "post_id": "67eb251fd702301ac9ff71db",
-    "user_id": "67eb21a0d702301ac9ff71c5",
-    "content": "I think minimalism can be freeing, but it requires a shift in perspective and lifestyle.",
-    "createdAt": "2025-04-01T09:50:00.000Z",
-    "updatedAt": "2025-04-01T09:50:00.000Z"
+    "postId": "67eb251fd702301ac9ff71da",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71c5"
+    },
+    "comment": "This discussion on AI aligns with my thoughts on philosophy and ethics."
   },
   {
-    "_id": "67eb251fd702301ac9ff71dc",
-    "post_id": "67eb251fd702301ac9ff71dc",
-    "user_id": "67eb21a0d702301ac9ff71c6",
-    "content": "I’ve been to a few of these places! Definitely recommend the Maldives for anyone looking for serenity.",
-    "createdAt": "2025-04-01T10:40:00.000Z",
-    "updatedAt": "2025-04-01T10:40:00.000Z"
+    "postId": "67eb251fd702301ac9ff71db",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71c5"
+    },
+    "comment": "Minimalism brings clarity to life. I have been practicing it for years!"
   },
   {
-    "_id": "67eb251fd702301ac9ff71dc",
-    "post_id": "67eb251fd702301ac9ff71dc",
-    "user_id": "67eb21a0d702301ac9ff71c9",
-    "content": "The travel list is interesting. I wonder how many places will be impacted by climate change.",
-    "createdAt": "2025-04-01T10:50:00.000Z",
-    "updatedAt": "2025-04-01T10:50:00.000Z"
+    "postId": "67eb251fd702301ac9ff71dc",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71c6"
+    },
+    "comment": "Great travel list! I have been to some of these destinations."
   },
   {
-    "_id": "67eb251fd702301ac9ff71dd",
-    "post_id": "67eb251fd702301ac9ff71dd",
-    "user_id": "67eb21a0d702301ac9ff71c7",
-    "content": "I believe writing is the purest form of self-expression. It’s freeing and cathartic.",
-    "createdAt": "2025-04-01T11:45:00.000Z",
-    "updatedAt": "2025-04-01T11:45:00.000Z"
+    "postId": "67eb251fd702301ac9ff71dc",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71c7"
+    },
+    "comment": "I love traveling! Exploring new places is always refreshing."
   },
   {
-    "_id": "67eb251fd702301ac9ff71de",
-    "post_id": "67eb251fd702301ac9ff71de",
-    "user_id": "67eb21a0d702301ac9ff71c8",
-    "content": "Open source is truly a game-changer. We should all be contributing to projects we believe in!",
-    "createdAt": "2025-04-01T12:10:00.000Z",
-    "updatedAt": "2025-04-01T12:10:00.000Z"
+    "postId": "67eb251fd702301ac9ff71dd",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71c7"
+    },
+    "comment": "Writing is such a great way to express emotions and thoughts."
   },
   {
-    "_id": "67eb251fd702301ac9ff71df",
-    "post_id": "67eb251fd702301ac9ff71df",
-    "user_id": "67eb21a0d702301ac9ff71ca",
-    "content": "Digital art is revolutionizing creativity. It's amazing how technology enhances traditional artistry.",
-    "createdAt": "2025-04-01T13:15:00.000Z",
-    "updatedAt": "2025-04-01T13:15:00.000Z"
+    "postId": "67eb251fd702301ac9ff71dd",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71c8"
+    },
+    "comment": "I find coding to be a form of writing as well. Creativity flows in many ways."
   },
   {
-    "_id": "67eb251fd702301ac9ff71e0",
-    "post_id": "67eb251fd702301ac9ff71e0",
-    "user_id": "67eb21a0d702301ac9ff71ca",
-    "content": "Music production is now so much more accessible, allowing even hobbyists to create full albums!",
-    "createdAt": "2025-04-01T14:45:00.000Z",
-    "updatedAt": "2025-04-01T14:45:00.000Z"
+    "postId": "67eb251fd702301ac9ff71de",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71c8"
+    },
+    "comment": "Open source is the future! The community support is incredible."
   },
   {
-    "_id": "67eb251fd702301ac9ff71e1",
-    "post_id": "67eb251fd702301ac9ff71e1",
-    "user_id": "67eb21a0d702301ac9ff71cb",
-    "content": "The impact of VR on gaming is enormous. It really brings immersion to a whole new level.",
-    "createdAt": "2025-04-01T15:40:00.000Z",
-    "updatedAt": "2025-04-01T15:40:00.000Z"
+    "postId": "67eb251fd702301ac9ff71df",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71c9"
+    },
+    "comment": "Digital art is evolving so fast. The tools available now are amazing!"
   },
   {
-    "_id": "67eb251fd702301ac9ff71e1",
-    "post_id": "67eb251fd702301ac9ff71e1",
-    "user_id": "67eb21a0d702301ac9ff71cc",
-    "content": "Esports are growing so fast. Can’t wait to see how it develops over the next decade.",
-    "createdAt": "2025-04-01T15:50:00.000Z",
-    "updatedAt": "2025-04-01T15:50:00.000Z"
+    "postId": "67eb251fd702301ac9ff71df",
+    "commenter": "67eb21a0d702301ac9ff71c9",
+    "comment": "This article is insightful! I love how AI is impacting art."
   },
   {
-    "_id": "67eb251fd702301ac9ff71e2",
-    "post_id": "67eb251fd702301ac9ff71e2",
-    "user_id": "67eb21a0d702301ac9ff71cc",
-    "content": "Learning new cooking techniques is always so satisfying! The best part is sharing it with others.",
-    "createdAt": "2025-04-01T16:05:00.000Z",
-    "updatedAt": "2025-04-01T16:05:00.000Z"
+    "postId": "67eb251fd702301ac9ff71e0",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71ca"
+    },
+    "comment": "Music production has changed so much with technology."
   },
   {
-    "_id": "67eb251fd702301ac9ff71e3",
-    "post_id": "67eb251fd702301ac9ff71e3",
-    "user_id": "67eb21a0d702301ac9ff71cd",
-    "content": "Fitness is a lifestyle, not a one-time thing. Even small daily habits make a huge difference.",
-    "createdAt": "2025-04-01T17:35:00.000Z",
-    "updatedAt": "2025-04-01T17:35:00.000Z"
+    "postId": "67eb251fd702301ac9ff71e1",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71cb"
+    },
+    "comment": "Gaming trends are so unpredictable. I love seeing new innovations."
   },
   {
-    "_id": "67eb251fd702301ac9ff71da",
-    "post_id": "67eb251fd702301ac9ff71da",
-    "user_id": "67eb21a0d702301ac9ff71c7",
-    "content": "The speed at which AI is developing is mind-blowing! I wonder how it will reshape job markets.",
-    "createdAt": "2025-04-01T08:50:00.000Z",
-    "updatedAt": "2025-04-01T08:50:00.000Z"
+    "postId": "67eb251fd702301ac9ff71e1",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71cb"
+    },
+    "comment": "Esports is growing at an insane rate! It's exciting to watch."
   },
   {
-    "_id": "67eb251fd702301ac9ff71db",
-    "post_id": "67eb251fd702301ac9ff71db",
-    "user_id": "67eb21a0d702301ac9ff71c4",
-    "content": "Minimalism isn't just physical; it's also mental. Learning to let go of unnecessary thoughts is key.",
-    "createdAt": "2025-04-01T09:55:00.000Z",
-    "updatedAt": "2025-04-01T09:55:00.000Z"
+    "postId": "67eb251fd702301ac9ff71e2",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71cc"
+    },
+    "comment": "Cooking is an art! Every dish tells a story."
   },
   {
-    "_id": "67eb251fd702301ac9ff71dc",
-    "post_id": "67eb251fd702301ac9ff71dc",
-    "user_id": "67eb21a0d702301ac9ff71c5",
-    "content": "Seeing a beautiful city in real life hits differently than just reading about it in travel blogs.",
-    "createdAt": "2025-04-01T10:20:00.000Z",
-    "updatedAt": "2025-04-01T10:20:00.000Z"
+    "postId": "67eb251fd702301ac9ff71e2",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71cc"
+    },
+    "comment": "I love experimenting with new ingredients and flavors."
   },
   {
-    "_id": "67eb251fd702301ac9ff71dd",
-    "post_id": "67eb251fd702301ac9ff71dd",
-    "user_id": "67eb21a0d702301ac9ff71ca",
-    "content": "As a writer, I feel that words can be healing. They have the power to connect us all.",
-    "createdAt": "2025-04-01T11:50:00.000Z",
-    "updatedAt": "2025-04-01T11:50:00.000Z"
+    "postId": "67eb251fd702301ac9ff71e3",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71cd"
+    },
+    "comment": "Fitness is about consistency. A little every day makes a difference!"
   },
   {
-    "_id": "67eb251fd702301ac9ff71e2",
-    "post_id": "67eb251fd702301ac9ff71e2",
-    "user_id": "67eb21a0d702301ac9ff71c8",
-    "content": "This post has made me want to learn new recipes this week! Cooking is always a fun challenge.",
-    "createdAt": "2025-04-01T16:15:00.000Z",
-    "updatedAt": "2025-04-01T16:15:00.000Z"
+    "postId": "67eb251fd702301ac9ff71e3",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71cd"
+    },
+    "comment": "Great tips on staying fit despite a busy schedule."
   },
   {
-    "_id": "67eb251fd702301ac9ff71e1",
-    "post_id": "67eb251fd702301ac9ff71e1",
-    "user_id": "67eb21a0d702301ac9ff71cc",
-    "content": "Cloud gaming is going to make gaming even more accessible. It's exciting to think about the future.",
-    "createdAt": "2025-04-01T15:55:00.000Z",
-    "updatedAt": "2025-04-01T15:55:00.000Z"
+    "postId": "67eb251fd702301ac9ff71e1",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71cb"
+    },
+    "comment": "Can't wait to see how VR changes gaming in the next decade."
   },
   {
-    "_id": "67eb251fd702301ac9ff71e3",
-    "post_id": "67eb251fd702301ac9ff71e3",
-    "user_id": "67eb21a0d702301ac9ff71c4",
-    "content": "Fitness is all about consistency. Even small progress is worth celebrating!",
-    "createdAt": "2025-04-01T17:40:00.000Z",
-    "updatedAt": "2025-04-01T17:40:00.000Z"
+    "postId": "67eb251fd702301ac9ff71e0",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71ca"
+    },
+    "comment": "Production software today is incredibly powerful!"
+  },
+  {
+    "postId": "67eb251fd702301ac9ff71da",
+    "commenter": {
+      "$oid": "67eb21a0d702301ac9ff71c4"
+    },
+    "comment": "AI ethics is a crucial discussion. This was a great read."
   }
 ]

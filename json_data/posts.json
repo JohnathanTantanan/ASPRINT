@@ -5,7 +5,9 @@
   "poster": {
     "$oid": "67eb21a0d702301ac9ff71c4"
   },
-  "community": null,
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71e9"
+  },
   "title": "Exploring the Future of AI",
   "images": "https://example.com/ai.jpg",
   "content": "AI is rapidly evolving, shaping industries and the way we live. From automation to ethical challenges, its impact is profound.",
@@ -23,10 +25,12 @@
   "poster": {
     "$oid": "67eb21a0d702301ac9ff71c5"
   },
-  "community": null,
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71ea"
+  },
   "title": "The Philosophy of Minimalism",
   "images": null,
-  "content": "Minimalism isn’t just about owning fewer things; it's a mindset. By decluttering, we find clarity and purpose in life.",
+  "content": "Minimalism isn't just about owning fewer things; it's a mindset. By decluttering, we find clarity and purpose in life.",
   "createdAt": "2025-04-01T09:30:00.000Z",
   "updatedAt": "2025-04-01T09:30:00.000Z",
   "upvotes": 400,
@@ -41,10 +45,12 @@
   "poster": {
     "$oid": "67eb21a0d702301ac9ff71c6"
   },
-  "community": null,
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71e9"
+  },
   "title": "Top 10 Travel Destinations for 2025",
   "images": "https://example.com/travel.jpg",
-  "content": "Exploring new places is one of the best ways to experience life. This year’s top travel destinations include hidden gems and must-visit cities.",
+  "content": "Exploring new places is one of the best ways to experience life. This year's top travel destinations include hidden gems and must-visit cities.",
   "createdAt": "2025-04-01T10:30:00.000Z",
   "updatedAt": "2025-04-01T10:30:00.000Z",
   "upvotes": 1200,
@@ -59,7 +65,9 @@
   "poster": {
     "$oid": "67eb21a0d702301ac9ff71c7"
   },
-  "community": null,
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71e9"
+  },
   "title": "Writing as a Form of Expression",
   "images": "https://example.com/writing.jpg",
   "content": "Words have power. Whether in poetry or prose, writing allows us to communicate ideas, emotions, and stories that shape our world.",
@@ -77,7 +85,9 @@
   "poster": {
     "$oid": "67eb21a0d702301ac9ff71c8"
   },
-  "community": null,
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71ea"
+  },
   "title": "The Rise of Open Source Contributions",
   "images": null,
   "content": "Open source software has transformed the way we develop technology. By collaborating, developers create impactful tools that benefit everyone.",
@@ -95,7 +105,9 @@
   "poster": {
     "$oid": "67eb21a0d702301ac9ff71c9"
   },
-  "community": null,
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71eb"
+  },
   "title": "Exploring Digital Art Trends",
   "images": "https://example.com/art.jpg",
   "content": "The digital art landscape is expanding with new techniques, tools, and platforms. Artists now have more opportunities than ever before.",
@@ -113,7 +125,9 @@
   "poster": {
     "$oid": "67eb21a0d702301ac9ff71ca"
   },
-  "community": null,
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71eb"
+  },
   "title": "The Evolution of Music Production",
   "images": "https://example.com/music.jpg",
   "content": "Music production has changed significantly over the years, with digital tools allowing for more creativity and innovation.",
@@ -131,7 +145,9 @@
   "poster": {
     "$oid": "67eb21a0d702301ac9ff71cb"
   },
-  "community": null,
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71ec"
+  },
   "title": "Gaming Trends for the Next Decade",
   "images": null,
   "content": "The gaming industry continues to grow, with new technologies such as VR and cloud gaming shaping the future.",
@@ -149,7 +165,9 @@
   "poster": {
     "$oid": "67eb21a0d702301ac9ff71cc"
   },
-  "community": null,
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71ed"
+  },
   "title": "The Art of Cooking",
   "images": "https://example.com/food.jpg",
   "content": "Cooking is both an art and a science. Mastering flavors and techniques brings joy to both the cook and those who enjoy the meals.",
@@ -167,7 +185,9 @@
   "poster": {
     "$oid": "67eb21a0d702301ac9ff71cd"
   },
-  "community": null,
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71ee"
+  },
   "title": "Staying Fit in a Busy World",
   "images": "https://example.com/fitness.jpg",
   "content": "Balancing fitness with a hectic schedule is a challenge, but small changes in routine can make a big difference.",
