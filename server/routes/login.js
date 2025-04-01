@@ -76,8 +76,8 @@ router.get('/myprofile', authMiddleware, async(req,res)=>{
         
         const user = await User.findOne({username: loggeduser.username});
         var userId = user._id.toString();
-        const posts = await Post.find({poster: new ObjectId(userId)});
-        const comments = await Comments.find({commenter: new ObjectId(userId)});
+        const posts = await Post.find({poster: new ObjectId(userId)}).sort({createdAt: -1});
+        const comments = await Comments.find({commenter: new ObjectId(userId)}).sort({createdAt: -1}); // comments of logged user
         communities = await Community.find();
 
         res.render('myprofile', {

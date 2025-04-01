@@ -1,152 +1,140 @@
 [{
   "_id": {
-    "$oid": "67ca62af3482fd190fe0cd9e"
+    "$oid": "67eb21a0d702301ac9ff71c4"
   },
-  "username": "ImOnForumDB",
-  "password": "hashed_password_1",
-  "description": "Passionate about AI, tech trends, and online communities.",
-  "posts": [
-    {
-      "$oid": "67ca636d3482fd190fe0cda4"
-    }
-  ],
-  "comments": [
-    {
-      "$oid": "67ca82341f75539afbfc66f5"
-    }
-  ],
-  "communities": []
-},
-{
-  "_id": {
-    "$oid": "67ca62af3482fd190fe0cd9f"
-  },
-  "username": "CodeMaster21",
-  "password": "hashed_password_2",
-  "description": "Software developer with a love for clean code and best practices.",
-  "posts": [
-    {
-      "$oid": "67ca817f1f75539afbfc66ea"
-    }
-  ],
-  "comments": [
-    {
-      "$oid": "67ca82401f75539afbfc66f6"
-    }
-  ],
-  "communities": []
-},
-{
-  "_id": {
-    "$oid": "67ca62af3482fd190fe0cda0"
-  },
-  "username": "GamerX",
-  "password": "hashed_password_3",
-  "description": "Hardcore gamer, cloud gaming enthusiast, and esports follower.",
-  "posts": [
-    {
-      "$oid": "67ca81d01f75539afbfc66ef"
-    }
-  ],
-  "comments": [
-    {
-      "$oid": "67ca824e1f75539afbfc66f7"
-    }
-  ],
-  "communities": []
-},
-{
-  "_id": {
-    "$oid": "67ca62af3482fd190fe0cda1"
-  },
-  "username": "ScienceGeek",
-  "password": "hashed_password_4",
-  "description": "Space and science fanatic, always following the latest discoveries.",
-  "posts": [
-    {
-      "$oid": "67ca81e81f75539afbfc66f0"
-    }
-  ],
-  "comments": [
-    {
-      "$oid": "67ca825a1f75539afbfc66f8"
-    }
-  ],
-  "communities": []
-},
-{
-  "_id": {
-    "$oid": "67ca62af3482fd190fe0cda2"
-  },
-  "username": "MovieBuff",
-  "password": "hashed_password_5",
-  "description": "Film critic in the making. Huge fan of sci-fi and classic movies.",
-  "posts": [
-    {
-      "$oid": "67ca82001f75539afbfc66f1"
-    }
-  ],
-  "comments": [
-    {
-      "$oid": "67ca826a1f75539afbfc66f9"
-    }
-  ],
-  "communities": []
-},
-{
-  "_id": {
-    "$oid": "67ca8b33fee1db931f23ddde"
-  },
-  "username": "lance",
-  "password": "$2b$10$7NOoXTmEIUrIxh7PtiWquePb52dqDKzgSadheN6PhZUW9oXZQfGYW",
+  "username": "john_doe",
+  "password": "hashedpassword123",
+  "picture": "https://example.com/john.jpg",
+  "description": "Tech enthusiast and software developer.",
   "posts": [],
   "comments": [],
   "communities": [],
-  "description": "I AM LANCE WAHAHAHAHAH AND MYPROFILE WORKS!",
-  "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZO4F0lKoa1G1MOrQ7b0hrCsSupq1XH9WtYw&s"
+  "createdAt": "2025-04-01T08:00:00.000Z",
+  "updatedAt": "2025-04-01T08:00:00.000Z"
 },
 {
   "_id": {
-    "$oid": "67ca9247bc2f4c442abcd0b4"
+    "$oid": "67eb21a0d702301ac9ff71c5"
   },
-  "username": "JL",
-  "password": "$2b$10$f4N5TCJZJ90X6P2.0w2/UOD6JXaZ2MOOhGTYlIFKziEJVVYPtuSLW",
+  "username": "jane_smith",
+  "password": "hashedpassword456",
+  "picture": "https://example.com/jane.jpg",
+  "description": "Lover of books and philosophy.",
   "posts": [],
   "comments": [],
   "communities": [],
-  "__v": 0
+  "createdAt": "2025-04-01T09:00:00.000Z",
+  "updatedAt": "2025-04-01T09:00:00.000Z"
 },
 {
   "_id": {
-    "$oid": "67cab47111da14e9f03d763e"
+    "$oid": "67eb21a0d702301ac9ff71c6"
   },
-  "username": "milcah",
-  "password": "$2b$10$1/CTwJu3jPNUQz2VzqtHXOpY.L0xrNOOL3UiZbzswnRCzix9kvJQq",
+  "username": "mark_travel",
+  "password": "hashedpassword789",
+  "picture": "https://example.com/mark.jpg",
+  "description": "Travel blogger and photographer.",
   "posts": [],
   "comments": [],
   "communities": [],
-  "__v": 0
+  "createdAt": "2025-04-01T10:00:00.000Z",
+  "updatedAt": "2025-04-01T10:00:00.000Z"
 },
 {
   "_id": {
-    "$oid": "67cd54101f7ceb6986d5ec2c"
+    "$oid": "67eb21a0d702301ac9ff71c7"
   },
-  "username": "Migs",
-  "password": "$2b$10$2jM67mhj6v/bHftpkPBLI.vS9KBhAbzPQCmYFaHRM2MGTXg/tT5Mi",
+  "username": "alice_writes",
+  "password": "hashedpasswordabc",
+  "picture": "https://example.com/alice.jpg",
+  "description": "Aspiring writer and poet.",
   "posts": [],
   "comments": [],
   "communities": [],
-  "__v": 0
+  "createdAt": "2025-04-01T11:00:00.000Z",
+  "updatedAt": "2025-04-01T11:00:00.000Z"
 },
 {
   "_id": {
-    "$oid": "67cd5c4e105b2c8040b9dc08"
+    "$oid": "67eb21a0d702301ac9ff71c8"
   },
-  "username": "reyvin",
-  "password": "$2b$10$LGfil2GnDbBGI5N7Lhi9fekJUW/kTcbGOD8U9EbCc5MThZSNIbkjq",
+  "username": "charlie_code",
+  "password": "hashedpassworddef",
+  "picture": "https://example.com/charlie.jpg",
+  "description": "Full-stack developer and open-source contributor.",
   "posts": [],
   "comments": [],
   "communities": [],
-  "__v": 0,
-  "description": "i am your father\r\n"
+  "createdAt": "2025-04-01T12:00:00.000Z",
+  "updatedAt": "2025-04-01T12:00:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "67eb21a0d702301ac9ff71c9"
+  },
+  "username": "emma_art",
+  "password": "hashedpasswordghi",
+  "picture": "https://example.com/emma.jpg",
+  "description": "Digital artist and designer.",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "createdAt": "2025-04-01T13:00:00.000Z",
+  "updatedAt": "2025-04-01T13:00:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "67eb21a0d702301ac9ff71ca"
+  },
+  "username": "lucas_music",
+  "password": "hashedpasswordjkl",
+  "picture": "https://example.com/lucas.jpg",
+  "description": "Musician and composer.",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "createdAt": "2025-04-01T14:00:00.000Z",
+  "updatedAt": "2025-04-01T14:00:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "67eb21a0d702301ac9ff71cb"
+  },
+  "username": "oliver_games",
+  "password": "hashedpasswordmno",
+  "picture": "https://example.com/oliver.jpg",
+  "description": "Game developer and esports fan.",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "createdAt": "2025-04-01T15:00:00.000Z",
+  "updatedAt": "2025-04-01T15:00:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "67eb21a0d702301ac9ff71cc"
+  },
+  "username": "sophia_foodie",
+  "password": "hashedpasswordpqr",
+  "picture": "https://example.com/sophia.jpg",
+  "description": "Food blogger and chef.",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "createdAt": "2025-04-01T16:00:00.000Z",
+  "updatedAt": "2025-04-01T16:00:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "67eb21a0d702301ac9ff71cd"
+  },
+  "username": "noah_fitness",
+  "password": "hashedpasswordstu",
+  "picture": "https://example.com/noah.jpg",
+  "description": "Fitness trainer and health advocate.",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "createdAt": "2025-04-01T17:00:00.000Z",
+  "updatedAt": "2025-04-01T17:00:00.000Z"
 }]

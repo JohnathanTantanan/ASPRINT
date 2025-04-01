@@ -290,8 +290,8 @@ a.sidebar-buttons {
 }
 
 .post-content{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     font-size: 14px;
 }
 
@@ -671,26 +671,26 @@ a.sidebar-buttons {
     margin-right: .2em;
 }
 
-.latest-posts .post-title a {
+.latest-posts .post-title h3 {
     color: var(--text-light);
     font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none;
+    margin-bottom: 0rem;
 }
 
-.latest-posts .post-title a:hover {
-    text-decoration: underline;
+.latest-posts:hover {
+    border-color: white;
 }
 
-.latest-posts {
+.latest-posts,
+.user-comments {
     position: relative;
     background-color: #000;
-    min-height: 80px;
-    max-height: 50px;
-    padding: 1.5rem;
-    margin-bottom: 0rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.308);
     overflow: hidden;
 }
 
@@ -699,18 +699,27 @@ a.sidebar-buttons {
     margin-bottom: 0.5em;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .latest-posts .profile-post-header{
     height: 2rem;
     margin-bottom: 0em;
-    border-bottom: 1 px solid rgba(255, 255, 255, 1);
 }
 
+/* Check for conflict, img size is restricted */
 .latest-posts .post-content {
-    
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.5);
-    max-height: 40px;
+    max-height: 4rem;
     overflow: hidden;
+    margin: 0rem 0rem 0rem 0rem;
+}
+
+.latest-posts .post-content img{
+    width: auto;
+    height: 5rem;
 }
 
 .latest-posts .post-actions button {
