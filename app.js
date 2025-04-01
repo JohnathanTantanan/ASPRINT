@@ -25,7 +25,7 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI_DEV }), // USE MONGODB_URI_OFFICIAL FOR PRODUCTION
     //cookie: { maxAge: new Date(Date.now() + 3600000) }
 }))
 //AJAX Middleware
