@@ -14,6 +14,24 @@ function toggleEditMode(editFormId, displayElementsIds, editButtonId) {
     }
 }
 
+function previewImage(event) {
+    const imageInput = event.target;
+    const preview = document.getElementById('image-preview');
+
+    if (imageInput.files && imageInput.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'flex'; // Show the preview image
+        };
+
+        reader.readAsDataURL(imageInput.files[0]); // Read the image file as a data URL
+    } else {
+        preview.src = '#';
+        preview.style.display = 'none'; // Hide the preview if no file is selected
+    }
+}
 // JQUERY/AJAX FUNCTIONS
 /* 
 $(document).ready(function(){

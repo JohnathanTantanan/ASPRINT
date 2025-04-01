@@ -8,12 +8,12 @@
             <% } %>
             <h2 id="username"> u/<%= user.username %></h2>
             <button id="edit-profile" onclick="toggleEditMode('edit-profile-form', ['username', 'profile-description'], 'edit-profile')">Edit</button>
-        </div>
+            <!-- Include the edit form partial for profile -->
+            <%- include('partials/editprofile', { formId: 'edit-profile-form', action: '/update-profile', user: user, displayElementsIds: ['username', 'profile-description'], editButtonId: 'edit-profile' }) %>
+    </div>
 
         <p id="profile-description"><%= user.description %></p>
         
-        <!-- Include the edit form partial for profile -->
-        <%- include('partials/editprofile', { formId: 'edit-profile-form', action: '/update-profile', user: user, displayElementsIds: ['username', 'profile-description'], editButtonId: 'edit-profile' }) %>
         
         <div id="profile-info">
             <h2>Latest Posts:</h2>

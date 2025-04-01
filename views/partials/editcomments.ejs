@@ -1,8 +1,10 @@
 <form id="<%= formId %>" action="/update-comment/<%= comment._id %>" method="POST" style="display: none;" class="edit-comment">
+    <div>
     <label for="comment">Comment:</label>
-    <textarea id="comment-input" name="comment"><%= comment.comment %></textarea>
-    <br>
-    <button type="submit" class="edit-del-btn"> Save</button>
-                                                                                    <!-- Leave unquoted because its a ejs expression-->   
-    <button type="button" class="edit-del-btn" onclick="toggleEditMode('<%= formId %>', <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
+    <textarea id="comment-input" name="comment" style="width: 80%; height: 40px; margin-top: 20px; border: 1px solid #ccc; border-radius: 5px; resize: vertical;"><%= comment.comment %></textarea>
+    </div>
+    <div style="text-align: center; margin-bottom: 10px;">
+        <button type="submit" class="edit-del-btn">Save</button>
+        <button type="button" class="edit-del-btn" onclick="toggleEditMode('<%= formId %>', <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
+    </div>
 </form>

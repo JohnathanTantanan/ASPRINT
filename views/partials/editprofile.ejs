@@ -2,11 +2,16 @@
     <label for="username">Username:</label>
     <input type="text" id="username-input" name="username" value="<%= user.username %>">
     <label for="description"><br>Description:</label>
-    <textarea id="description-input" name="description"><%= user.description %></textarea>
+    <textarea id="description-input" name="description" style="width: 100%; height: 120px; padding: 10px; font-size: 14px; border: 1px solid #ccc; border-radius: 5px; resize: vertical;"><%= user.description %></textarea>
     <br>
     <label for="image"><br>Upload Profile Picture:</label>
-    <input type="file" id="image-input" name="image">
+    <input type="file" id="image-input" name="image" accept="image/*" onchange="previewImage(event)"> <br>
+    <div style="text-align: center; margin-top: 10px;">
+        <img id="image-preview" src="#" alt="Image Preview" style="display: none; max-width: 400px; max-height: 400px;">
+    </div>
+    <div style="text-align: center; margin-top: 10px;">
     <button type="submit" class="edit-del-btn">Save</button>
                                                                                      <!-- Leave unquoted because its a ejs expression-->   
     <button type="button" class="edit-del-btn" onclick="toggleEditMode('<%= formId %>', <%= JSON.stringify(displayElementsIds) %>, '<%= editButtonId %>')">Cancel</button>
+    </div>
 </form>
