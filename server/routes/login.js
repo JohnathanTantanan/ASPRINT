@@ -74,8 +74,12 @@ router.get('/myprofile', authMiddleware, async(req,res)=>{
             description: "Simple Blog created with NodeJs, Express & MongoDB."
         }
         
-        const user = await User.findOne({username: loggeduser.username});
-        var userId = user._id.toString();
+        const user = await getUser(req);
+        if (!user) {
+            console.log('No user found, redirecting to login');
+            return res.redirect('/login'); // Redirect to login if no user is found
+        }
+        let userId = user._id.toString();
         const posts = await Post.find({poster: new ObjectId(userId)}).sort({createdAt: -1});
         const comments = await Comments.find({commenter: new ObjectId(userId)}).sort({createdAt: -1}); // comments of logged user
         communities = await Community.find();
@@ -103,13 +107,13 @@ router.get('/logout', (req, res) => {
  * VIEW USER PROFILE 
  */
 router.get('/user-profile/:id', async (req, res) => {
-    const locals = { 
-        layout: 'layouts/main',
-        title: "The Forum",
-        description: "Simple Blog created with NodeJs, Express & MongoDB."
-    }
-
     try {
+        const locals = { 
+            layout: 'layouts/main',
+            title: "The Forum",
+            description: "Simple Blog created with NodeJs, Express & MongoDB."
+        }
+
         //const postId = new mongoose.Types.ObjectId(req.params.id);
         const user = await User.findById(req.params.id); // returns a single mongoose document 
         const comments = await Comments.find({ commenter: req.params.id }); // returns array of mongoose documents 

@@ -15,7 +15,6 @@ function toggleEditMode(editFormId, displayElementsIds, editButtonId) {
 }
 
 // JQUERY/AJAX FUNCTIONS
-
 /* 
 $(document).ready(function(){
     // make modular for both vote options

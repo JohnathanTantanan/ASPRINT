@@ -4,26 +4,25 @@ const jwt = require('jsonwebtoken')
 const User = require('../models/User')
 const multer = require('multer')
 //const mongoose = require('mongoose');
-
+const { getUser } = require('../middleware/auth'); // Imported getUser from auth.js, Show username when LoggedIn
 
 //Server Models/Schemas 
 const Post = require('../models/Post')
 const Comments = require('../models/Comments')
 const Community = require('../models/Community')
 
-// Show username when LoggedIn
-const getUser = async (req) => {
-    try {
-        const token = req.cookies.token;
-        if (!token) return null;
+// const getUser = async (req) => {
+//     try {
+//         const token = req.cookies.token;
+//         if (!token) return null;
         
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        const user = await User.findById(decoded.id);
-        return user;
-    } catch (error) {
-        return null; 
-    }
-}
+//         const decoded = jwt.verify(token, process.env.JWT_SECRET);
+//         const user = await User.findById(decoded.id);
+//         return user;
+//     } catch (error) {
+//         return null; 
+//     }
+// }
 
 // Set up multer for file uploads
 const storage = multer.diskStorage({

@@ -8,6 +8,98 @@
     --transition-speed: 0.2s;
 }
 
+/* ============ RESPONSIVE DESIGN ============ */
+/* ============ Default Styles (Desktop) ============ */
+/* Your existing styles will apply to large screens by default. */
+
+/* ============ Tablet Screens (768px to 1024px) ============ */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .sidebar {
+        width: 10rem; /* Reduce sidebar width */
+    }
+
+    .main {
+        padding: 1rem; /* Reduce padding for main content */
+    }
+
+    .post-container {
+        width: 25rem; /* Adjust post width */
+    }
+
+    .profile-picture img,
+    .post-profile img {
+        width: 2rem; /* Reduce profile picture size */
+        height: 2rem;
+    }
+
+    #myprofile {
+        width: 25rem; /* Adjust profile container width */
+    }
+}
+
+/* ============ Mobile Screens (Up to 767px) ============ */
+@media (max-width: 767px) {
+    .header {
+        flex-direction: column; /* Stack header elements vertically */
+        height: auto;
+        padding: 1rem;
+    }
+
+    #search-form {
+        display: none; /* Hide search bar on small screens */
+    }
+
+    .sidebar {
+        display: none; /* Hide sidebar on mobile */
+        width: 0; /* Set width to 0 to avoid layout issues */
+    }
+
+    .main {
+        padding: 1rem;
+        margin-top: 0; /* Remove margin caused by the hidden sidebar */
+    }
+
+    .post-container {
+        width: 100%; /* Make posts take full width */
+        padding: 1rem;
+    }
+
+    .profile-picture img,
+    .post-profile img {
+        width: 1.5rem; /* Further reduce profile picture size */
+        height: 1.5rem;
+    }
+
+    #myprofile {
+        width: 100%; /* Make profile container take full width */
+        padding: 1rem;
+    }
+
+    .latest-posts img {
+        max-width: 100%; /* Make images responsive */
+        height: auto;
+    }
+}
+
+/* ============ Large Screens (Desktops, 1024px and above) ============ */
+@media (min-width: 1024px) {
+    .sidebar {
+        width: 14rem; /* Default sidebar width */
+    }
+
+    .main {
+        padding: 2rem; /* Default padding for main content */
+    }
+
+    .post-container {
+        width: 30rem; /* Default post width */
+    }
+
+    #myprofile {
+        width: 30rem; /* Default profile container width */
+    }
+}
+
 /* ============ GENERAL FORMATTING ============ */
 * {
     /* margin: 0;
@@ -879,31 +971,6 @@ a.sidebar-buttons {
 #login-form-button:hover{
     background-color: #fff;
     color: #000;
-}
-
-/* ============ RESPONSIVE DESIGN ============ */
-@media (max-width: 768px) {
-    :root {
-        --sidebar-width: 4rem;
-    }
-
-    .sidebar-buttons span {
-        display: none;
-    }
-
-    #search-form {
-        max-width: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        padding: 0 1rem;
-    }
-
-    #search-form {
-        display: none;
-    }
 }
 
 /* ============ LOGIN AND REGISTER ============ */
