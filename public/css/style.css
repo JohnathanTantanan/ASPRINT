@@ -293,7 +293,7 @@ a.sidebar-buttons {
 .post-content{
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    font-size: 14px;
+    font-size: 0.9rem;
 }
 
 .profile-picture{
@@ -334,8 +334,8 @@ a.sidebar-buttons {
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 5px;
-    margin-top: 0em;
-    margin-left: 1em;
+    margin-top: 0rem;
+    margin-left: 1rem;
     float: left;
 }
 
@@ -1064,33 +1064,19 @@ a.sidebar-buttons {
 */
 /* ============ Tablet Screens (768px to 1024px) ============ */
 @media (max-width: 1024px) and (min-width: 768px) {
+    html {
+        font-size: 13px;
+    }
+
     .sidebar {
         --sidebar-width: 10rem; /* Reduce sidebar width */
-    }
-
-    .main {
-        padding: 1rem; /* Reduce padding for main content */
-    }
-
-    .post-container {
-        width: 25rem; /* Adjust post width */
-    }
-
-    .profile-picture img,
-    .post-profile img {
-        width: 2rem; /* Reduce profile picture size */
-        height: 2rem;
-    }
-
-    #myprofile {
-        width: 25rem; /* Adjust profile container width */
     }
 }
 
 /* ============ Mobile Screens (Up to 767px) ============ */
 @media (max-width: 767px) {
     html {
-        font-size: 8px; /* 1rem = 12px */
+        font-size: 7px; /* 1rem = 12px */
     }
 
     .header {
@@ -1122,6 +1108,10 @@ a.sidebar-buttons {
         filter: invert(100%);
         margin: 0.7rem 0.3rem 0.7rem 0.3rem;
         transition: all var(--transition-speed) ease;
+    }
+
+    .post-profile > a {
+        font-size: 1rem;
     }
 }
 
