@@ -1,160 +1,180 @@
 [{
   "_id": {
-    "$oid": "67ca636d3482fd190fe0cda4"
+    "$oid": "67eb251fd702301ac9ff71da"
   },
   "poster": {
-    "$oid": "67ca62af3482fd190fe0cd9e"
+    "$oid": "67eb21a0d702301ac9ff71c4"
   },
-  "community": {
-    "$oid": "67cc1d84918b6ad140068b36"
-  },
-  "title": "The Future of AI in Online Communities",
-  "images": "",
-  "content": "AI is changing how we interact online, from content moderation to personalized recommendations. What are your thoughts on AI’s role in forums?",
-  "createdAt": "2025-03-07T12:00:00Z",
-  "updatedAt": "2025-03-07T12:00:00Z",
-  "upvotes": 125,
-  "downvotes": 10,
-  "comments": []
-},
-{
-  "_id": {
-    "$oid": "67ca636d3482fd190fe0cda5"
-  },
-  "poster": {
-    "$oid": "67ca62af3482fd190fe0cd9f"
-  },
-  "community": {
-    "$oid": "67cc1d84918b6ad140068b36"
-  },
-  "title": "Best Practices for Writing Clean Code",
-  "images": "",
-  "content": "Clean code improves maintainability and readability. What are your favorite tips or best practices for writing clean, efficient code?",
-  "createdAt": "2025-03-07T13:30:00Z",
-  "updatedAt": "2025-03-07T13:30:00Z",
-  "upvotes": 98,
-  "downvotes": 3,
-  "comments": []
-},
-{
-  "_id": {
-    "$oid": "67ca636d3482fd190fe0cda6"
-  },
-  "poster": {
-    "$oid": "67ca62af3482fd190fe0cda0"
-  },
-  "community": {
-    "$oid": "67cc1d84918b6ad140068b39"
-  },
-  "title": "Is Cloud Gaming the Future?",
-  "images": "",
-  "content": "With advancements in cloud computing, gaming no longer requires high-end hardware. Do you think cloud gaming will replace traditional consoles?",
-  "createdAt": "2025-03-07T14:15:00Z",
-  "updatedAt": "2025-03-07T14:15:00Z",
+  "community": null,
+  "title": "Exploring the Future of AI",
+  "images": "https://example.com/ai.jpg",
+  "content": "AI is rapidly evolving, shaping industries and the way we live. From automation to ethical challenges, its impact is profound.",
+  "createdAt": "2025-04-01T08:30:00.000Z",
+  "updatedAt": "2025-04-01T08:30:00.000Z",
   "upvotes": 150,
-  "downvotes": 25,
+  "downvotes": 20,
+  "voters": [],
   "comments": []
 },
 {
   "_id": {
-    "$oid": "67ca636d3482fd190fe0cda7"
+    "$oid": "67eb251fd702301ac9ff71db"
   },
   "poster": {
-    "$oid": "67ca62af3482fd190fe0cda1"
+    "$oid": "67eb21a0d702301ac9ff71c5"
   },
-  "community": {
-    "$oid": "67cc1d84918b6ad140068b37"
-  },
-  "title": "The James Webb Telescope’s Latest Discoveries",
-  "images": "",
-  "content": "The James Webb Telescope continues to unveil new cosmic wonders. What do you think has been its most groundbreaking discovery so far?",
-  "createdAt": "2025-03-07T15:00:00Z",
-  "updatedAt": "2025-03-07T15:00:00Z",
-  "upvotes": 200,
-  "downvotes": 5,
+  "community": null,
+  "title": "The Philosophy of Minimalism",
+  "images": null,
+  "content": "Minimalism isn’t just about owning fewer things; it's a mindset. By decluttering, we find clarity and purpose in life.",
+  "createdAt": "2025-04-01T09:30:00.000Z",
+  "updatedAt": "2025-04-01T09:30:00.000Z",
+  "upvotes": 400,
+  "downvotes": 50,
+  "voters": [],
   "comments": []
 },
 {
   "_id": {
-    "$oid": "67ca636d3482fd190fe0cda8"
+    "$oid": "67eb251fd702301ac9ff71dc"
   },
   "poster": {
-    "$oid": "67ca62af3482fd190fe0cda2"
+    "$oid": "67eb21a0d702301ac9ff71c6"
   },
-  "community": {
-    "$oid": "67cc1d84918b6ad140068b32"
-  },
-  "title": "Best Sci-Fi Movies of the Last Decade",
-  "images": "",
-  "content": "From Interstellar to Dune, the last decade has given us some incredible sci-fi films. What are your favorites and why?",
-  "createdAt": "2025-03-07T16:20:00Z",
-  "updatedAt": "2025-03-07T16:20:00Z",
-  "upvotes": 175,
-  "downvotes": 8,
+  "community": null,
+  "title": "Top 10 Travel Destinations for 2025",
+  "images": "https://example.com/travel.jpg",
+  "content": "Exploring new places is one of the best ways to experience life. This year’s top travel destinations include hidden gems and must-visit cities.",
+  "createdAt": "2025-04-01T10:30:00.000Z",
+  "updatedAt": "2025-04-01T10:30:00.000Z",
+  "upvotes": 1200,
+  "downvotes": 80,
+  "voters": [],
   "comments": []
 },
 {
   "_id": {
-    "$oid": "67ca8e2b1f75539afbfc670e"
+    "$oid": "67eb251fd702301ac9ff71dd"
   },
   "poster": {
-    "$oid": "67ca8b33fee1db931f23ddde"
+    "$oid": "67eb21a0d702301ac9ff71c7"
   },
-  "community": {
-    "$oid": "67cc1d84918b6ad140068b32"
-  },
-  "title": "Best Sci-Fi Movies of the Last Decade",
-  "images": "https://media.npr.org/assets/img/2024/02/29/rev-1-dun2-t3-0026r_high_res_jpeg_wide-2a8f6918bcf0190c8fa3d26a5f2e732623a196d6.jpeg?s=1200&c=85&f=webp",
-  "content": "From Interstellar to Dune, the last decade has given us some incredible sci-fi films. What are your favorites and why?",
-  "createdAt": "2025-03-07T16:20:00Z",
-  "updatedAt": "2025-03-07T16:20:00Z",
-  "upvotes": 175,
-  "downvotes": 8,
+  "community": null,
+  "title": "Writing as a Form of Expression",
+  "images": "https://example.com/writing.jpg",
+  "content": "Words have power. Whether in poetry or prose, writing allows us to communicate ideas, emotions, and stories that shape our world.",
+  "createdAt": "2025-04-01T11:30:00.000Z",
+  "updatedAt": "2025-04-01T11:30:00.000Z",
+  "upvotes": 900,
+  "downvotes": 30,
+  "voters": [],
   "comments": []
 },
 {
   "_id": {
-    "$oid": "67cd57032db2f9aa86a759a4"
+    "$oid": "67eb251fd702301ac9ff71de"
   },
   "poster": {
-    "$oid": "67cd54101f7ceb6986d5ec2c"
+    "$oid": "67eb21a0d702301ac9ff71c8"
   },
-  "community": {
-    "$oid": "67cc1d84918b6ad140068b36"
-  },
-  "title": "Special Characters in Routes",
-  "content": "TIL if you are inserting parameters into your routes, say post title is inserted dynamically, you have to consider special characters in the title as it would confuse routing",
-  "upvotes": 0,
-  "downvotes": 0,
-  "comments": [],
-  "createdAt": {
-    "$date": "2025-03-09T08:53:23.407Z"
-  },
-  "updatedAt": {
-    "$date": "2025-03-09T08:53:23.407Z"
-  },
-  "__v": 0
+  "community": null,
+  "title": "The Rise of Open Source Contributions",
+  "images": null,
+  "content": "Open source software has transformed the way we develop technology. By collaborating, developers create impactful tools that benefit everyone.",
+  "createdAt": "2025-04-01T12:30:00.000Z",
+  "updatedAt": "2025-04-01T12:30:00.000Z",
+  "upvotes": 1100,
+  "downvotes": 100,
+  "voters": [],
+  "comments": []
 },
 {
   "_id": {
-    "$oid": "67cd57d257bcff1695aad0f5"
+    "$oid": "67eb251fd702301ac9ff71df"
   },
   "poster": {
-    "$oid": "67cd54101f7ceb6986d5ec2c"
+    "$oid": "67eb21a0d702301ac9ff71c9"
   },
-  "community": {
-    "$oid": "67cc1d84918b6ad140068b36"
+  "community": null,
+  "title": "Exploring Digital Art Trends",
+  "images": "https://example.com/art.jpg",
+  "content": "The digital art landscape is expanding with new techniques, tools, and platforms. Artists now have more opportunities than ever before.",
+  "createdAt": "2025-04-01T13:30:00.000Z",
+  "updatedAt": "2025-04-01T13:30:00.000Z",
+  "upvotes": 700,
+  "downvotes": 40,
+  "voters": [],
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "67eb251fd702301ac9ff71e0"
   },
-  "title": "Special/Characters",
-  "content": "The sequel to my post, this should work if I did things correctly. Hoodoo Voodoo Avadakadabra",
-  "upvotes": 0,
-  "downvotes": 0,
-  "comments": [],
-  "createdAt": {
-    "$date": "2025-03-09T08:56:50.916Z"
+  "poster": {
+    "$oid": "67eb21a0d702301ac9ff71ca"
   },
-  "updatedAt": {
-    "$date": "2025-03-09T08:56:50.916Z"
+  "community": null,
+  "title": "The Evolution of Music Production",
+  "images": "https://example.com/music.jpg",
+  "content": "Music production has changed significantly over the years, with digital tools allowing for more creativity and innovation.",
+  "createdAt": "2025-04-01T14:30:00.000Z",
+  "updatedAt": "2025-04-01T14:30:00.000Z",
+  "upvotes": 1500,
+  "downvotes": 90,
+  "voters": [],
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "67eb251fd702301ac9ff71e1"
   },
-  "__v": 0
+  "poster": {
+    "$oid": "67eb21a0d702301ac9ff71cb"
+  },
+  "community": null,
+  "title": "Gaming Trends for the Next Decade",
+  "images": null,
+  "content": "The gaming industry continues to grow, with new technologies such as VR and cloud gaming shaping the future.",
+  "createdAt": "2025-04-01T15:30:00.000Z",
+  "updatedAt": "2025-04-01T15:30:00.000Z",
+  "upvotes": 1300,
+  "downvotes": 70,
+  "voters": [],
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "67eb251fd702301ac9ff71e2"
+  },
+  "poster": {
+    "$oid": "67eb21a0d702301ac9ff71cc"
+  },
+  "community": null,
+  "title": "The Art of Cooking",
+  "images": "https://example.com/food.jpg",
+  "content": "Cooking is both an art and a science. Mastering flavors and techniques brings joy to both the cook and those who enjoy the meals.",
+  "createdAt": "2025-04-01T16:30:00.000Z",
+  "updatedAt": "2025-04-01T16:30:00.000Z",
+  "upvotes": 800,
+  "downvotes": 60,
+  "voters": [],
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "67eb251fd702301ac9ff71e3"
+  },
+  "poster": {
+    "$oid": "67eb21a0d702301ac9ff71cd"
+  },
+  "community": null,
+  "title": "Staying Fit in a Busy World",
+  "images": "https://example.com/fitness.jpg",
+  "content": "Balancing fitness with a hectic schedule is a challenge, but small changes in routine can make a big difference.",
+  "createdAt": "2025-04-01T17:30:00.000Z",
+  "updatedAt": "2025-04-01T17:30:00.000Z",
+  "upvotes": 950,
+  "downvotes": 50,
+  "voters": [],
+  "comments": []
 }]

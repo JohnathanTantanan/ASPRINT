@@ -27,26 +27,26 @@ const CommunitySchema = new Schema({
         type: Date,
         default: Date.now
     },
-    moderators: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    }],
-    members: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    }],
-    rules: [{
-        title: String,
-        description: String
-    }],
-    postCount: {
-        type: Number,
-        default: 0
-    },
-    memberCount: {
-        type: Number,
-        default: 0
-    }
+    // moderators: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'User'
+    // }],
+    // members: [{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'User'
+    // }],
+    // rules: [{
+    //     title: String,
+    //     description: String
+    // }],
+    // postCount: {
+    //     type: Number,
+    //     default: 0
+    // },
+    // memberCount: {
+    //     type: Number,
+    //     default: 0
+    // }
 })
 
 module.exports = mongoose.model('Community', CommunitySchema)

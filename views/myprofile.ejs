@@ -18,16 +18,14 @@
             <h2>Latest Posts:</h2>
             <%- include('partials/profile-post', { data: posts, comments: comments }) %>
 
-            <h2>Comments:</h2>
+            <h2>Comments:</h2>            
             <% comments.forEach(comment => { %>
-            <div class="latest-posts">
+            <div class="user-comments">
                 <p><%= comment.comment %></p>
             </div>
+
             <% }) %>
         </div>
     </div>
-
-<!-- Include the external JavaScript file -->
-<script src="/js/script.js"></script>
 <% } %>
 
