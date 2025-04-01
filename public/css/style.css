@@ -8,99 +8,7 @@
     --transition-speed: 0.2s;
 }
 
-/* ============ RESPONSIVE DESIGN ============ */
-/* ============ Default Styles (Desktop) ============ */
-/* Your existing styles will apply to large screens by default. */
-
-/* ============ Tablet Screens (768px to 1024px) ============ */
-@media (max-width: 1024px) and (min-width: 768px) {
-    .sidebar {
-        width: 10rem; /* Reduce sidebar width */
-    }
-
-    .main {
-        padding: 1rem; /* Reduce padding for main content */
-    }
-
-    .post-container {
-        width: 25rem; /* Adjust post width */
-    }
-
-    .profile-picture img,
-    .post-profile img {
-        width: 2rem; /* Reduce profile picture size */
-        height: 2rem;
-    }
-
-    #myprofile {
-        width: 25rem; /* Adjust profile container width */
-    }
-}
-
-/* ============ Mobile Screens (Up to 767px) ============ */
-@media (max-width: 767px) {
-    html {
-        font-size: 8px; /* 1rem = 12px */
-    }
-    .header {
-        flex-direction: row; /* Stack header elements vertically */
-        padding: 1rem;
-    }
-
-    #search-form {
-        width: min-content; /* Hide search bar on small screens */
-    }
-
-    .sidebar {
-        display: none !important; /* Hide sidebar on small screens */
-    }
-
-    .main {
-        padding: 1rem;
-        margin-top: 0; /* Remove margin caused by the hidden sidebar */
-    }
-
-    .post-container {
-        width: 100%; /* Make posts take full width */
-        padding: 1rem;
-    }
-
-    .profile-picture img,
-    .post-profile img {
-        width: 1.5rem; /* Further reduce profile picture size */
-        height: 1.5rem;
-    }
-
-    #myprofile {
-        width: 100%; /* Make profile container take full width */
-        padding: 1rem;
-    }
-
-    .latest-posts img {
-        max-width: 100%; /* Make images responsive */
-        height: auto;
-    }
-}
-
 /* ============ Large Screens (Desktops, 1024px and above) ============ */
-@media (min-width: 1024px) {
-    .sidebar {
-        width: 14rem; /* Default sidebar width */
-    }
-
-    .main {
-        padding: 2rem; /* Default padding for main content */
-    }
-
-    .post-container {
-        width: 30rem; /* Default post width */
-    }
-
-    #myprofile {
-        width: 30rem; /* Default profile container width */
-    }
-}
-
 /* ============ GENERAL FORMATTING ============ */
 * {
     /* margin: 0;
@@ -254,7 +162,6 @@ a.sidebar-buttons {
 
 .sidebar-buttons img {
     height: 1.4rem;
-    width: 1.4rem;
     filter: invert(100%);
     margin-right: 1rem;
     transition: all var(--transition-speed) ease;
@@ -1147,3 +1054,75 @@ a.sidebar-buttons {
     opacity: 70%;
     font-weight: 200;
 }
+
+/* ============ RESPONSIVE DESIGN ============ */
+/* Note:    Styles placed much later in the file take precedence over styles placed earlier in the file.
+            This is called Cascade Order, and this factor (Source Order) is one of the three factors:
+            1. Importance (use of !important)
+            2. Specificity (ID, class, element selectors)
+            3. Source Order (where the CSS is placed in the file)
+*/
+/* ============ Tablet Screens (768px to 1024px) ============ */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .sidebar {
+        --sidebar-width: 10rem; /* Reduce sidebar width */
+    }
+
+    .main {
+        padding: 1rem; /* Reduce padding for main content */
+    }
+
+    .post-container {
+        width: 25rem; /* Adjust post width */
+    }
+
+    .profile-picture img,
+    .post-profile img {
+        width: 2rem; /* Reduce profile picture size */
+        height: 2rem;
+    }
+
+    #myprofile {
+        width: 25rem; /* Adjust profile container width */
+    }
+}
+
+/* ============ Mobile Screens (Up to 767px) ============ */
+@media (max-width: 767px) {
+    html {
+        font-size: 8px; /* 1rem = 12px */
+    }
+
+    .header {
+        padding: 0.5rem;
+    }
+
+    #search-form {
+        width: min-content;
+    }
+
+    .sidebar {
+        --sidebar-width: 6rem;
+    }
+
+    a.sidebar-buttons {
+        font-size: 0; /*hide text on small screens*/
+        padding: 0.8rem 1.2rem;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        color: var(--text-light);
+        opacity: 0.8;
+        transition: all var(--transition-speed) ease;
+    }
+    
+    .sidebar-buttons img {
+        height: 3rem;
+        width: 3rem;
+        filter: invert(100%);
+        margin: 0.7rem 0.3rem 0.7rem 0.3rem;
+        transition: all var(--transition-speed) ease;
+    }
+}
+
+/* Add any new css above reponsive layout */
