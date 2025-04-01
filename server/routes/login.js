@@ -115,11 +115,12 @@ router.get('/user-profile/:id', async (req, res) => {
         }
 
         //const postId = new mongoose.Types.ObjectId(req.params.id);
-        const user = await User.findById(req.params.id); // returns a single mongoose document 
+        const user = await getUser(req); // logged-in user
+        const userViewed = await User.findById(req.params.id); // returns a single mongoose document 
         const comments = await Comments.find({ commenter: req.params.id }); // returns array of mongoose documents 
         const posts = await Post.find({ poster: req.params.id });
         const communities = await Community.find();
-        res.render('user-profile', {locals, user, comments, posts, communities}); // should this be data.toObject()? why
+        res.render('user-profile', {locals, userViewed, user, comments, posts, communities}); // should this be data.toObject()? why
     } catch (error) {
         console.log(error);
     }

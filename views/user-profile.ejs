@@ -1,18 +1,17 @@
 <div class="main-content">
     
-    <% if (user) { %>
     <div id="myprofile">
         <div id="profile-header">
-            <% if (user.picture) { %>
-                <img src=<%= user.picture %>>
+            <% if (userViewed.picture) { %>
+                <img src=<%= userViewed.picture %>>
             <% }else{ %>
                 <img src="/img/user-icon-default.png">
             <% } %>
-            <h1 id="username">u/<%= user.username %></h1>
+            <h1 id="username">u/<%= userViewed.username %></h1>
         </div>
 
         <div id="profile-info">
-            <p id="profile-description"><%= user.description %></p>
+            <p id="profile-description"><%= userViewed.description %></p>
             
             <h2>Latest Posts:</h2>
             <%- include('partials/profile-post', { data: posts, comments: comments }) %>
@@ -26,5 +25,4 @@
         </div>
         
     </div>
-    <% } %>
 </div>
