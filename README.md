@@ -59,7 +59,14 @@ http://localhost:3000
   ```
 ## Web Host
 ### 1. Open Web Browser to use Application
-Once the web browser is open input this https://the-forum.onrender.com
+Once the web browser is open, visit this URL: https://the-forum.onrender.com
+
+## Troubleshooting
+- **If Render takes too long to load**, the server might have timed out. This happens because Render's free tier spins down with inactivity. The first request after inactivity will wake up the server, but may take 30-60 seconds to respond.
+- **If the application crashes or shows errors**, try refreshing the page or clearing your browser cache.
+- **If images don't load properly**, this could be due to temporary storage limitations on Render's free tier.
+- **For persistent issues**, please use the local installation method described above for a more reliable experience during development and testing.
+- **Database connection issues** may occur if there are too many simultaneous connections. If this happens, wait a few minutes before trying again.
 
 
 
