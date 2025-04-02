@@ -15,7 +15,19 @@
             <% if (!locals.inCommunity) { %>
                 <a href="/c/<%= post.community._id %>/<%= post.community.name %>">from c/<%= post.community.name %></a>
             <% } %> 
-            <br><sub class="post-date">Posted <%= post.createdAt.toDateString()%></sub>
+            <br>
+            <sub class="post-date">
+                Posted on: <%= post.createdAt.getMonth()+1 %>/<%= post.createdAt.getDate() %>/<%= post.createdAt.getFullYear() %> 
+                <%= post.createdAt.getHours() %>:<%= (post.createdAt.getMinutes() < 10 ? '0' : '') + post.createdAt.getMinutes() %>:<%= (post.createdAt.getSeconds() < 10 ? '0' : '') + post.createdAt.getSeconds() %>
+            </sub>
+            
+            <% if(post.createdAt.toString() !== post.updatedAt.toString()) { %>
+                <br>
+                <sub class="post-date">
+                    Edited on: <%= post.updatedAt.getMonth()+1 %>/<%= post.updatedAt.getDate() %>/<%= post.updatedAt.getFullYear() %> 
+                    <%= post.updatedAt.getHours() %>:<%= (post.updatedAt.getMinutes() < 10 ? '0' : '') + post.updatedAt.getMinutes() %>:<%= (post.updatedAt.getSeconds() < 10 ? '0' : '') + post.updatedAt.getSeconds() %>
+                </sub>
+            <% } %>
         </span>
         <hr><h4><%= post.title %></h4> 
         <% if(post.images) { %>
