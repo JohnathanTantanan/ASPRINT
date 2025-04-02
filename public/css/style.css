@@ -923,6 +923,10 @@ a.sidebar-buttons {
     font-weight: 1;
 }
 
+#auth-header a{
+    color: white;
+}
+
 #auth-content{
     background-color: black;
     color: white;
