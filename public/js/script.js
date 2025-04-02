@@ -83,7 +83,12 @@ $(document).ready(function(){
                 }
             },
             error: function(xhr, status, error) {
-                console.error('Failed to upvote post:', error);
+                if (xhr.status === 401) { // status sent from route handler
+                    // User is not logged in, redirect to login page
+                    window.location.href = '/login';
+                } else {
+                    console.error('Failed to upvote post:', error);
+                }
             }
         })
     }
@@ -101,7 +106,12 @@ $(document).ready(function(){
                 }
             },
             error: function(xhr, status, error) {
-                console.error('Failed to upvote post:', error);
+                if (xhr.status === 401) { // status sent from route handler
+                    // User is not logged in, redirect to login page
+                    window.location.href = '/login';
+                } else {
+                    console.error('Failed to upvote post:', error);
+                }
             }
         })
     }

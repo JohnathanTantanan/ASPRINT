@@ -21,7 +21,9 @@ const authMiddleware = async (req,res,next) => {
         const token = req.cookies.token;
 
         if(!token){
-            return res.status(401).json({message: 'Unauthorized'});
+            console.error('No token provided, redirecting to login');
+            return res.redirect('/login'); // Redirect to login if no token is found
+            // return res.status(401).json({message: 'Unauthorized'});
         }
 
         try {
@@ -231,11 +233,11 @@ router.post('/register', async (req,res)=>{
 /**POST /
  * ADD COMMENT
  */
-
 router.post('/addcomment/:id', authMiddleware, async (req,res)=>{
     try {
         const user = await getUser(req);
         if (!user) {
+            console.log('No user found, redirecting to login');
             return res.redirect('/login');
         }
 
@@ -248,7 +250,7 @@ router.post('/addcomment/:id', authMiddleware, async (req,res)=>{
         await comment.save();
         res.redirect(`/post/${req.params.id}/${req.params.title}`);
     } catch (error) {
-        console.log(error);
+        console.error('Error adding comment:', error);
         res.status(500).json({ message: 'Internal Server Error' });
     }
 });
@@ -305,7 +307,7 @@ router.post('/post/upvote/:id', async (req, res) => {
     try {
         const postId = req.params.id;
         const post = await Post.findById(postId);
-        const user = loggeduser;
+        const user = await getUser(req); // logged-in user
 
         if (!user) {
             return res.status(401).json({ message: 'Please log in to vote' });
@@ -347,7 +349,7 @@ router.post('/post/downvote/:id', async (req, res) => {
     try {
         const postId = req.params.id;
         const post = await Post.findById(postId);
-        const user = loggeduser;
+        const user = await getUser(req); // logged-in user
         
         if (!user) {
             return res.status(401).json({ message: 'Please log in to vote' });
