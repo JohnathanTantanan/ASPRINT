@@ -9,10 +9,9 @@
 <% } %>
 
 <%# Show from which community post is (not applied to community page) %>
-<% if (locals.inCommunity) { %>
-    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0PAISQwFpsOJ1DVunojhuGjVtfmBrRNMzhQ&s" alt="" class="banner"> -->
+<% if (locals.inCommunity && typeof community !== 'undefined' && community) { %>
     <div class="community-header community-layout">
-        <img src="/img/community-icon-default.png" alt="profile-picture" id="profile">
+        <img src="<%= community.picture || '/img/community-icon-default.png' %>" alt="profile-picture" id="profile">
         <div class="community-text">
             <h1>c/<%= community.name %></h1>
             <p><%= community.description %></p>
