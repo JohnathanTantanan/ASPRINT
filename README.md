@@ -1,4 +1,4 @@
-# CCAPDEV-Phase2-Group10
+# CCAPDEV-Phase3-Group10
 
 ## Project Setup and Installation
 
@@ -16,15 +16,15 @@ If both commands return version numbers, Node.js and npm are correctly installed
 
 ---
 
-## Installation Guide
-
+## Installation Guide (Two Ways)
+## Local Host
 ### 1. Clone or Extract the Project
-- If using a ZIP file, unzip `CCAPDEV-Phase2-Group10.zip`.
-- Move the extracted `CCAPDEV-Phase2-Group10` folder to a safe directory.
+- If using a ZIP file, unzip `CCAPDEV-Phase3-Group10.zip`.
+- Move the extracted `CCAPDEV-Phase3-Group10` folder to a safe directory.
 - Open **Command Prompt** and navigate to the project directory:
 
  ``` sh
-  cd path\to\CCAPDEV-Phase2-Group10
+  cd path\to\CCAPDEV-Phase3-Group10
  ```
 
 ### 2. Install Dependencies
@@ -57,5 +57,10 @@ http://localhost:3000
     "dev": "nodemon app.js"
   }
   ```
+## Web Host
+### 1. Open Web Browser to use Application
+Once the web browser is open input this https://the-forum.onrender.com
+
+
 
 
