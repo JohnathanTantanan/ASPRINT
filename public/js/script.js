@@ -177,16 +177,18 @@ $(document).ready(function(){
 
         // Get current path to determine if we're on home or popular
         const path = window.location.pathname;
-        const endpoint = path === '/popular' ? '/popular' : '/';
+        const searchTerm = new URLSearchParams(window.location.search).get('searchTerm');
+        const endpoint = searchTerm ? `/search?searchTerm=${searchTerm}&page=${currentPage}` : `${path}?page=${currentPage}`;
 
         $.ajax({
-            url: `${endpoint}?page=${currentPage}`,
+            url: endpoint,
             method: 'GET',
             success: function(response) {
                 if (response.trim()) {
                     // Insert new posts before the marker
                     loadMoreMarker.before(response);
                     isLoading = false;
+                    
                 } else {
                     // No more posts to load
                     loadMoreMarker.remove();

@@ -350,16 +350,37 @@ router.get('/search', async (req,res)=>{
             search: searchTerm,
             inCommunity: false
         };
+
+        // Support for pagaination, load in chunks of 10 posts
+        const page = parseInt(req.query.page) || 1;
+        const limit = 10;
+
         const query = {
             $or: [
                 { title: {$regex: new RegExp(searchInsensitive, 'i')}},
                 { content: {$regex: new RegExp(searchInsensitive, 'i')}}
             ]
         } // Case-insensitive search
-        const data = await Post.find(query).populate('poster').populate('community');
+        const data = await Post.find(query)
+            .populate('poster')
+            .populate('community')
+            .sort({ createdAt: -1 })
+            .limit(limit)
+            .skip((page - 1) * limit);
+
         const communities = await Community.find();
         const user = await getUser(req);
         const comments = await Comments.find();
+
+        // If it's an AJAX request, send only the posts HTML
+        if (req.xhr) {
+            return res.render('partials/post', {
+                data,
+                user,
+                comments,
+                layout: false
+            });
+        }
 
         res.render('home', { locals, data, communities, user, comments});
     } catch (error) {
