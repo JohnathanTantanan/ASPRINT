@@ -161,7 +161,7 @@ router.post('/login', async (req,res)=>{
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
         const cookieOptions = {
             httpOnly: true,
-            secure: false, // Set to true if using HTTPS
+            secure: true, // Set to true if using HTTPS
         };
 
         // Set cookie expiration based on "Remember Me"

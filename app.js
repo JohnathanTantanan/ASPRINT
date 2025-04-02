@@ -29,7 +29,7 @@ app.use(session({
     cookie: {
         maxAge: null, // default cookie lifespan: 1 day in milliseconds, default val is null (deleted on broswer close)
         httpOnly: true,
-        secure: false // Set to true for production/if using HTTPS
+        secure: true // Set to true for production/if using HTTPS (See also: login.ejs login form submission)
     }
 }))
 //AJAX Middleware
