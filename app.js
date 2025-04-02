@@ -26,7 +26,11 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI_DEV }), // USE MONGODB_URI_OFFICIAL FOR PRODUCTION
-    //cookie: { maxAge: new Date(Date.now() + 3600000) }
+    cookie: {
+        maxAge: null, // default cookie lifespan: 1 day in milliseconds, default val is null (deleted on broswer close)
+        httpOnly: true,
+        secure: false // Set to true for production/if using HTTPS
+    }
 }))
 //AJAX Middleware
 app.use(bodyParser.json());

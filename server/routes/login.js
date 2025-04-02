@@ -47,8 +47,10 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+
+
 /**GET /
- * LOGIN AND REGISTER
+ * LOGIN
  */
 router.get('/login', async (req,res)=>{
     try {
@@ -59,6 +61,9 @@ router.get('/login', async (req,res)=>{
     }
 });
 
+/**GET /
+ * REGISTER
+ */
 router.get('/register', async(req,res)=>{
     try {
         res.render('register', {
@@ -101,7 +106,12 @@ router.get('/myprofile', authMiddleware, async(req,res)=>{
 
 router.get('/logout', (req, res) => {
     res.clearCookie('token');
-    res.redirect('/');
+    req.session.destroy(err => { // remove sssion, free up memory
+        if (err) {
+            console.error('Error destroying session:', err);
+        }
+        res.redirect('/');
+    });
 });
 
 
@@ -132,39 +142,46 @@ router.get('/user-profile/:id', async (req, res) => {
 
 
 /**POST /
- * LOGIN AND REGISTER
+ * LOGIN FORM SUBMISSION
  */
 router.post('/login', async (req,res)=>{
     try {
-
-
-        const { username, password } = req.body;
+        const { username, password, 'remember-me': rememberMe } = req.body;
         
         const user = await User.findOne({username});
-
         if(!user){
             return res.status(401).json({message: 'Invalid Credentials'});
         } 
 
         const isMatch = await bcrypt.compare(password, user.password);
-
         if(!isMatch){
             return res.status(401).json({message: 'Wrong Password'});
         }
 
-        const token = jwt.sign({id: user._id}, process.env.JWT_SECRET);
-        res.cookie('token', token, {
-            httpOnly: true
-        });
-        // Set the logged user in the session
-        loggeduser = user;
-        res.redirect('/myprofile');
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+        const cookieOptions = {
+            httpOnly: true,
+            secure: false, // Set to true if using HTTPS
+        };
 
+        // Set cookie expiration based on "Remember Me"
+        if (rememberMe) {
+            cookieOptions.maxAge = 1000 * 60 * 60 * 24 * 21; // set cookie lifespan: 3 weeks in milliseconds
+        }
+        // Set the logged user in the session
+        loggeduser = user; // consider removing
+
+        res.cookie('token', token, cookieOptions);
+        res.redirect('/myprofile');
     } catch (error) {
         console.log(error);
+        res.status(500).json({ message: 'Internal Server Error' });
     }
 });
 
+/**POST /
+ * REGISTER FORM SUBMISSION
+ */
 router.post('/register', async (req,res)=>{
     try {
         const { username, password, confirm } = req.body;
