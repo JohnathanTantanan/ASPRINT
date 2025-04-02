@@ -7,6 +7,12 @@
     </div>  
     
     <div id="auth-content"><!--same with register (keep and rename class/id name)-->
+        
+        <% if (locals.errorMessage) { %>
+            <div class="error-message">
+                <%= errorMessage %>
+            </div>
+        <% } %>
         <h2>LOGIN</h2>
         <div id="auth-form"><!--same with register (keep and rename class/id name)-->
             <form action="/login" method="POST">
