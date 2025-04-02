@@ -2,7 +2,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b663e"
   },
-  "postId": "67eb251fd702301ac9ff71dd",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71dd"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71c7"
   },
@@ -12,7 +14,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b6640"
   },
-  "postId": "67eb251fd702301ac9ff71de",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71de"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71c8"
   },
@@ -22,15 +26,21 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b6642"
   },
-  "postId": "67eb251fd702301ac9ff71df",
-  "commenter": "67eb21a0d702301ac9ff71c9",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71df"
+  },
+  "commenter": {
+    "$oid": "67eb21a0d702301ac9ff71c9"
+  },
   "comment": "This article is insightful! I love how AI is impacting art."
 },
 {
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b6643"
   },
-  "postId": "67eb251fd702301ac9ff71e0",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71e0"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71ca"
   },
@@ -40,7 +50,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b6646"
   },
-  "postId": "67eb251fd702301ac9ff71e2",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71e2"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71cc"
   },
@@ -50,7 +62,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b6647"
   },
-  "postId": "67eb251fd702301ac9ff71e2",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71e2"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71cc"
   },
@@ -60,7 +74,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b663a"
   },
-  "postId": "67eb251fd702301ac9ff71da",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71da"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71c5"
   },
@@ -70,7 +86,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b663b"
   },
-  "postId": "67eb251fd702301ac9ff71db",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71db"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71c5"
   },
@@ -80,7 +98,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b663c"
   },
-  "postId": "67eb251fd702301ac9ff71dc",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71dc"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71c6"
   },
@@ -90,7 +110,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b663d"
   },
-  "postId": "67eb251fd702301ac9ff71dc",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71dc"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71c7"
   },
@@ -100,7 +122,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b6644"
   },
-  "postId": "67eb251fd702301ac9ff71e1",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71e1"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71cb"
   },
@@ -110,7 +134,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b6645"
   },
-  "postId": "67eb251fd702301ac9ff71e1",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71e1"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71cb"
   },
@@ -120,7 +146,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b664a"
   },
-  "postId": "67eb251fd702301ac9ff71e1",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71e1"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71cb"
   },
@@ -130,7 +158,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b664c"
   },
-  "postId": "67eb251fd702301ac9ff71da",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71da"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71c4"
   },
@@ -140,7 +170,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b663f"
   },
-  "postId": "67eb251fd702301ac9ff71dd",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71dd"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71c8"
   },
@@ -150,7 +182,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b6641"
   },
-  "postId": "67eb251fd702301ac9ff71df",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71df"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71c9"
   },
@@ -160,7 +194,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b6639"
   },
-  "postId": "67eb251fd702301ac9ff71da",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71da"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71c4"
   },
@@ -170,7 +206,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b6648"
   },
-  "postId": "67eb251fd702301ac9ff71e3",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71e3"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71cd"
   },
@@ -180,7 +218,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b6649"
   },
-  "postId": "67eb251fd702301ac9ff71e3",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71e3"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71cd"
   },
@@ -190,7 +230,9 @@
   "_id": {
     "$oid": "67ebc4f151c2c7264a0b664b"
   },
-  "postId": "67eb251fd702301ac9ff71e0",
+  "postId": {
+    "$oid": "67eb251fd702301ac9ff71e0"
+  },
   "commenter": {
     "$oid": "67eb21a0d702301ac9ff71ca"
   },

@@ -129,7 +129,7 @@ router.get('/post/:id/:title', async (req, res) => {
             .populate('commenter'); // returns array of mongoose documents 
         data.comments = comments; // manual population
         const communities = await Community.find();
-        res.render('post-page', {locals, data, user, communities}); // should this be data.toObject()? why
+        res.render('post-page', {locals, data, user, comments, communities}); // should this be data.toObject()? why
     } catch (error) {
         console.log(error);
     }
