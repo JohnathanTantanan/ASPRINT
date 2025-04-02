@@ -1,29 +1,18 @@
 <%# No results found indicator %>
-<% if (data.length === 0) { %>
+<% if (data.length === 0) { %> <%# strict equality, avoid potential issues caused by type conversions %>
     <article class="search-results">
         <img src="/img/no-results-icon.png" alt="No-Results">
-        
-        <% if (locals.search) { %>
-            <!-- Search-specific message -->
-            <h2>Hm... it seems our post offices could not find any results for "<%= locals.search %>"</h2>
-            <h3>Check your spelling or try other keywords</h3>
-        <% } else if (locals.inCommunity && community) { %>
-            <!-- Empty community message -->
-            <h2>This community doesn't have any posts yet</h2>
-            <h3>Be the first to create a post in c/<%= community.name %>!</h3>
-        <% } else { %>
-            <!-- Generic message for other cases -->
-            <h2>No posts found</h2>
-            <h3>Check back later or create a new post</h3>
-        <% } %>
+        <h2>Hm... it seems our post offices could not find any results for "<%= locals.search %>"</h2>
+        <h3>Check your spelling or try other keywords</h3>
         <br><br>
     </article>
 <% } %>
 
 <%# Show from which community post is (not applied to community page) %>
-<% if (locals.inCommunity && typeof community !== 'undefined' && community) { %>
+<% if (locals.inCommunity) { %>
+    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0PAISQwFpsOJ1DVunojhuGjVtfmBrRNMzhQ&s" alt="" class="banner"> -->
     <div class="community-header community-layout">
-        <img src="<%= community.picture || '/img/community-icon-default.png' %>" alt="profile-picture" id="profile">
+        <img src="/img/community-icon-default.png" alt="profile-picture" id="profile">
         <div class="community-text">
             <h1>c/<%= community.name %></h1>
             <p><%= community.description %></p>

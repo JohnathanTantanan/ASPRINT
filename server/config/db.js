@@ -3,7 +3,7 @@ const connectDB = async () => {
     try {
         mongoose.set('strictQuery', false)
         // USE MONGODB_URI_OFFICIAL FOR PRODUCTION
-        const conn = await mongoose.connect(process.env.MONGODB_URI_OFFICIAL)
+        const conn = await mongoose.connect(process.env.MONGODB_URI_DEV)
         console.log(`MongoDB Connected: ${conn.connection.host}`)
     }
     catch(err) {

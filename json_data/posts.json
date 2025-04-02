@@ -1,12 +1,32 @@
 [{
   "_id": {
+    "$oid": "67eb251fd702301ac9ff71da"
+  },
+  "poster": {
+    "$oid": "67eb21a0d702301ac9ff71c4"
+  },
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71e9"
+  },
+  "title": "Exploring the Future of AI",
+  "images": "https://example.com/ai.jpg",
+  "content": "AI is rapidly evolving, shaping industries and the way we live. From automation to ethical challenges, its impact is profound.",
+  "createdAt": "2025-04-01T08:30:00.000Z",
+  "updatedAt": "2025-04-01T08:30:00.000Z",
+  "upvotes": 150,
+  "downvotes": 20,
+  "voters": [],
+  "comments": []
+},
+{
+  "_id": {
     "$oid": "67eb251fd702301ac9ff71db"
   },
   "poster": {
     "$oid": "67eb21a0d702301ac9ff71c5"
   },
   "community": {
-    "$oid": "67eb278dd702301ac9ff71e6"
+    "$oid": "67eb278dd702301ac9ff71ea"
   },
   "title": "The Philosophy of Minimalism",
   "images": null,
@@ -15,6 +35,86 @@
   "updatedAt": "2025-04-01T09:30:00.000Z",
   "upvotes": 400,
   "downvotes": 50,
+  "voters": [],
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "67eb251fd702301ac9ff71dc"
+  },
+  "poster": {
+    "$oid": "67eb21a0d702301ac9ff71c6"
+  },
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71e9"
+  },
+  "title": "Top 10 Travel Destinations for 2025",
+  "images": "https://example.com/travel.jpg",
+  "content": "Exploring new places is one of the best ways to experience life. This year's top travel destinations include hidden gems and must-visit cities.",
+  "createdAt": "2025-04-01T10:30:00.000Z",
+  "updatedAt": "2025-04-01T10:30:00.000Z",
+  "upvotes": 1200,
+  "downvotes": 80,
+  "voters": [],
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "67eb251fd702301ac9ff71dd"
+  },
+  "poster": {
+    "$oid": "67eb21a0d702301ac9ff71c7"
+  },
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71e9"
+  },
+  "title": "Writing as a Form of Expression",
+  "images": "https://example.com/writing.jpg",
+  "content": "Words have power. Whether in poetry or prose, writing allows us to communicate ideas, emotions, and stories that shape our world.",
+  "createdAt": "2025-04-01T11:30:00.000Z",
+  "updatedAt": "2025-04-01T11:30:00.000Z",
+  "upvotes": 900,
+  "downvotes": 30,
+  "voters": [],
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "67eb251fd702301ac9ff71de"
+  },
+  "poster": {
+    "$oid": "67eb21a0d702301ac9ff71c8"
+  },
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71ea"
+  },
+  "title": "The Rise of Open Source Contributions",
+  "images": null,
+  "content": "Open source software has transformed the way we develop technology. By collaborating, developers create impactful tools that benefit everyone.",
+  "createdAt": "2025-04-01T12:30:00.000Z",
+  "updatedAt": "2025-04-01T12:30:00.000Z",
+  "upvotes": 1100,
+  "downvotes": 100,
+  "voters": [],
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "67eb251fd702301ac9ff71df"
+  },
+  "poster": {
+    "$oid": "67eb21a0d702301ac9ff71c9"
+  },
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71eb"
+  },
+  "title": "Exploring Digital Art Trends",
+  "images": "https://example.com/art.jpg",
+  "content": "The digital art landscape is expanding with new techniques, tools, and platforms. Artists now have more opportunities than ever before.",
+  "createdAt": "2025-04-01T13:30:00.000Z",
+  "updatedAt": "2025-04-01T13:30:00.000Z",
+  "upvotes": 700,
+  "downvotes": 40,
   "voters": [],
   "comments": []
 },
@@ -29,52 +129,12 @@
     "$oid": "67eb278dd702301ac9ff71eb"
   },
   "title": "The Evolution of Music Production",
-  "images": "https://moises.ai/_next/image/?url=https%3A%2F%2Fstorage.googleapis.com%2Fmoises-cms%2Fhow_to_reading_sheet_music_image_338d99b137%2Fhow_to_reading_sheet_music_image_338d99b137.jpg&w=1920&q=75",
+  "images": "https://example.com/music.jpg",
   "content": "Music production has changed significantly over the years, with digital tools allowing for more creativity and innovation.",
   "createdAt": "2025-04-01T14:30:00.000Z",
   "updatedAt": "2025-04-01T14:30:00.000Z",
   "upvotes": 1500,
   "downvotes": 90,
-  "voters": [],
-  "comments": []
-},
-{
-  "_id": {
-    "$oid": "67eb251fd702301ac9ff71e3"
-  },
-  "poster": {
-    "$oid": "67eb21a0d702301ac9ff71cd"
-  },
-  "community": {
-    "$oid": "67eb278dd702301ac9ff71ee"
-  },
-  "title": "Staying Fit in a Busy World",
-  "images": "https://xplorgym.co.uk/wp-content/uploads/2023/10/commercial-gym-equipment-list.jpg",
-  "content": "Balancing fitness with a hectic schedule is a challenge, but small changes in routine can make a big difference.",
-  "createdAt": "2025-04-01T17:30:00.000Z",
-  "updatedAt": "2025-04-01T17:30:00.000Z",
-  "upvotes": 950,
-  "downvotes": 50,
-  "voters": [],
-  "comments": []
-},
-{
-  "_id": {
-    "$oid": "67eb251fd702301ac9ff71dd"
-  },
-  "poster": {
-    "$oid": "67eb21a0d702301ac9ff71c7"
-  },
-  "community": {
-    "$oid": "67eb278dd702301ac9ff71e8"
-  },
-  "title": "Writing as a Form of Expression",
-  "images": "https://www.unitedlanguagegroup.com/hubfs/Imported_Blog_Media/photo-1455390582262-044cdead277a-750x410-compressed-1.jpg",
-  "content": "Words have power. Whether in poetry or prose, writing allows us to communicate ideas, emotions, and stories that shape our world.",
-  "createdAt": "2025-04-01T11:30:00.000Z",
-  "updatedAt": "2025-04-01T11:30:00.000Z",
-  "upvotes": 900,
-  "downvotes": 30,
   "voters": [],
   "comments": []
 },
@@ -100,86 +160,6 @@
 },
 {
   "_id": {
-    "$oid": "67eb251fd702301ac9ff71da"
-  },
-  "poster": {
-    "$oid": "67eb21a0d702301ac9ff71c4"
-  },
-  "community": {
-    "$oid": "67eb278dd702301ac9ff71e5"
-  },
-  "title": "Exploring the Future of AI",
-  "images": "https://hcpl.net/wp-content/uploads/sites/130/2024/10/terminator_dark_fate___2019_new_movie_trailer_by_epicheroes_dd7w5hm-fullview-1024x512.jpg",
-  "content": "AI is rapidly evolving, shaping industries and the way we live. From automation to ethical challenges, its impact is profound.",
-  "createdAt": "2025-04-01T08:30:00.000Z",
-  "updatedAt": "2025-04-01T08:30:00.000Z",
-  "upvotes": 150,
-  "downvotes": 20,
-  "voters": [],
-  "comments": []
-},
-{
-  "_id": {
-    "$oid": "67eb251fd702301ac9ff71dc"
-  },
-  "poster": {
-    "$oid": "67eb21a0d702301ac9ff71c6"
-  },
-  "community": {
-    "$oid": "67eb278dd702301ac9ff71e7"
-  },
-  "title": "Top 10 Travel Destinations for 2025",
-  "images": "https://media.cntraveller.com/photos/670e2b6f1187263905b52245/master/w_1600%2Cc_limit/travel-GettyImages-1761648501.jpg",
-  "content": "Exploring new places is one of the best ways to experience life. This year's top travel destinations include hidden gems and must-visit cities.",
-  "createdAt": "2025-04-01T10:30:00.000Z",
-  "updatedAt": "2025-04-01T10:30:00.000Z",
-  "upvotes": 1200,
-  "downvotes": 80,
-  "voters": [],
-  "comments": []
-},
-{
-  "_id": {
-    "$oid": "67eb251fd702301ac9ff71de"
-  },
-  "poster": {
-    "$oid": "67eb21a0d702301ac9ff71c8"
-  },
-  "community": {
-    "$oid": "67eb278dd702301ac9ff71e9"
-  },
-  "title": "The Rise of Open Source Contributions",
-  "images": null,
-  "content": "Open source software has transformed the way we develop technology. By collaborating, developers create impactful tools that benefit everyone.",
-  "createdAt": "2025-04-01T12:30:00.000Z",
-  "updatedAt": "2025-04-01T12:30:00.000Z",
-  "upvotes": 1100,
-  "downvotes": 100,
-  "voters": [],
-  "comments": []
-},
-{
-  "_id": {
-    "$oid": "67eb251fd702301ac9ff71df"
-  },
-  "poster": {
-    "$oid": "67eb21a0d702301ac9ff71c9"
-  },
-  "community": {
-    "$oid": "67eb278dd702301ac9ff71ea"
-  },
-  "title": "Exploring Digital Art Trends",
-  "images": "https://i.pinimg.com/736x/3c/5a/00/3c5a00d9b93d3c12881b186647ca0870.jpg",
-  "content": "The digital art landscape is expanding with new techniques, tools, and platforms. Artists now have more opportunities than ever before.",
-  "createdAt": "2025-04-01T13:30:00.000Z",
-  "updatedAt": "2025-04-01T13:30:00.000Z",
-  "upvotes": 700,
-  "downvotes": 40,
-  "voters": [],
-  "comments": []
-},
-{
-  "_id": {
     "$oid": "67eb251fd702301ac9ff71e2"
   },
   "poster": {
@@ -189,12 +169,32 @@
     "$oid": "67eb278dd702301ac9ff71ed"
   },
   "title": "The Art of Cooking",
-  "images": "https://static0.thethingsimages.com/wordpress/wp-content/uploads/2022/02/9EB441A0-09D1-4872-BA59-D80510AD83BB.jpeg",
+  "images": "https://example.com/food.jpg",
   "content": "Cooking is both an art and a science. Mastering flavors and techniques brings joy to both the cook and those who enjoy the meals.",
   "createdAt": "2025-04-01T16:30:00.000Z",
   "updatedAt": "2025-04-01T16:30:00.000Z",
   "upvotes": 800,
   "downvotes": 60,
+  "voters": [],
+  "comments": []
+},
+{
+  "_id": {
+    "$oid": "67eb251fd702301ac9ff71e3"
+  },
+  "poster": {
+    "$oid": "67eb21a0d702301ac9ff71cd"
+  },
+  "community": {
+    "$oid": "67eb278dd702301ac9ff71ee"
+  },
+  "title": "Staying Fit in a Busy World",
+  "images": "https://example.com/fitness.jpg",
+  "content": "Balancing fitness with a hectic schedule is a challenge, but small changes in routine can make a big difference.",
+  "createdAt": "2025-04-01T17:30:00.000Z",
+  "updatedAt": "2025-04-01T17:30:00.000Z",
+  "upvotes": 950,
+  "downvotes": 50,
   "voters": [],
   "comments": []
 }]

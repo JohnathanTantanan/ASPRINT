@@ -25,7 +25,7 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI_OFFICIAL }), // USE MONGODB_URI_OFFICIAL FOR PRODUCTION
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI_DEV }), // USE MONGODB_URI_OFFICIAL FOR PRODUCTION
     cookie: {
         maxAge: null, // default cookie lifespan: 1 day in milliseconds, default val is null (deleted on broswer close)
         httpOnly: true,

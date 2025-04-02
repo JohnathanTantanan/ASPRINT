@@ -1,4 +1,4 @@
-# CCAPDEV-Phase3-Group10
+# CCAPDEV-Phase2-Group10
 
 ## Project Setup and Installation
 
@@ -16,15 +16,15 @@ If both commands return version numbers, Node.js and npm are correctly installed
 
 ---
 
-## Installation Guide (Two Ways)
-## Local Host
+## Installation Guide
+
 ### 1. Clone or Extract the Project
-- If using a ZIP file, unzip `CCAPDEV-Phase3-Group10.zip`.
-- Move the extracted `CCAPDEV-Phase3-Group10` folder to a safe directory.
+- If using a ZIP file, unzip `CCAPDEV-Phase2-Group10.zip`.
+- Move the extracted `CCAPDEV-Phase2-Group10` folder to a safe directory.
 - Open **Command Prompt** and navigate to the project directory:
 
  ``` sh
-  cd path\to\CCAPDEV-Phase3-Group10
+  cd path\to\CCAPDEV-Phase2-Group10
  ```
 
 ### 2. Install Dependencies
@@ -57,17 +57,5 @@ http://localhost:3000
     "dev": "nodemon app.js"
   }
   ```
-## Web Host
-### 1. Open Web Browser to use Application
-Once the web browser is open, visit this URL: https://the-forum.onrender.com
-
-## Troubleshooting
-- **If Render takes too long to load**, the server might have timed out. This happens because Render's free tier spins down with inactivity. The first request after inactivity will wake up the server, but may take 30-60 seconds to respond.
-- **If the application crashes or shows errors**, try refreshing the page or clearing your browser cache.
-- **If images don't load properly**, this could be due to temporary storage limitations on Render's free tier.
-- **For persistent issues**, please use the local installation method described above for a more reliable experience during development and testing.
-- **Database connection issues** may occur if there are too many simultaneous connections. If this happens, wait a few minutes before trying again.
-
-
 
 
