@@ -5,6 +5,12 @@
     </div>  
     
     <div id="auth-content"><!--same with register (keep and rename class/id name)-->
+
+        <% if (locals.errorMessage) { %>
+            <div class="error-message">
+                <%= errorMessage %>
+            </div>
+        <% } %>
         <h2>REGISTER</h2>
         <div id="auth-form"><!--same with register (keep and rename class/id name)-->
             <form action="/register" method="POST">
@@ -27,6 +33,7 @@
             </form>
             <a href="/login">Already have an Account? Login!</a>
         </div>
+
     </div>
 
 </div>

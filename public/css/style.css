@@ -1072,6 +1072,23 @@ a.sidebar-buttons {
     font-weight: 200;
 }
 
+/* ============ ERROR MESSAGE ============ */
+.error-message {
+    background-color: #ff4444;
+    color: white;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    height: 0.5rem;
+    width: 37rem;
+    font-weight: bold;
+    justify-content: center;
+    display: flex;
+    position:absolute;
+    margin-top: -2rem;
+}
+
 /* ============ RESPONSIVE DESIGN ============ */
 /* Note:    Styles placed much later in the file take precedence over styles placed earlier in the file.
             This is called Cascade Order, and this factor (Source Order) is one of the three factors:

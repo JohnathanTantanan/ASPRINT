@@ -166,29 +166,65 @@ router.post('/login', async (req,res)=>{
 router.post('/register', async (req,res)=>{
     try {
         const { username, password, confirm } = req.body;
-        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Password validation
+        if (password.length < 8) {
+            return res.render('register', {
+                layout: 'layouts/auth',
+                errorMessage: 'Password must be at least 8 characters long'
+            });
+        }
+
+        // Check for at least one number
+        if (!/\d/.test(password)) {
+            return res.render('register', {
+                layout: 'layouts/auth',
+                errorMessage: 'Password must contain at least one number'
+            });
+        }
+
+        // Check for at least one special character
+        const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        if (!specialChars.test(password)) {
+            return res.render('register', {
+                layout: 'layouts/auth',
+                errorMessage: 'Password must contain at least one special character'
+            });
+        }
 
         if (password !== confirm) {
-            res.status(408).json({message: 'Passwords do not match'});
-        } else {
-            try {
-                const user = await User.create({
-                    username,
-                    password: hashedPassword
-                });
-                res.redirect('/login');
-            }   catch (error) {
-                if(error.code === 11000){
-                    res.status(409).json({message: 'Username already exists'});
-                }
-                res.status(500).json({message: 'Internal Server Error'});
-            }
+            return res.render('register', {
+                layout: 'layouts/auth',
+                errorMessage: 'Passwords do not match'
+            });
         }
-        
 
+        const hashedPassword = await bcrypt.hash(password, 10);
 
+        try {
+            const user = await User.create({
+                username,
+                password: hashedPassword
+            });
+            res.redirect('/login');
+        } catch (error) {
+            if(error.code === 11000){
+                return res.render('register', {
+                    layout: 'layouts/auth',
+                    errorMessage: 'Username already exists'
+                });
+            }
+            return res.render('register', {
+                layout: 'layouts/auth',
+                errorMessage: 'Internal Server Error'
+            });
+        }
     } catch (error) {
         console.log(error);
+        return res.render('register', {
+            layout: 'layouts/auth',
+            errorMessage: 'Server error occurred'
+        });
     }
 });
 
