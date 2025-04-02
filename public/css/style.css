@@ -948,6 +948,23 @@ a.sidebar-buttons {
     color: white;
 }
 
+
+#auth-form h5{
+    margin-bottom: 0.5rem;
+
+}
+
+#auth-form ul{
+    float: right;
+    margin-top: -5rem;
+
+}
+
+#auth-form ul li{
+    font-size: 0.9rem;
+    color: white;
+}
+
 #auth-form a{
     color: white;
     padding-right: 4em;
