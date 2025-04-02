@@ -16,11 +16,13 @@
                 <% if(comment.createdAt != comment.updatedAt) { %>
                     <p>Edited on: <%= comment.updatedAt.getMonth()+1 %>/<%= comment.updatedAt.getDate() %>/<%= comment.updatedAt.getFullYear() %> <%= comment.updatedAt.getHours() %>:<%= comment.updatedAt.getMinutes() %>:<%= comment.updatedAt.getSeconds() %></p>
                 <% } %>
-                <% if(comment.commenter.username == user.username) { %>
-                    <div>
-                        <button class="edit-del-btn" id="edit-comment-<%= comment._id %>" onclick="toggleEditMode('edit-comment-form-<%= comment._id %>', ['comment-content-<%= comment._id %>'], 'edit-comment-<%= comment._id %>')">Edit</button>
-                        <%- include('./delete', { action: '/delete-comment/' + comment._id }) %>
-                    </div>
+                <% if(typeof user !== 'undefined' && user && user.username) { %>
+                    <% if(comment.commenter.username === user.username) { %>
+                        <div>
+                            <button class="edit-del-btn" id="edit-comment-<%= comment._id %>" onclick="toggleEditMode('edit-comment-form-<%= comment._id %>', ['comment-content-<%= comment._id %>'], 'edit-comment-<%= comment._id %>')">Edit</button>
+                            <%- include('./delete', { action: '/delete-comment/' + comment._id }) %>
+                        </div>
+                    <% } %>
                 <% } %>
             </div>
         </div>
