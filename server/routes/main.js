@@ -51,7 +51,7 @@ router.get(['', '/home'], async (req,res)=>{
 
     try {
         const page = parseInt(req.query.page) || 1;
-        const limit = 10;
+        const limit = 15;
 
         const data = await Post.find()
             .populate('poster')
@@ -192,7 +192,7 @@ router.get('/popular', async(req,res)=>{
 
     try {
         const page = parseInt(req.query.page) || 1;
-        const limit = 10;
+        const limit = 15;
 
         const data = await Post.find()
             .sort({ upvotes: -1 })
@@ -341,7 +341,7 @@ router.post('/update-comment/:id', async (req, res) => {
 router.get('/search', async (req,res)=>{
     // FOR GET METHOD
     try {
-        let searchTerm = req.query.searchTerm; // Use req.query for GET requests
+        let searchTerm = req.query.searchTerm || ''; // Use req.query for GET requests
         const searchInsensitive = searchTerm.replace(/[^a-zA-Z0-9]/g, ""); // case-insensitive search
 
         const locals = {
@@ -351,9 +351,9 @@ router.get('/search', async (req,res)=>{
             inCommunity: false
         };
 
-        // Support for pagaination, load in chunks of 10 posts
+        // Support for pagaination, load in chunks of 15 posts
         const page = parseInt(req.query.page) || 1;
-        const limit = 10;
+        const limit = 15;
 
         const query = {
             $or: [
@@ -372,7 +372,7 @@ router.get('/search', async (req,res)=>{
         const user = await getUser(req);
         const comments = await Comments.find();
 
-        // If it's an AJAX request, send only the posts HTML
+        // If it's an AJAX request, render only the post partial
         if (req.xhr) {
             return res.render('partials/post', {
                 data,
@@ -384,7 +384,7 @@ router.get('/search', async (req,res)=>{
 
         res.render('home', { locals, data, communities, user, comments});
     } catch (error) {
-        console.log(error);
+        console.error('Error performing search:', error);
         res.status(500).send('Error performing search');
     }
 
