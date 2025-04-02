@@ -160,20 +160,49 @@ router.get('/communities', async (req,res)=>{
  * A COMMUNITY'S DEDICATED PAGE
  */
 router.get('/c/:id/:name', async (req,res)=>{
-    const locals = {
-        layout: 'layouts/main',
-        title: req.params.name,
-        inCommunity: true
-    };
-
     try {
+        const locals = {
+            layout: 'layouts/main',
+            title: req.params.name,
+            inCommunity: true
+        };
+        
+        const page = parseInt(req.query.page) || 1;
+        const limit = 15;
+
         //const postId = new mongoose.Types.ObjectId(req.params.id);
         const user = await getUser(req);
         const community = await Community.findById(req.params.id);
-        const data = await Post.find({ community: req.params.id}).populate('poster');
+        const data = await Post.find({ community: req.params.id})
+            .populate('poster')
+            .sort({ createdAt: -1 })
+            .limit(limit)
+            .skip((page - 1) * limit);
         const comments = await Comments.find();
         data.comments = comments; // manual population
         const communities = await Community.find();
+        
+        if (!community) {
+            return res.status(404).render('error', { 
+                locals: {
+                    layout: 'layouts/main',
+                    title: 'Community Not Found',
+                    description: 'The requested community could not be found.'
+                },
+                user
+            });
+        }
+
+        // If it's an AJAX request (infinite scrolling), render only the post partial
+        if (req.xhr) {
+            return res.render('partials/post', { 
+                data, 
+                user, 
+                comments,
+                layout: false 
+            });
+        }
+
         res.render('home', {locals, data, user, community, communities, comments});
     } catch (error) {
         console.log(error);
