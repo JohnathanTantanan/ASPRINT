@@ -50,14 +50,30 @@ router.get(['', '/home'], async (req,res)=>{
     }
 
     try {
+        const page = parseInt(req.query.page) || 1;
+        const limit = 10;
+
         const data = await Post.find()
             .populate('poster')
             .populate('community')
-            .sort({ createdAt: -1 });
+            .sort({ createdAt: -1 })
+            .limit(limit)
+            .skip((page - 1) * limit);
+
         const user = await getUser(req);
-        console.log('User in main.js:', user);
         const communities = await Community.find();
         const comments = await Comments.find();
+        
+        // If it's an AJAX request, send only the posts HTML
+        if (req.xhr) {
+            return res.render('partials/post', { 
+                data, 
+                user, 
+                comments,
+                layout: false 
+            });
+        }
+
         res.render('home', {
             locals, 
             data, 
@@ -68,7 +84,6 @@ router.get(['', '/home'], async (req,res)=>{
     } catch (error) {
         console.log(error);
     }
-    
 });
 
 
@@ -176,13 +191,30 @@ router.get('/popular', async(req,res)=>{
     }
 
     try {
-        const communities = await Community.find();
+        const page = parseInt(req.query.page) || 1;
+        const limit = 10;
+
         const data = await Post.find()
             .sort({ upvotes: -1 })
             .populate('poster')
-            .populate('community');
+            .populate('community')
+            .limit(limit)
+            .skip((page - 1) * limit);
+
+        const communities = await Community.find();
         const user = await getUser(req);
         const comments = await Comments.find();
+
+        // If it's an AJAX request, send only the posts HTML
+        if (req.xhr) {
+            return res.render('partials/post', { 
+                data, 
+                user, 
+                comments,
+                layout: false 
+            });
+        }
+
         res.render('home', {
             locals, 
             data, 

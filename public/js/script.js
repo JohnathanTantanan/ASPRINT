@@ -140,4 +140,53 @@ $(document).ready(function(){
     // Added event delegation in listeners for dynamically added elements, ensure listener is attached
     // The click event is attached to the $(document) or another parent element that always exists
     // */
+
+    // Infinite scroll
+    let currentPage = 1;
+    let isLoading = false;
+    const loadMoreMarker = $('#load-more-marker');
+
+    // Create intersection observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !isLoading) {
+                loadMorePosts();
+            }
+        });
+    });
+
+    // Start observing the marker
+    if (loadMoreMarker.length) {
+        observer.observe(loadMoreMarker[0]);
+    }
+
+    function loadMorePosts() {
+        if (isLoading) return;
+        isLoading = true;
+        currentPage++;
+
+        // Get current path to determine if we're on home or popular
+        const path = window.location.pathname;
+        const endpoint = path === '/popular' ? '/popular' : '/';
+
+        $.ajax({
+            url: `${endpoint}?page=${currentPage}`,
+            method: 'GET',
+            success: function(response) {
+                if (response.trim()) {
+                    // Insert new posts before the marker
+                    loadMoreMarker.before(response);
+                    isLoading = false;
+                } else {
+                    // No more posts to load
+                    loadMoreMarker.remove();
+                    observer.disconnect();
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error loading more posts:', error);
+                isLoading = false;
+            }
+        });
+    }
 });
