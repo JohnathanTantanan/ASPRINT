@@ -1,24 +1,24 @@
 [{
   "_id": {
-    "$oid": "67eb278dd702301ac9ff71e5"
+    "$oid": "67ed611df3e8eb1047ec992e"
   },
-  "name": "techInnovators",
-  "description": "A community for discussing the latest in technology and innovation.",
+  "name": "TheForumOfficial",
+  "description": "Welcome to The Forum, a community for everything.",
   "banner": "",
-  "picture": "https://example.com/tech.jpg",
+  "picture": null,
   "createdAt": "2025-04-01T08:00:00.000Z",
   "updatedAt": "2025-04-01T08:00:00.000Z"
 },
 {
   "_id": {
-    "$oid": "67eb278dd702301ac9ff71e6"
+    "$oid": "67eb278dd702301ac9ff71e5"
   },
-  "name": "philosophyHub",
-  "description": "A place for deep philosophical discussions and thought-provoking questions.",
+  "name": "techInnovators",
+  "description": "A community for discussing the latest in technology and innovation.",
   "banner": "",
-  "picture": "https://example.com/philosophy.jpg",
-  "createdAt": "2025-04-01T09:00:00.000Z",
-  "updatedAt": "2025-04-01T09:00:00.000Z"
+  "picture": null,
+  "createdAt": "2025-04-01T08:00:00.000Z",
+  "updatedAt": "2025-04-01T08:00:00.000Z"
 },
 {
   "_id": {
@@ -27,42 +27,20 @@
   "name": "travelAdventures",
   "description": "Share and discover amazing travel experiences from around the world.",
   "banner": "",
-  "picture": "https://example.com/travel.jpg",
+  "picture": null,
   "createdAt": "2025-04-01T10:00:00.000Z",
   "updatedAt": "2025-04-01T10:00:00.000Z"
 },
 {
   "_id": {
-    "$oid": "67eb278dd702301ac9ff71e8"
+    "$oid": "67eb278dd702301ac9ff71e6"
   },
-  "name": "writersCorner",
-  "description": "A space for writers and poets to share and discuss their work.",
+  "name": "philosophyHub",
+  "description": "A place for deep philosophical discussions and thought-provoking questions.",
   "banner": "",
-  "picture": "https://example.com/writing.jpg",
-  "createdAt": "2025-04-01T11:00:00.000Z",
-  "updatedAt": "2025-04-01T11:00:00.000Z"
-},
-{
-  "_id": {
-    "$oid": "67eb278dd702301ac9ff71e9"
-  },
-  "name": "openSource",
-  "description": "A community dedicated to open-source projects and collaborations.",
-  "banner": "",
-  "picture": "https://example.com/opensource.jpg",
-  "createdAt": "2025-04-01T12:00:00.000Z",
-  "updatedAt": "2025-04-01T12:00:00.000Z"
-},
-{
-  "_id": {
-    "$oid": "67eb278dd702301ac9ff71ea"
-  },
-  "name": "digitalArt",
-  "description": "A hub for digital artists to showcase their work and share techniques.",
-  "banner": "",
-  "picture": "https://example.com/art.jpg",
-  "createdAt": "2025-04-01T13:00:00.000Z",
-  "updatedAt": "2025-04-01T13:00:00.000Z"
+  "picture": null,
+  "createdAt": "2025-04-01T09:00:00.000Z",
+  "updatedAt": "2025-04-01T09:00:00.000Z"
 },
 {
   "_id": {
@@ -71,7 +49,7 @@
   "name": "musicMakers",
   "description": "A space for musicians, producers, and composers to connect.",
   "banner": "",
-  "picture": "https://example.com/music.jpg",
+  "picture": "https://media.npr.org/assets/img/2018/06/05/WomenComposers-4884a159adb1ef24bdf90484dffd641a79762368.jpg?s=6",
   "createdAt": "2025-04-01T14:00:00.000Z",
   "updatedAt": "2025-04-01T14:00:00.000Z"
 },
@@ -82,7 +60,7 @@
   "name": "gamingWorld",
   "description": "A community for gamers and game developers to discuss the latest trends.",
   "banner": "",
-  "picture": "https://example.com/gaming.jpg",
+  "picture": "https://tech.news.am/static/news/b/2023/11/2420.jpg",
   "createdAt": "2025-04-01T15:00:00.000Z",
   "updatedAt": "2025-04-01T15:00:00.000Z"
 },
@@ -93,7 +71,7 @@
   "name": "foodiesUnite",
   "description": "A place for food lovers to share recipes, reviews, and cooking tips.",
   "banner": "",
-  "picture": "https://example.com/food.jpg",
+  "picture": null,
   "createdAt": "2025-04-01T16:00:00.000Z",
   "updatedAt": "2025-04-01T16:00:00.000Z"
 },
@@ -104,7 +82,40 @@
   "name": "fitnessGoals",
   "description": "A supportive community for fitness enthusiasts and health-conscious individuals.",
   "banner": "",
-  "picture": "https://example.com/fitness.jpg",
+  "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1lqXkpc5mIg0kkkvaozzg20ZRZmM9ma8bXQ&s",
   "createdAt": "2025-04-01T17:00:00.000Z",
   "updatedAt": "2025-04-01T17:00:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "67eb278dd702301ac9ff71e8"
+  },
+  "name": "writersCorner",
+  "description": "A space for writers and poets to share and discuss their work.",
+  "banner": "",
+  "picture": null,
+  "createdAt": "2025-04-01T11:00:00.000Z",
+  "updatedAt": "2025-04-01T11:00:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "67eb278dd702301ac9ff71e9"
+  },
+  "name": "openSource",
+  "description": "A community dedicated to open-source projects and collaborations.",
+  "banner": "",
+  "picture": null,
+  "createdAt": "2025-04-01T12:00:00.000Z",
+  "updatedAt": "2025-04-01T12:00:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "67eb278dd702301ac9ff71ea"
+  },
+  "name": "digitalArt",
+  "description": "A hub for digital artists to showcase their work and share techniques.",
+  "banner": "",
+  "picture": null,
+  "createdAt": "2025-04-01T13:00:00.000Z",
+  "updatedAt": "2025-04-01T13:00:00.000Z"
 }]

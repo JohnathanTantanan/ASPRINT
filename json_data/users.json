@@ -1,5 +1,33 @@
 [{
   "_id": {
+    "$oid": "67eb21a0d702301ac9ff71c7"
+  },
+  "username": "alice_writes",
+  "password": "hashedpasswordabc",
+  "picture": null,
+  "description": "Aspiring writer and poet.",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "createdAt": "2025-04-01T11:00:00.000Z",
+  "updatedAt": "2025-04-01T11:00:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "67eb21a0d702301ac9ff71c9"
+  },
+  "username": "emma_art",
+  "password": "hashedpasswordghi",
+  "picture": "https://akns-images.eonline.com/eol_images/Entire_Site/2023317/rs_1200x1200-230417122054-1200-emma-watson.cm.41723.jpg?fit=around%7C1080:1080&output-quality=90&crop=1080:1080;center,top",
+  "description": "Digital artist and designer.",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "createdAt": "2025-04-01T13:00:00.000Z",
+  "updatedAt": "2025-04-01T13:00:00.000Z"
+},
+{
+  "_id": {
     "$oid": "67eb21a0d702301ac9ff71c4"
   },
   "username": "john_doe",
@@ -11,6 +39,34 @@
   "communities": [],
   "createdAt": "2025-04-01T08:00:00.000Z",
   "updatedAt": "2025-04-01T08:00:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "67eb21a0d702301ac9ff71cc"
+  },
+  "username": "sophia_foodie",
+  "password": "hashedpasswordpqr",
+  "picture": null,
+  "description": "Food blogger and chef.",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "createdAt": "2025-04-01T16:00:00.000Z",
+  "updatedAt": "2025-04-01T16:00:00.000Z"
+},
+{
+  "_id": {
+    "$oid": "67eb21a0d702301ac9ff71cd"
+  },
+  "username": "noah_fitness",
+  "password": "hashedpasswordstu",
+  "picture": "https://yt3.googleusercontent.com/0VEG-XT4JS5iMjk4LxW8UFQ2x9DamEZ3Sa4oQKonlKqgrO1URMv-AFjvcTOUpaEzfKO7jksOdA=s900-c-k-c0x00ffffff-no-rj",
+  "description": "Fitness trainer and health advocate.",
+  "posts": [],
+  "comments": [],
+  "communities": [],
+  "createdAt": "2025-04-01T17:00:00.000Z",
+  "updatedAt": "2025-04-01T17:00:00.000Z"
 },
 {
   "_id": {
@@ -42,20 +98,6 @@
 },
 {
   "_id": {
-    "$oid": "67eb21a0d702301ac9ff71c7"
-  },
-  "username": "alice_writes",
-  "password": "hashedpasswordabc",
-  "picture": null,
-  "description": "Aspiring writer and poet.",
-  "posts": [],
-  "comments": [],
-  "communities": [],
-  "createdAt": "2025-04-01T11:00:00.000Z",
-  "updatedAt": "2025-04-01T11:00:00.000Z"
-},
-{
-  "_id": {
     "$oid": "67eb21a0d702301ac9ff71c8"
   },
   "username": "charlie_code",
@@ -67,20 +109,6 @@
   "communities": [],
   "createdAt": "2025-04-01T12:00:00.000Z",
   "updatedAt": "2025-04-01T12:00:00.000Z"
-},
-{
-  "_id": {
-    "$oid": "67eb21a0d702301ac9ff71c9"
-  },
-  "username": "emma_art",
-  "password": "hashedpasswordghi",
-  "picture": null,
-  "description": "Digital artist and designer.",
-  "posts": [],
-  "comments": [],
-  "communities": [],
-  "createdAt": "2025-04-01T13:00:00.000Z",
-  "updatedAt": "2025-04-01T13:00:00.000Z"
 },
 {
   "_id": {
@@ -102,39 +130,11 @@
   },
   "username": "oliver_games",
   "password": "hashedpasswordmno",
-  "picture": null,
+  "picture": "https://www.comingsoon.net/wp-content/uploads/sites/3/2025/02/MixCollage-07-Feb-2025-02-47-PM-762.jpg?w=1024",
   "description": "Game developer and esports fan.",
   "posts": [],
   "comments": [],
   "communities": [],
   "createdAt": "2025-04-01T15:00:00.000Z",
   "updatedAt": "2025-04-01T15:00:00.000Z"
-},
-{
-  "_id": {
-    "$oid": "67eb21a0d702301ac9ff71cc"
-  },
-  "username": "sophia_foodie",
-  "password": "hashedpasswordpqr",
-  "picture": null,
-  "description": "Food blogger and chef.",
-  "posts": [],
-  "comments": [],
-  "communities": [],
-  "createdAt": "2025-04-01T16:00:00.000Z",
-  "updatedAt": "2025-04-01T16:00:00.000Z"
-},
-{
-  "_id": {
-    "$oid": "67eb21a0d702301ac9ff71cd"
-  },
-  "username": "noah_fitness",
-  "password": "hashedpasswordstu",
-  "picture": null,
-  "description": "Fitness trainer and health advocate.",
-  "posts": [],
-  "comments": [],
-  "communities": [],
-  "createdAt": "2025-04-01T17:00:00.000Z",
-  "updatedAt": "2025-04-01T17:00:00.000Z"
 }]
