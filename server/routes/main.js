@@ -338,29 +338,56 @@ router.post('/update-comment/:id', async (req, res) => {
 /**GET /
  * GET SEARCH TERM
  */
-router.get('/search', async (req,res)=>{
-    // FOR GET METHOD
+router.get('/search', async (req, res) => {
     try {
-        let searchTerm = req.query.searchTerm || ''; // Use req.query for GET requests
-        const searchInsensitive = searchTerm.replace(/[^a-zA-Z0-9]/g, ""); // case-insensitive search
-
+        let searchTerm = req.query.searchTerm || '';
+        
+        // Extract community keyword if present (c/communityName)
+        let communityName = null;
+        let searchQuery = searchTerm;
+        let community = null;
+        
+        // Regular expression to match c/communityName pattern
+        const communityMatch = searchTerm.match(/c\/([a-zA-Z0-9_-]+)/);
+        if (communityMatch) {
+            communityName = communityMatch[1];
+            // Remove the c/community part from search query for content/title search
+            searchQuery = searchTerm.replace(/c\/[a-zA-Z0-9_-]+/, '').trim();
+            
+            // Find the community by name
+            community = await Community.findOne({ name: { $regex: new RegExp(`^${communityName}$`, 'i') } });
+        }
+        
         const locals = {
             layout: 'layouts/main',
             title: `${searchTerm} - Search The Forum!`,
             search: searchTerm,
-            inCommunity: false
+            inCommunity: community ? true : false
         };
 
-        // Support for pagaination, load in chunks of 15 posts
         const page = parseInt(req.query.page) || 1;
         const limit = 15;
-
-        const query = {
-            $or: [
-                { title: {$regex: new RegExp(searchInsensitive, 'i')}},
-                { content: {$regex: new RegExp(searchInsensitive, 'i')}}
-            ]
-        } // Case-insensitive search
+        
+        // Build the search query
+        let query = {};
+        
+        // If community was found, filter by community
+        if (community) {
+            query.community = community._id;
+        }
+        
+        // If there's a search term (besides community specification), add content/title search
+        if (searchQuery) {
+            // Convert search term to regex-safe format
+            const searchRegex = searchQuery.replace(/[^a-zA-Z0-9\s]/g, '');
+            if (searchRegex) {
+                query.$or = [
+                    { title: { $regex: new RegExp(searchRegex, 'i') } },
+                    { content: { $regex: new RegExp(searchRegex, 'i') } }
+                ];
+            }
+        }
+        
         const data = await Post.find(query)
             .populate('poster')
             .populate('community')
@@ -372,7 +399,7 @@ router.get('/search', async (req,res)=>{
         const user = await getUser(req);
         const comments = await Comments.find();
 
-        // If it's an AJAX request, render only the post partial
+        // If it's an AJAX request (infinite scrolling), render only the post partial
         if (req.xhr) {
             return res.render('partials/post', {
                 data,
@@ -382,11 +409,20 @@ router.get('/search', async (req,res)=>{
             });
         }
 
-        res.render('home', { locals, data, communities, user, comments});
+        // Render full page
+        res.render('home', { 
+            locals, 
+            data, 
+            communities, 
+            user, 
+            comments,
+            community // Pass community to template for community header
+        });
     } catch (error) {
         console.error('Error performing search:', error);
         res.status(500).send('Error performing search');
     }
+});
 
     // FOR POST METHOD
     // try {
@@ -413,6 +449,5 @@ router.get('/search', async (req,res)=>{
     // } catch (error) {
     //     console.log(error);
     // }
-});
 
 module.exports = router;
