@@ -177,8 +177,13 @@ $(document).ready(function(){
 
         // Get current path to determine if we're on home or popular
         const path = window.location.pathname;
-        const searchTerm = new URLSearchParams(window.location.search).get('searchTerm');
-        const endpoint = searchTerm ? `/search?searchTerm=${searchTerm}&page=${currentPage}` : `${path}?page=${currentPage}`;
+        const searchParams = new URLSearchParams(window.location.search);
+        const searchTerm = searchParams.get('searchTerm');
+    
+        // Keep original search term intact (with c/community if present)
+        const endpoint = searchTerm ? 
+        `/search?searchTerm=${encodeURIComponent(searchTerm)}&page=${currentPage}` : 
+        `${path}?page=${currentPage}`;
 
         $.ajax({
             url: endpoint,
@@ -188,7 +193,7 @@ $(document).ready(function(){
                     // Insert new posts before the marker
                     loadMoreMarker.before(response);
                     isLoading = false;
-                    
+
                 } else {
                     // No more posts to load
                     loadMoreMarker.remove();
