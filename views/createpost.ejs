@@ -12,7 +12,10 @@
         <input type="text" id="title" name="title" placeholder="Title...*" required>
         <textarea id="content" name="content" placeholder="Content...*" required></textarea>
         <label for="image">Upload Image:</label>
-        <input type="file" id="image" name="image">
+        <input type="file" id="image-input" name="image" accept="image/*" onchange="previewImage(event)">
+        <div style="text-align: center; margin-top: 10px;">
+            <img id="image-preview" src="#" alt="Image Preview" style="display: none; max-width: 400px; max-height: 400px;">
+        </div>
         <div>
             <button type="button" id="discard" onclick="window.location.href='/'">Discard</button>
             <button type="submit" id="postbutton">Post</button>
