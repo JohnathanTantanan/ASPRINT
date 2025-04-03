@@ -11,11 +11,11 @@
                 <a href="/user-profile/<%= data.poster._id %>"><%= data.poster.username %></a> <br>
                     <!-- Date of post creation and last edit -->
                     <br> Posted on: <%= data.createdAt.getMonth()+1 %>/<%= data.createdAt.getDate() %>/<%= data.createdAt.getFullYear() %> 
-                    <%= data.createdAt.getHours() %>:<%= (data.createdAt.getMinutes() < 10 ? '0' : '') + data.createdAt.getMinutes() %>:<%= (data.createdAt.getSeconds() < 10 ? '0' : '') + data.createdAt.getSeconds() %> <br>
+                    <%= data.createdAt.getHours() %>:<%= data.createdAt.getMinutes() %>:<%= data.createdAt.getSeconds() < 10 ? '0' : '') + data.createdAt.getSeconds() %> <br>
                     <% if (data.createdAt !== data.updatedAt) { %>
                          Edited on: <%= data.updatedAt.getMonth()+1 %>/<%= data.updatedAt.getDate() %>/<%= data.updatedAt.getFullYear() %> 
-                        <%= data.updatedAt.getHours() %>:<%= (data.updatedAt.getMinutes() < 10 ? '0' : '') + data.updatedAt.getMinutes() %>:<%= (data.updatedAt.getSeconds() < 10 ? '0' : '') + data.updatedAt.getSeconds() %>
-                    <% } %>
+                        <%= data.updatedAt.getHours() %>:<%= data.updatedAt.getMinutes() %>:<%= data.updatedAt.getSeconds() %>
+                        <% } %>
             </div>
             <% if (user != null && data.poster.username == user.username) { %>
                 <div class="post-edit-buttons">
