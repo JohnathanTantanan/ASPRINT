@@ -3,7 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
 const connectDB = require('./server/config/db')
-connectDB()
+connectDB() // Connect to MongoDB
 // Other dependencies
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
